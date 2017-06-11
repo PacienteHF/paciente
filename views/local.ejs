@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PaginaDoHosptal</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!--biblioteca houver css-->
+  <link href="/hoverCSS/css/hover-min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
+
+  <link rel="stylesheet" href="/js/jquery-ui-1.12.1.custom/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="/js/dispositivo.js"></script>
+  <script type="text/javascript" src="/js/post.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style_paginaDispositivo.css">
+  <!--colocanto dicone na aba da pagina-->
+  <link rel="shortcut icon" href="icone.png" type="image/x-png" />
+
+</head>
+
+<body>
+
+  <!--popups modals-->
+  <!--modal avaliar estrutura-->
+  <div class=" modal fade " id="avaliarEstrutura">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <img src="/popup.png" class="img-responsive center-block">
+        <div class="modal-header">
+
+
+
+          <p class="lead">AVALIAÇÃO DE ESTRUTURA </p>
+          <!--criando botão de fechar modal-->
+          <hr>
+
+          <form id="form-1">
+
+            <label> Classificação: </label>
+            <label> <h6>Onde 5 estrelas significa que está ruim e 0 que não há reclamação</h6></label>
+
+            <fieldset class="rating">
+              <input type="radio" id="star5" name="rating-01" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="star4" name="rating-01" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="star3" name="rating-01" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="star2" name="rating-01" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="star1" name="rating-01" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <br>
+
+            <div class="form-group resto">
+              <label>Problema Encontrado</label>
+              <textarea class="form-control" id="texto-001" rows="3"></textarea>
+            </div>
+            <div class="btn-group btn-group-justified " role="group">
+              <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-default  confirme01">ENVIAR</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default  fechar01" data-dismiss="modal" aria-label="Close">FECHAR</button>
+              </div>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal avaliar falta de medicos-->
+  <div class=" modal fade " id="avaliarFaltaDeMedicos">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <img src="/popup.png" class="img-responsive center-block">
+        <div class="modal-header">
+
+          <p class="lead">
+            AVALIAÇÃO DE MÉDICOS FALTOSOS </p>
+          <!--criando botão de fechar modal-->
+          <hr>
+          <form>
+
+            <label> Classificação: </label>
+            <label> <h6>Onde 5 estrelas significa que está ruim e 0 que não há reclamação</h6></label>
+
+            <fieldset class="rating">
+              <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <br>
+
+            <select class="form-control">
+ <option> Alergia e Imunologia</option>
+ <option>Anestesiologia</option>
+ <option>Angiologia</option>
+ <option>Oncologia</option>
+ <option>Cardiologia</option>
+ <option> Ala Cirúrgica</option>
+ <option>Coloproctologia</option>
+ <option>Dermatologia</option>
+ <option>Endocrinologia</option>
+ <option>Gastroenterologia</option>
+ <option>Geriatria</option>
+ <option>Ginecologia e obstetrícia</option>
+ <option>Hematologia e Hemoterapia</option>
+ <option>Mastologia</option>
+ <option>Nefrologia</option>
+ <option>Neurologia</option>
+ <option>Nutrologia</option>
+ <option>Oftalmologia</option>
+ <option>Ortopedia e Traumatologia</option>
+ <option>Otorrinolaringologia</option>
+ <option>Pediatria</option>
+ <option>Pneumologia</option>
+ <option>Psiquiatria</option>
+ <option>Radiologia</option>
+ <option>Radioterapia</option>
+ <option> Reumatologia</option>
+ <option>Urologia</option>
+</select>
+
+            <select class="form-control">
+  <option>Manhã</option>
+  <option>Tarde</option>
+  <option>Noite</option>
+</select>
+
+            <div class="form-group">
+              <label>Oque foi dito?</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Comentário:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="btn-group btn-group-justified " role="group">
+              <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-default  confirme01">ENVIAR</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default  fechar01" data-dismiss="modal" aria-label="Close">FECHAR</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal avaliar demora do atendimento-->
+  <div class=" modal fade " id="avaliarDemora">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <img src="/popup.png" class="img-responsive center-block">
+        <div class="modal-header">
+
+          <p class="lead">
+            AVALIAÇÃO DA DEMORA NO ATENDIMENTO </p>
+          <!--criando botão de fechar modal-->
+          <hr>
+          <form>
+
+            <label> Classificação: </label>
+            <label> <h6>Onde 5 estrelas significa que está ruim e 0 que não há reclamação</h6></label>
+
+            <fieldset class="rating">
+              <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <br>
+
+            <select class="form-control">
+ <option> Alergia e Imunologia</option>
+ <option>Anestesiologia</option>
+ <option>Angiologia</option>
+ <option>Oncologia</option>
+ <option>Cardiologia</option>
+ <option> Ala Cirúrgica</option>
+ <option>Coloproctologia</option>
+ <option>Dermatologia</option>
+ <option>Endocrinologia</option>
+ <option>Gastroenterologia</option>
+ <option>Geriatria</option>
+ <option>Ginecologia e obstetrícia</option>
+ <option>Hematologia e Hemoterapia</option>
+ <option>Mastologia</option>
+ <option>Nefrologia</option>
+ <option>Neurologia</option>
+ <option>Nutrologia</option>
+ <option>Oftalmologia</option>
+ <option>Ortopedia e Traumatologia</option>
+ <option>Otorrinolaringologia</option>
+ <option>Pediatria</option>
+ <option>Pneumologia</option>
+ <option>Psiquiatria</option>
+ <option>Radiologia</option>
+ <option>Radioterapia</option>
+ <option> Reumatologia</option>
+ <option>Urologia</option>
+</select>
+
+
+            <select class="form-control">
+  <option>Manhã</option>
+  <option>Tarde</option>
+  <option>Noite</option>
+</select>
+
+
+            <select class="form-control">
+  <option>Até 1 hora</option>
+  <option>Entre 1 e 2 horas</option>
+  <option>Entre 2 e 3 horas</option>
+  <option>Entre 3 e 4 horas</option>
+  <option>Mais de 4 horas</option>
+</select>
+
+            <div class="form-group">
+              <label>Oque foi dito?</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Comentário:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="btn-group btn-group-justified " role="group">
+              <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-default  confirme01">ENVIAR</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default  fechar01" data-dismiss="modal" aria-label="Close">FECHAR</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--modal avaliar falta de equipamento-->
+  <div class=" modal fade " id="avaliarFaltaDeEquipamento">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <img src="/popup.png" class="img-responsive center-block">
+        <div class="modal-header">
+
+          <p class="lead">
+            AVALIAÇÃO DE FALTA DE EQUIPAMENTO </p>
+          <!--criando botão de fechar modal-->
+          <hr>
+          <form>
+
+            <label> Classificação: </label>
+            <label> <h6>Onde 5 estrelas significa que está ruim e 0 que não há reclamação</h6></label>
+
+            <fieldset class="rating">
+              <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <br>
+
+
+            <div class="form-group resto">
+              <label><p>Qual o dispositivo?</p></label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Qual o Exame?</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Comentário:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="btn-group btn-group-justified " role="group">
+              <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-default  confirme01">ENVIAR</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default  fechar01" data-dismiss="modal" aria-label="Close">FECHAR</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--modal avaliar falta de medicos-->
+  <div class=" modal fade " id="avaliarFaltaDeMedicamento">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <img src="/popup.png" class="img-responsive center-block">
+        <div class="modal-header">
+
+          <p class="lead">
+            AVALIAÇÃO DE FALTA DE MEDICAMENTO </p>
+          <!--criando botão de fechar modal-->
+          <hr>
+          <form>
+
+            <label> Classificação: </label>
+            <label> <h6>Onde 5 estrelas significa que está ruim e 0 que não há reclamação</h6></label>
+
+            <fieldset class="rating">
+              <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+              <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+              <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+
+              <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+              <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+            </fieldset>
+            <br>
+
+            <select class="form-control">
+ <option> Alergia e Imunologia</option>
+ <option>Anestesiologia</option>
+ <option>Angiologia</option>
+ <option>Oncologia</option>
+ <option>Cardiologia</option>
+ <option> Ala Cirúrgica</option>
+ <option>Coloproctologia</option>
+ <option>Dermatologia</option>
+ <option>Endocrinologia</option>
+ <option>Gastroenterologia</option>
+ <option>Geriatria</option>
+ <option>Ginecologia e obstetrícia</option>
+ <option>Hematologia e Hemoterapia</option>
+ <option>Mastologia</option>
+ <option>Nefrologia</option>
+ <option>Neurologia</option>
+ <option>Nutrologia</option>
+ <option>Oftalmologia</option>
+ <option>Ortopedia e Traumatologia</option>
+ <option>Otorrinolaringologia</option>
+ <option>Pediatria</option>
+ <option>Pneumologia</option>
+ <option>Psiquiatria</option>
+ <option>Radiologia</option>
+ <option>Radioterapia</option>
+ <option> Reumatologia</option>
+ <option>Urologia</option>
+</select>
+
+            <div class="form-group">
+              <label>Qual o medicamento?</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Oque foi dito?</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Comentário:</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="btn-group btn-group-justified " role="group">
+              <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-default  confirme01">ENVIAR</button>
+              </div>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default  fechar01" data-dismiss="modal" aria-label="Close">FECHAR</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--conteiner de toda a pagina-->
+  <div class="container-fluid">
+
+
+    <!--inicio do topo da pagina-->
+    <header>
+      <nav class="  navbar navbar-inverse navbar-fixed-top topo">
+        <div class="container-fluid col-xs-12 col-xs-offset-0
+		                                col-sm-8 col-sm-offset-2
+		                                col-md-8 col-md-offset-2
+		                                col-lg-8 col-lg-offset-2">
+
+          <div class="navbar-header">
+
+            <!--logomarca principal da pagina, logo ham.io-->
+            <div class="col-xs-12 col-xs-offset-0
+                     col-sm-8 col-sm-offset-2
+                     col-md-4 col-md-offset-4
+                     col-lg-4 col-lg-offset-4">
+              <a href="/" type="button" id="logoham"> <img src="/logo2.png" class="img-responsive center-block logonutes" alt="Logo Ham.io"></a>
+            </div>
+
+
+
+          </div>
+      </nav>
+
+    </header>
+    </div>
+    </nav>
+    </header>
+
+
+    <!--inicio do corpo da pagina-->
+    <section class=" corpo col-xs-12 col-xs-offset-0
+                     col-sm-8 col-sm-offset-2
+                     col-md-8 col-md-offset-2
+                     col-lg-8 col-lg-offset-2">
+
+      <b>Nome do hospital:</b> <%= nome %>
+      <span class="text-right"><br>
+        <b>Endereço:</b> <%= endereco %>
+
+      <div class="row">
+
+
+        <h2>
+            <p class="titulop3 text-center ">AVALIAÇÕES</p>
+        </h2>
+        <!--definindo responsividade do formulario-->
+        <div class=" ranking01 col-xs-12
+                        col-sm-12
+                        col-md-4
+                        col-lg-4 ">
+
+          <a href="#"><img src="/n0.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                data-toggle="modal" data-target="#avaliarFaltaDeMedicos" id="logoham"></a>
+          <h4 class="text-center">
+                        Falta de Médicos</h4>
+          <p class="text-center descricao"> Quando o usuário não consegue ser atendido devidamente</p>
+          <p class="text-center "><a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarFaltaDeMedicos" id="logoham">AVALIAR</a></p>
+
+        </div>
+
+
+
+        <div class="ranking02 col-xs-12
+                        col-sm-12
+                        col-md-4
+                        col-lg-4 ">
+          <a href="#"><img src="/n3.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                        data-toggle="modal" data-target="#avaliarDemora" id="logoham"></a>
+
+          <h4 class="text-center">
+                        Demora no Atendimento</h4>
+          <p class="text-center descricao"> Atraso nas consultas dos pacientes e o mesmo se sente prejudicado</p>
+          <p class="text-center "><a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarDemora" id="logoham">AVALIAR</a></p>
+        </div>
+
+        <div class="ranking03 col-xs-12
+                        col-sm-12
+                        col-md-4
+                        col-lg-4 ">
+          <a href="#"><img src="/n4.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                        data-toggle="modal" data-target="#avaliarFaltaDeEquipamento" id="logoham"></a>
+          <h4 class="text-center">
+                         Falta de Equipamento</h4>
+          <p class="text-center descricao"> Usuário não consegue ser atendido por falta de dispositivos médicos</p>
+          <p class="text-center "><a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarFaltaDeEquipamento" id="logoham">AVALIAR</a></p>
+
+
+
+
+        </div>
+      </div>
+      <div class="row">
+
+
+        <div class="ranking04 col-xs-12
+                        col-sm-12
+                        col-md-6
+                        col-lg-6 ">
+          <a href="#"><img src="/n3.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                        data-toggle="modal" data-target="#avaliarFaltaDeMedicamento" id="logoham"></a>
+          <h4 class="text-center">
+                         Falta de Medicamento</h4>
+          <p class="text-center descricao"> Quando o usuário não teve seu atendimento adequado </p>
+          <p class="text-center "><a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarFaltaDeMedicamento" id="logoham">AVALIAR</a></p>
+
+
+
+        </div>
+
+        <div class="ranking05 col-xs-12
+                        col-sm-12
+                        col-md-6
+                        col-lg-6 ">
+          <a href="#"><img src="/n4.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                        data-toggle="modal" data-target="#avaliarEstrutura" id="logoham"
+                        ></a>
+
+          <h4 class="text-center">
+                        Estrutura Irregular</h4>
+          <p class="text-center descricao">O paciente identificou problemas em infraestruturas </p>
+          <p class="text-center "><a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarEstrutura" id="logoham">AVALIAR</a></p>
+        </div>
+
+
+
+
+
+      </div>
+    </section>
+  </div>
+
+  <section class="  container rodape col-xs-12 col-xs-offset-0
+                        col-sm-12 col-sm-offset-0
+                        col-md-12 col-md-offset-0
+                        col-lg-12 col-lg-offset-0">
+    <div>
+
+      <p class="trxtorodape text-center">Universidade Estadual da Paraíba -UEPB</p>
+    </div>
+    </div>
+
+  </section>
+
+
+</body>
+
+</html>

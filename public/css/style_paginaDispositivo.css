@@ -1,0 +1,151 @@
+/*editando nav, menu*/
+
+ .logonutes{
+ 	opacity:0.65;
+ 	padding-top:10px;
+ 	padding-bottom: 5px;
+ }
+
+ .logonutes:hover{
+ 	opacity:1;
+ }
+
+.topo{
+    background-color: #9f346c;
+    padding-top: 0%;
+
+}
+
+.menususpenso:active{
+	color:#eee;
+
+}
+
+/*ranking*/
+.corpo{
+	padding-top: 140px;
+}
+.ranking01{
+	border-top: 3px solid;
+	border-color: #602341;
+		padding: 30px;
+
+}
+.ranking02{
+	border-top: 3px solid;
+		border-color: #9f346c;
+		padding: 30px;
+	
+}
+.ranking03{
+	border-top: 3px solid;
+	border-color: #602341;
+		padding: 30px;
+}
+.ranking04{
+	border-top: 3px solid;
+	border-color:#9f346c;
+		padding: 30px;
+
+	
+}
+.ranking05{
+	border-top: 3px solid;
+	border-color: #602341;
+	padding: 30px;
+
+	
+}
+.nivel{
+	padding-bottom: 25px;
+	  width: 100px;
+
+}
+.nivel:hover{
+	opacity:0.65;
+
+}
+.avaliar{
+
+	text-decoration: none;
+	padding-left: 10%;
+	padding-right: 10%;
+	border: 2px solid;
+	border-color: #ccc;
+	color: #ccc !important;
+}
+.avaliar:hover{
+	text-decoration: none;
+border: 2px solid;
+	border-color: #602341;
+	color: #602341 !important;
+}
+
+.descricao{
+	padding-bottom: 20px;
+}
+
+/*resto*/
+.resto{
+	padding-top: 50px;
+}
+
+
+/*RODA PE*/
+.rodape{
+	background-color: #602341;
+	padding: 0px;
+	padding-bottom: 0px;
+	margin-top: 50px;
+	color: #fff;
+}
+
+.trxtorodape{
+	margin: 10px;
+	font-family: Gill Sans;
+}
+
+/*estrelinhas*/
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #602341;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #9f346c;  } 

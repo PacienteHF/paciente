@@ -1,0 +1,149 @@
+body{
+	    
+
+}
+
+.p1{
+
+	background: #9f346c  URL(../topo.png);
+	background-size:cover;
+	background-position: center;
+
+
+
+
+}
+#logo{
+	padding-top: 50px;
+	padding-bottom: 40px;
+}
+
+/*parte 2*/
+/*
+x
+x
+x*/
+
+
+#map {
+	background-color: #fff;
+        height: 500px;
+        
+        padding: 10px;
+        margin: 10px;
+        margin-bottom: 100px;
+
+      }
+
+.p2{
+	background-color: #fff;
+
+	padding-top: 80px;
+	padding-bottom:50px;
+
+
+}
+.txt01{
+	font-family: Helvetica!important;
+	padding: 2px;
+	line-height: 40px;
+
+
+}
+
+.form-control{
+	padding: 30px;
+	margin-bottom: 50px;
+
+}
+.instituicoesEncontradas{
+	border: 1px solid;
+	border-color: #ccc;
+
+}
+/*parte 3*/
+/*
+x
+x
+x*/
+
+.p3{
+
+	background-color: #602341;
+	padding: 100px;
+	padding-top: 30px;
+
+}
+.titulop3{
+	color: #fff;
+	padding-bottom: 40px;
+
+}
+.ranking01{
+		background-color: #602341;
+		padding: 30px;
+		color: #fff;
+
+}
+.ranking02{
+		background-color: #9f346c;
+		padding: 30px;
+		color: #fff;
+	
+}
+.ranking03{
+
+		background-color:  #602341;
+		padding: 30px;
+		color: #fff;
+}
+.tabela02:hover{
+	background-color:  #602341;
+
+}
+.ranking04{
+		
+		padding: 30px;
+		color: #fff;
+		border-top: 3px solid;
+		border-color: #9f346c;
+		padding-bottom: 5px;
+
+	
+}
+.ranking05{
+	background-color: #602341;
+	padding: 30px;
+	color: #fff;
+	border-top: 3px solid;
+		border-color: #9f346c;
+		padding-bottom: 5px;
+
+	
+}
+.p4{
+	background-color: #fff;
+	padding: 100px;
+	padding-bottom: 0px;
+
+}
+.p5{
+	background-color: #602341;
+	padding: 30px;
+	padding-top: 0px;
+	margin-top: 0px;
+
+
+}
+
+td:hover{
+	background-color: #9f346c;
+
+}
+
+.rodape{
+	background-color:#9f346c;
+	padding: 30px;
+	margin-top: 0px;
+	color: #fff;
+}
