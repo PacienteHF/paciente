@@ -4,10 +4,11 @@ Aplicativo para avaliar problemas nos serviços em estabelecimentos de saúde p�
 ### Tecnologia Usadas
 
 + Back-end: Node.js
-+ BD: MongoDB
++ BD: MongoDB 3.2
 
 ### Build
 
-```javascript
+```script
 $ npm install
+use saude (mongo shell)
 ```
