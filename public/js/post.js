@@ -4,7 +4,7 @@ $(function(){
       e.preventDefault();
       $.ajax({
           url: '/submitForm', //this is the submit URL
-          type: 'POST', //or POST
+          type: 'POST',
           data: { problema : $('#texto-001').val(),
                   classificacao: $('input[name=rating-01]:checked').val()
                 }

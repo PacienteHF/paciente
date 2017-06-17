@@ -19,7 +19,7 @@ app.use('/font-awesome', express.static(__dirname + '/node_modules/font-awesome/
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 app.get("/", function(req, res) {
-    res.sendFile(root + '/views/index.html');
+    res.render('index');
 });
 
 app.post("/submitForm", function(req, res) {
