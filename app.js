@@ -19,7 +19,17 @@ app.use('/font-awesome', express.static(__dirname + '/node_modules/font-awesome/
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
 
 app.get("/", function(req, res) {
-    res.render('index');
+  res.render('index');
+});
+
+app.get("/dados", function(req, res) {
+  res.json(require("./dados/dados-validos").map(function(estabelecimento) {
+    return {
+      nome: estabelecimento['NOME FANTASIA'],
+      lat: estabelecimento['LATITUDE'],
+      lng: estabelecimento['LONGITUDE']
+    }
+  }));
 });
 
 app.post("/submitForm", function(req, res) {
@@ -38,5 +48,5 @@ router.route('/:id').get(function(req, res) {
 app.use('/local', router);
 
 app.listen(3000, function() {
-    console.log("Server Running!");
+  console.log("Server Running!");
 });
