@@ -1,6 +1,6 @@
 var Nightmare = require('nightmare');
 var jsonfile = require('jsonfile');
-var path = 'estab.json';
+var path = 'dados-originais.json';
 
 var totalProcessados = 0;
 var totalEstab = 0;
