@@ -1,4 +1,4 @@
-[{
+module.exports = [{
   "lat": -7.21761,
   "lng": -35.89182,
   "estabelecimentos": ["CLINICA DE C PLASTICA DE C GRANDE"]

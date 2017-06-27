@@ -1,5 +1,4 @@
-[
- {
+module.exports = [{
    "IBGE": 250320,
    "UF": "PB",
    "MUNICIPIO": "CABEDELO",
