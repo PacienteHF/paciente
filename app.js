@@ -23,7 +23,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/dados", function(req, res) {
-  res.json(require("./dados/dados-validos").map(function(estabelecimento) {
+  res.json(require("./dados/dados-validos-sem-conflito").map(function(estabelecimento) {
     return {
       nome: estabelecimento['NOME FANTASIA'],
       lat: estabelecimento['LATITUDE'],
