@@ -17,18 +17,17 @@ function initMap() {
     map.setMapTypeId('styled_map');
 
     var markers = locations.map(function(location) {
-      return new google.maps.Marker({
-        position: { lat: location.lat, lng: location.lng },
+      var marker = new google.maps.Marker({
+        position: { lat: location.coordenadas.lat, lng: location.coordenadas.lng },
         label: location.nome
       });
-    });
 
-    // markers.forEach(function(marker) {
-    //   google.maps.event.addListener(marker, 'click', function() {
-    //     window.location.replace("http://localhost:3000/local/" + marker.id);
-    //     console.log(place);
-    //   });
-    // });
+      google.maps.event.addListener(marker, 'click', function() {
+        window.location.replace("http://localhost:3000/local/" + location.id);
+      });
+      
+      return marker;
+    });
 
     var markerCluster = new MarkerClusterer(map, markers,
       {imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'});

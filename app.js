@@ -4,7 +4,8 @@ var express = require("express"),
     path = require("path")
     mongoose = require("mongoose")
 
-var local = require("./models/local");
+var Estabelecimento = require("./models/estabelecimento");
+require("./models/connect")();
 var root = path.resolve(".");
 var router = express.Router();
 
@@ -23,25 +24,30 @@ app.get("/", function(req, res) {
 });
 
 app.get("/dados", function(req, res) {
-  res.json(require("./dados/dados-validos-sem-conflito").map(function(estabelecimento) {
-    return {
-      nome: estabelecimento['NOME FANTASIA'],
-      lat: estabelecimento['LATITUDE'],
-      lng: estabelecimento['LONGITUDE']
-    }
-  }));
+  Estabelecimento.find({}, function(err, estabelecimentos) {
+    res.json(estabelecimentos);
+  })
 });
 
-app.post("/submitForm", function(req, res) {
-  console.log(req.body);
+app.post("/avaliarEstrutura", function(req, res) {
+  var data = req.body;
+  var id = { id: Number(data.id) };
+  var avaliacao = { nota : Number(data.nota), comentario: data.problemaEstrutura };
+  var update = { $push: { "avaliacoes.infraestrutura" : avaliacao } };
+  var query = Estabelecimento.findOneAndUpdate(id, update, function(err) {
+    console.log(err);
+  });
+  res.redirect('/');
 });
 
 router.route('/:id').get(function(req, res) {
   var id = req.path.substring(1); // remove / do path
-  var query = local.findOne({ id: id });
-  query.select('nome endereco');
+  var query = Estabelecimento.findOne({ id: id });
+  query.select('nome endereco id');
   query.exec(function(err, local) {
-    res.render(root + '/views/local', { nome: local.nome, endereco: local.endereco });
+    res.render(root + '/views/local', { nome: local.nome,
+                                        endereco: local.endereco.logradouro,
+                                        id: local.id } );
   });
 });
 

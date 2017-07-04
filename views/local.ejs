@@ -30,26 +30,27 @@
           <!--criando botão de fechar modal-->
           <hr>
 
-          <form id="form-1">
+          <form id="form-estrutura" action="/avaliarEstrutura" method="post">
             <label> Classificação: </label>
             <label> <h6>Onde 5 estrelas significa que está ruim e 0 que não há reclamação</h6></label>
 
             <fieldset class="rating">
-              <input type="radio" id="star5" name="rating-01" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-              <input type="radio" id="star4" name="rating-01" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-              <input type="radio" id="star3" name="rating-01" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
-              <input type="radio" id="star2" name="rating-01" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-              <input type="radio" id="star1" name="rating-01" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+              <input type="radio" id="star5" name="nota" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
+              <input type="radio" id="star4" name="nota" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+              <input type="radio" id="star3" name="nota" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label>
+              <input type="radio" id="star2" name="nota" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+              <input type="radio" id="star1" name="nota" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label>
             </fieldset>
             <br>
 
+            <input type="text" name="id" style="display: none" value= <%= id %> ></input>
             <div class="form-group resto">
               <label>Problema Encontrado</label>
-              <textarea class="form-control" id="texto-001" rows="3"></textarea>
+              <textarea class="form-control" name="problemaEstrutura" rows="3"></textarea>
             </div>
             <div class="btn-group btn-group-justified " role="group">
               <div class="btn-group" role="group">
-                <button type="submit" class="btn btn-default  confirme01">ENVIAR</button>
+                <button type="submit" class="btn btn-default">ENVIAR</button>
               </div>
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default  fechar01" data-dismiss="modal" aria-label="Close">FECHAR</button>
@@ -387,8 +388,7 @@
                      col-sm-8 col-sm-offset-2
                      col-md-8 col-md-offset-2
                      col-lg-8 col-lg-offset-2">
-
-      <b>Nome do hospital:</b> <%= nome %>
+      <b>Nome do hospital:</b > <%= nome %>
       <span class="text-right"><br>
       <b>Endereço:</b> <%= endereco %>
 
