@@ -1,66 +1,109 @@
-body{
-	    
+body{ 
+	margin: 0px;
+	background:#fff;
+    
 
 }
-
+video{
+	position: absolute;
+	top:0;
+	left: 0;
+	display: block;
+	width: 100%;
+}/*
+#fundotopo{
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	/*min-height: 100%;
+	width: auto;
+	background-size: cover;
+}*/
 .p1{
 
-	background: #9f346c  URL(../topo.png);
+	background: #9f346c  URL(../topo.png)top;
 	background-size:cover;
 	background-position: center;
-
-
-
+	width: 100%;
+	margin-bottom: 0;
+	-webkit-box-shadow: 0px 4px 100px #000 !important;
 
 }
 #logo{
-	padding-top: 50px;
-	padding-bottom: 40px;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 /*parte 2*/
 /*
 x
 x
-x*/
-
-
-#map {
-	background-color: #fff;
-        height: 500px;
-        
-        padding: 10px;
-        margin: 10px;
-        margin-bottom: 100px;
-
-      }
+x
 
 .p2{
 	background-color: #fff;
-
 	padding-top: 80px;
 	padding-bottom:50px;
+}*/
 
 
-}
 .txt01{
-	font-family: Helvetica!important;
+	text-shadow: #000 1px 1px 1px;
+	color: #fff;
+	font-size: 30px !important;
+	font-family: 'Nunito', sans-serif!important;
 	padding: 2px;
-	line-height: 40px;
+	line-height: 140%;
+
+}
+.seta{
+	opacity: 0.8;
+	width: 8%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+}
+.seta:hover{
+	opacity: 1;
+}
+
+@media (max-width: 700px){
+	
+	.txt01{
+		font-size: 14px !important;
+		text-shadow: #000 0px 0px 0px;
+	}
+	.seta{
+		width: 10%;
+
+	}
+}
+
+	/*p3*/
+#map {
+    position: relative;
+	background-color: #fff;
+    height: 500px;
+    padding: 0px;
+    margin: 0px;
+
+ }
+ .espantmapa{
+	padding: 10px;
+	background:   URL(../topo.png)top;
 
 
 }
 
-.form-control{
-	padding: 30px;
-	margin-bottom: 50px;
+ @media (max-width: 700px){
+ 		#map{
+ 			height: 300px;
+	}
+	
 
 }
-.instituicoesEncontradas{
-	border: 1px solid;
-	border-color: #ccc;
 
-}
+
 /*parte 3*/
 /*
 x
@@ -68,82 +111,123 @@ x
 x*/
 
 .p3{
-
+	background: URL(../linha.png)top;
+	background-repeat: repeat-x;
 	background-color: #602341;
-	padding: 100px;
-	padding-top: 30px;
+	padding: 0px !important;
+	margin: 0px !important;
+	padding-bottom: 5% !important;
+	padding-top: 5% !important;
+	-webkit-box-shadow: 0px 20px 60px #ccc !important;
+	
+}
 
+
+.contp3{
+
+	
 }
 .titulop3{
+	text-shadow: #000 1px 1px 1px;
 	color: #fff;
-	padding-bottom: 40px;
+	font-size: 40px !important;
+	font-family: 'Nunito', sans-serif!important;
+	padding: 2px;
+	line-height: 140%;
+	margin-top: 2px;
+	color: #fff;
+	padding-top: 15px;
+	padding-bottom: 2%;
 
 }
+
 .ranking01{
-		background-color: #602341;
-		padding: 30px;
-		color: #fff;
+
+	background-color: #602341;
+	padding: 0px;
+	margin: 0px;
+	color: #fff;
+    background-color: rgba(255, 255, 255, 0.0);
+
 
 }
+
 .ranking02{
-		background-color: #9f346c;
-		padding: 30px;
-		color: #fff;
-	
-}
-.ranking03{
 
-		background-color:  #602341;
-		padding: 30px;
-		color: #fff;
-}
-.tabela02:hover{
-	background-color:  #602341;
-
-}
-.ranking04{
-		
-		padding: 30px;
-		color: #fff;
-		border-top: 3px solid;
-		border-color: #9f346c;
-		padding-bottom: 5px;
-
-	
-}
-.ranking05{
-	background-color: #602341;
-	padding: 30px;
+	background-color: #9F346C;
+	padding: 0px;
+	-webkit-box-shadow: 4px 4px 20px #4A0C2C;
+	margin: 0px;
 	color: #fff;
-	border-top: 3px solid;
-		border-color: #9f346c;
-		padding-bottom: 5px;
 
-	
 }
+.setarank{
+
+	margin-bottom: 0px;
+	margin-top: -30px; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+		width: 80%;
+		opacity: 0.5;
+
+
+}
+
+ @media (max-width: 700px){
+ 	.ranking01, .ranking02{
+ 	}
+ 	.titulop3{
+ 		font-size: 30px !important;
+ 		padding-top: 40px;
+		padding-bottom: 2%;
+		line-height: 100%;
+	}
+	
+
+}
+tr:hover{
+	background-color: #9F346C!important;
+}
+.trr:hover{
+	background-color: #602341!important;
+}
+
+#panel1,#panel2,#panel3,#panel4,#panel5,#panel6{
+    display: none;
+    padding: 30px;
+    padding-bottom:0px;
+    padding-top: 0px; 
+}
+
+
 .p4{
-	background-color: #fff;
-	padding: 100px;
-	padding-bottom: 0px;
+	padding-top: 10%;
 
 }
+
+
 .p5{
-	background-color: #602341;
-	padding: 30px;
-	padding-top: 0px;
-	margin-top: 0px;
+background-color: #602341;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
+		color: #fff;
 
 }
-
-td:hover{
+.p6{
 	background-color: #9f346c;
-
-}
-
-.rodape{
-	background-color:#9f346c;
-	padding: 30px;
-	margin-top: 0px;
 	color: #fff;
+	padding-bottom:2%; 
+	padding-top:5%;
+
+
+
 }
+.linkrodape{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
