@@ -25,7 +25,7 @@ function initMap() {
       google.maps.event.addListener(marker, 'click', function() {
         window.location.replace("http://localhost:3000/local/" + location.id);
       });
-      
+
       return marker;
     });
 
