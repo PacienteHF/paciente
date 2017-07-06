@@ -18,6 +18,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 app.use('/font-awesome', express.static(__dirname + '/node_modules/font-awesome/css/'));
 app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use('/autocomplete', express.static(__dirname + '/node_modules/devbridge-autocomplete/dist/'));
 
 app.get("/", function(req, res) {
   res.render('index');

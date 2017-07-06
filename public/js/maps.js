@@ -8,8 +8,18 @@ function initMap() {
       zoom: 7
     });
 
+    var sugestoes = locations.map(function(estabelecimento) {
+      return { value: estabelecimento.nome, data: estabelecimento.id }
+    });
+
+    $('#pac-input').autocomplete({
+      lookup: sugestoes,
+      onSelect: function (suggestion) {
+        alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+      }
+    });
+
     var input = document.getElementById('pac-input');
-    var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     var style =
@@ -21,6 +31,7 @@ function initMap() {
     map.setMapTypeId('styled_map');
 
     var markers = locations.map(function(location) {
+      console.log(location.id);
       var marker = new google.maps.Marker({
         position: { lat: location.coordenadas.lat, lng: location.coordenadas.lng },
         label: location.nome
