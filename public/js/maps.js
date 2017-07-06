@@ -9,13 +9,16 @@ function initMap() {
     });
 
     var sugestoes = locations.map(function(estabelecimento) {
-      return { value: estabelecimento.nome, data: estabelecimento.id }
+      return { value: estabelecimento.nome,
+               data: { id: estabelecimento.id, coordenadas: estabelecimento.coordenadas }
+             }
     });
 
     $('#pac-input').autocomplete({
       lookup: sugestoes,
       onSelect: function (suggestion) {
-        alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        map.setZoom(18);
+        map.setCenter(suggestion.data.coordenadas);
       }
     });
 
