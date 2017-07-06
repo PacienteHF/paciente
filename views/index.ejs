@@ -9,10 +9,11 @@
 	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/style_login.css">
+	<link rel="stylesheet" type="text/css" href="/css/maps_search_box.css">
 	<script src="/jquery/jquery.min.js"></script>
 	<script src="/js/maps.js" charset="utf-8"></script>
 	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw-kUn3g74P2z_rTgItryoWqUYfWZbqXo&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw-kUn3g74P2z_rTgItryoWqUYfWZbqXo&libraries=places&callback=initMap" async defer></script>
   <script src="/js/index.js" charset="utf-8"></script>
   <!--colocanto icone na aba da pagina-->
   <link rel="shortcut icon" href="icone.png" type="image/x-png" />
@@ -59,9 +60,9 @@
   </section>-->
 
   <section>
-    <div id="espmap" class="espantmapa"></div>
-
-   <div id="map" class="row "></div>
+  	<div id="espmap" class="espantmapa"></div>
+		<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+  	<div id="map" class="row "></div>
   </section>
 
   <section class="p3">
