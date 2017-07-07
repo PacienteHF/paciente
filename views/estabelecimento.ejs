@@ -30,7 +30,7 @@
           <!--criando botão de fechar modal-->
           <hr>
 
-          <form id="form-estrutura" action="/avaliarEstrutura" method="post">
+          <form id="form-estrutura" action="/estabelecimentos/<%=id%>" method="post">
             <label> Classificação: </label>
             <label> <h6>Onde 5 estrelas significa que está ruim e 0 que não há reclamação</h6></label>
 
@@ -45,7 +45,7 @@
 
             <div class="form-group resto">
               <label>Problema Encontrado</label>
-              <textarea class="form-control" name="problemaEstrutura" rows="3"></textarea>
+              <textarea class="form-control" name="comentario" rows="3"></textarea>
             </div>
             <div class="btn-group btn-group-justified " role="group">
               <div class="btn-group" role="group">
