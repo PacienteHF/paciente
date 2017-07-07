@@ -12,7 +12,7 @@ router.route('/estabelecimentos')
 router.route('/estabelecimentos/:id')
   .get(function(req, res) {
     var id = req.params.id;
-    controller.get(id, function(estabelecimento) {
+    controller.get(id, function(err, estabelecimento) {
       var data = { id: estabelecimento.id,
                    nome: estabelecimento.nome,
                    endereco: estabelecimento.endereco.logradouro }
@@ -23,9 +23,6 @@ router.route('/estabelecimentos/:id')
     var id = req.params.id;
     var avaliacao = req.body;
     controller.avalia(id, avaliacao, function(err) {
-      if(err) {
-        res.send(err);
-      }
       res.sendStatus(200);
     });
   })
