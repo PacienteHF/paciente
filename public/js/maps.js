@@ -1,7 +1,7 @@
 var map;
 
 function initMap() {
-  $.getJSON('/dados', function(locations) {
+  $.getJSON('/estabelecimentos', function(locations) {
 
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -7.2251168, lng: -35.8975412},
@@ -41,7 +41,7 @@ function initMap() {
       });
 
       google.maps.event.addListener(marker, 'click', function() {
-        window.location.replace("http://localhost:3000/local/" + location.id);
+        window.location.href = "/estabelecimentos/" + location.id;
       });
 
       return marker;
