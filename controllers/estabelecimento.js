@@ -9,12 +9,12 @@ exports.getAll = function(callback) {
 exports.get = function(id, callback) {
   var query = Estabelecimento.findOne({ id: id });
   query.exec(function(err, estabelecimento) {
-    callback(estabelecimento);
+    callback(err, estabelecimento);
   });
 }
 
 exports.avalia = function(id, avaliacao, callback) {
-  this.get(id, function(estabelecimento) {
+  this.get(id, function(err, estabelecimento) {
     estabelecimento.avaliacoes.infraestrutura.push(avaliacao);
     estabelecimento.save(function(err) {
       callback(err);
