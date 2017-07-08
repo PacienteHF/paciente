@@ -1,6 +1,6 @@
-require('./connect')();
-var dados = require('../dados/dados-validos-sem-conflito')
-var Estabelecimento = require('./estabelecimento');
+require('../config/db')();
+var dados = require('./dados-validos-sem-conflito')
+var Estabelecimento = require('../models/estabelecimento');
 
 dados.forEach(function(estabelecimento) {
   var data = {

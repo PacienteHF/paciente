@@ -34,7 +34,6 @@ function initMap() {
     map.setMapTypeId('styled_map');
 
     var markers = locations.map(function(location) {
-      console.log(location.id);
       var marker = new google.maps.Marker({
         position: { lat: location.coordenadas.lat, lng: location.coordenadas.lng },
         label: location.nome
