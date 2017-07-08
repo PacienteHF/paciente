@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 module.exports = function() {
   mongoose.connect("mongodb://localhost/saude");
-  
+
   mongoose.connection.on('connected', function () {
     console.log('mongo conectado');
   });

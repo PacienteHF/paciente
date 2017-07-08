@@ -2,14 +2,14 @@ var express = require('express');
 var router = express.Router();
 var controller = require('../controllers/estabelecimento')
 
-router.route('/estabelecimentos')
+router.route('/')
   .get(function(req, res) {
     controller.getAll(function(estabelecimentos) {
       res.json(estabelecimentos);
     })
   })
 
-router.route('/estabelecimentos/:id')
+router.route('/:id')
   .get(function(req, res) {
     var id = req.params.id;
     controller.get(id, function(err, estabelecimento) {

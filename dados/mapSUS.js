@@ -1,21 +1,19 @@
 var Nightmare = require('nightmare');
 var jsonfile = require('jsonfile');
-var path = 'dados-originais.json';
+var estabelecimentos = require('./dados-originais');
 
 var totalProcessados = 0;
 var totalEstab = 0;
 var processados = [];
 var rejeitados = [];
 
-jsonfile.readFile(path, function(err, estabelecimentos) {
-  totalEstab = estabelecimentos.length;
-  // Pooling
-  consulta(estabelecimentos);
-  consulta(estabelecimentos);
-  consulta(estabelecimentos);
-  consulta(estabelecimentos);
-  consulta(estabelecimentos);
-});
+totalEstab = estabelecimentos.length;
+// Pooling
+consulta(estabelecimentos);
+consulta(estabelecimentos);
+consulta(estabelecimentos);
+consulta(estabelecimentos);
+consulta(estabelecimentos);
 
 function consultaSUS(browser, estabelecimento, next) {
   browser
@@ -60,5 +58,3 @@ function consulta(estabelecimentos) {
     });
   }
 }
-
-//consulta(0);
