@@ -89,3 +89,11 @@ jQuery(document).ready(function($) {
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
    });
 });
+
+//criar e exluir div video//
+$(document).ready(function(){
+    if($(window).width()<800){
+        $("#fundotopo").remove();
+
+    }
+});
