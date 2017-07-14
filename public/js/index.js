@@ -97,3 +97,24 @@ $(document).ready(function(){
 
     }
 });
+
+
+$(document).ready(function(){
+
+    $('#mudaropcao').change(function() {
+        if(window.document.getElementById("fundoP3").name==="mais"){
+            $('#fundoP3').css("background-color","#602341" );
+             $('.ranking02').css("background-color", "#9f346c");
+
+            window.document.getElementById("fundoP3").name="menos";
+        }
+        else{
+            $('#fundoP3').css("background-color", "black");
+                        $('.ranking02').css("background-color", "red");
+
+            window.document.getElementById("fundoP3").name="mais";
+        }
+
+    });
+
+});

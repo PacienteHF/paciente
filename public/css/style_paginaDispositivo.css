@@ -196,6 +196,14 @@
 
 }
 
+.avaliar:link,.avaliar:visited, .avaliar:active{
+	text-decoration: none;
+	color: #fff;
+	border: 0px;
+
+}
+
+
  @media (max-width: 700px){
  	.titulop3{
  		font-size: 30px !important;
@@ -283,6 +291,11 @@ x*/
 /*
 /*
 x*/
+
+/*duvidas*/
+.duvida01:hover{
+
+}
 
 .corpoformulario{
 	margin: 10px;
