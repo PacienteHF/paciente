@@ -4,21 +4,38 @@ function initMap() {
   $.getJSON('/estabelecimentos', function(locations) {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -7.2251168, lng: -35.8975412},
-      zoom: 7
+      center: {lat: -7.2251168, lng: -36.4175412},
+      zoom: 8
     });
 
-    var sugestoes = locations.map(function(estabelecimento) {
-      return { value: estabelecimento.nome,
-               data: { id: estabelecimento.id, coordenadas: estabelecimento.coordenadas }
+    String.prototype.capitalize = function() {
+      return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+    };
+
+    var estabelecimentoSugestoes = locations.map(function(estabelecimento) {
+      return { value: estabelecimento.nome.toLowerCase().capitalize(),
+               data: { id: estabelecimento.id, type: "nome", coordenadas: estabelecimento.coordenadas }
              }
     });
 
+    var ruaSugestoes = locations.map(function(estabelecimento) {
+      return { value: estabelecimento.endereco.logradouro.toLowerCase().capitalize(),
+               data: { id: estabelecimento.id, type: "rua", coordenadas: estabelecimento.coordenadas }
+             }
+    });
+
+    var sugestoes = [].concat(estabelecimentoSugestoes).concat(ruaSugestoes);
+
     $('#pac-input').autocomplete({
       lookup: sugestoes,
+      noCache: true,
       onSelect: function (suggestion) {
-        map.setZoom(18);
-        map.setCenter(suggestion.data.coordenadas);
+        if(suggestion.data.type === "rua") {
+          map.setZoom(18);
+          map.setCenter(suggestion.data.coordenadas);
+        } else {
+          window.location.href = "/estabelecimentos/" + suggestion.data.id;
+        }
       }
     });
 
