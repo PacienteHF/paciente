@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pagina Do Hospital</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style_paginaDispositivo.css">
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+  <!--colocanto icone na aba da pagina-->
+  <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
+  <!-- nao sou um robo -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="/js/local.js" charset="utf-8"></script>
+</head>
+
+<body>
+<!--popups modals-->
+
+  <!--modal avaliar falta de medicos-->
+  <div class="modal fade" id="avaliarFaltaDeMedicos">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <a href="#"  data-dismiss="modal" aria-label="Close">
+          <img src="/topoPopUp01.png" class="img-responsive center-block">
+        </a>
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="presencaEquipe">
+          <div class="modal-header corpoformulario">
+
+            <label> Classificação: Escolha uma reação para classificar a instituição </label>
+            <!-- classificadores -->
+            <div class=" conteiner classificacao">
+              <input type="radio"  id="i11" name="nota" value="1" />
+              <label class="reacao" for="i11"><img class="img-responsive center-block" src="/reacao11.png" alt=""></label>
+
+              <input type="radio"  id="i12"  name="nota" value="2"/>
+              <label class="reacao" for="i12"><img class="img-responsive center-block" src="/reacao12.png" alt=""></label>
+
+              <input type="radio"  id="i13"  name="nota" value="3" />
+              <label class="reacao" for="i13"><img class="img-responsive center-block" src="/reacao03.png" alt=""></label>
+
+              <input type="radio" id="i14"  name="nota" value="4" />
+              <label class="reacao" for="i14"><img class="img-responsive center-block" src="/reacao14.png" alt=""></label>
+
+              <input type="radio"  id="i15"  name="nota" value="5" />
+              <label class="reacao" for="i15"><img class="img-responsive center-block" src="/reacao15.png" alt=""></label>
+            </div>
+            <!-- resto do formulario -->
+
+            <label> Turno: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <select class="form-control" name="turno">
+              <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Manhã">Manhã</option>
+              <option value="Tarde">Tarde</option>
+              <option value="Noite">Noite</option>
+            </select>
+
+            <label> Data: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <input type="date" name="data">
+
+            <label> Especialidade: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <select class="form-control" name="especialidade">
+               <option selected="true" disabled="disabled">Selecione...</option>
+               <option value="Alergia e Imunologia">Alergia e Imunologia</option>
+               <option value="Anestesiologia">Anestesiologia</option>
+               <option value="Angiologia">Angiologia</option>
+               <option value="Oncologia">Oncologia</option>
+               <option value="Cardiologia">Cardiologia</option>
+               <option value="Ala Cirúrgica">Ala Cirúrgica</option>
+               <option value="Coloproctologia">Coloproctologia</option>
+               <option value="Dermatologia">Dermatologia</option>
+               <option value="Endocrinologia">Endocrinologia</option>
+               <option value="Gastroenterologia">Gastroenterologia</option>
+               <option value="Geriatria">Geriatria</option>
+               <option value="Ginecologia e obstetrícia">Ginecologia e obstetrícia</option>
+               <option value="Hematologia e Hemoterapia">Hematologia e Hemoterapia</option>
+               <option value="Mastologia">Mastologia</option>
+               <option value="Nefrologia">Nefrologia</option>
+               <option value="Neurologia">Neurologia</option>
+               <option value="Nutrologia">Nutrologia</option>
+               <option value="Oftalmologia">Oftalmologia</option>
+               <option value="Ortopedia e Traumatologia">Ortopedia e Traumatologia</option>
+               <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+               <option value="Pediatria">Pediatria</option>
+               <option value="Pneumologia">Pneumologia</option>
+               <option value="Psiquiatria">Psiquiatria</option>
+               <option value="Radiologia">Radiologia</option>
+               <option value="Radioterapia">Radioterapia</option>
+               <option value="Reumatologia">Reumatologia</option>
+               <option value="Urologia">Urologia</option>
+            </select>
+
+            <div class="form-group">
+              <label>Oque foi dito pelo instituição? <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                </a>
+              </label>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Seu comentário: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                </a>
+              </label>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
+            </div>
+
+          </div>
+          <div class="modal-header enviar">
+            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--modal avaliar demora do atendimento-->
+  <div class=" modal fade " id="avaliarDemora">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+                <a href="#"  data-dismiss="modal" aria-label="Close">
+          <img src="/topoPopUp02.png" class="img-responsive center-block">
+        </a>
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="tempoEspera">
+          <div class="modal-header corpoformulario">
+            <label> Classificação: Escolha uma reação para classificar a instituição </label>
+            <!-- classificadores -->
+            <div class=" conteiner classificacao">
+              <input type="radio"  id="i21" name="nota" value="1" />
+              <label class="reacao" for="i21"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
+
+              <input type="radio"  id="i22"  name="nota" value="2"/>
+              <label class="reacao" for="i22"><img class="img-responsive center-block" src="/reacao02.png" alt=""></label>
+
+              <input type="radio"  id="i23"  name="nota" value="3" />
+              <label class="reacao" for="i23"><img class="img-responsive center-block" src="/reacao03.png" alt=""></label>
+
+              <input type="radio" id="i24"  name="nota" value="4" />
+              <label class="reacao" for="i24"><img class="img-responsive center-block" src="/reacao04.png" alt=""></label>
+
+              <input type="radio"  id="i25"  name="nota" value="5" />
+              <label class="reacao" for="i25"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
+            </div>
+            <!-- resto do formulario -->
+
+            <label> Turno: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <select class="form-control" name="turno">
+              <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Manhã">Manhã</option>
+              <option value="Tarde">Tarde</option>
+              <option value="Noite">Noite</option>
+            </select>
+
+            <label>Tempo esperado:<a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <select class="form-control" name="tempoEsperado">
+             <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Até 1 hora">Até 1 hora</option>
+              <option value="Entre 1 e 2 horas">Entre 1 e 2 horas</option>
+              <option value="Entre 2 e 3 horas">Entre 2 e 3 horas</option>
+              <option value="Entre 3 e 4 horas">Entre 3 e 4 horas</option>
+              <option value="Mais de 4 horas">Mais de 4 horas</option>
+            </select>
+
+            <label>Procedimento medico:<a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <select class="form-control" name="procedimentoMedico">
+              <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Exame">Exame</option>
+            </select>
+
+            <label> Data: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <input type="date" name="data">
+
+            <label> Especialidade: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+            </a></label>
+            <select class="form-control" name="especialidade">
+               <option selected="true" disabled="disabled">Selecione...</option>
+               <option value="Alergia e Imunologia">Alergia e Imunologia</option>
+               <option value="Anestesiologia">Anestesiologia</option>
+               <option value="Angiologia">Angiologia</option>
+               <option value="Oncologia">Oncologia</option>
+               <option value="Cardiologia">Cardiologia</option>
+               <option value="Ala Cirúrgica">Ala Cirúrgica</option>
+               <option value="Coloproctologia">Coloproctologia</option>
+               <option value="Dermatologia">Dermatologia</option>
+               <option value="Endocrinologia">Endocrinologia</option>
+               <option value="Gastroenterologia">Gastroenterologia</option>
+               <option value="Geriatria">Geriatria</option>
+               <option value="Ginecologia e obstetrícia">Ginecologia e obstetrícia</option>
+               <option value="Hematologia e Hemoterapia">Hematologia e Hemoterapia</option>
+               <option value="Mastologia">Mastologia</option>
+               <option value="Nefrologia">Nefrologia</option>
+               <option value="Neurologia">Neurologia</option>
+               <option value="Nutrologia">Nutrologia</option>
+               <option value="Oftalmologia">Oftalmologia</option>
+               <option value="Ortopedia e Traumatologia">Ortopedia e Traumatologia</option>
+               <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+               <option value="Pediatria">Pediatria</option>
+               <option value="Pneumologia">Pneumologia</option>
+               <option value="Psiquiatria">Psiquiatria</option>
+               <option value="Radiologia">Radiologia</option>
+               <option value="Radioterapia">Radioterapia</option>
+               <option value="Reumatologia">Reumatologia</option>
+               <option value="Urologia">Urologia</option>
+            </select>
+
+            <div class="form-group">
+              <label>Oque foi dito pela instituição?</label>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Seu comentário:</label>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
+            </div>
+          </div>
+          <div class="modal-header enviar">
+            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--modal avaliar falta de equipamento-->
+  <div class=" modal fade " id="avaliarFaltaDeEquipamento">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <a href="#"  data-dismiss="modal" aria-label="Close">
+          <img src="/topoPopUp03.png" class="img-responsive center-block">
+        </a>
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="equipamentos">
+          <div class="modal-header corpoformulario">
+            <label> Classificação: Escolha uma reação para classificar a instituição </label>
+            <!-- classificadores -->
+            <div class=" conteiner classificacao">
+              <input type="radio"  id="i31" name="nota" value="1" />
+              <label class="reacao" for="i31"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
+
+              <input type="radio"  id="i32"  name="nota" value="2"/>
+              <label class="reacao" for="i32"><img class="img-responsive center-block" src="/reacao02.png" alt=""></label>
+
+              <input type="radio"  id="i33"  name="nota" value="3" />
+              <label class="reacao" for="i33"><img class="img-responsive center-block" src="/reacao03.png" alt=""></label>
+
+              <input type="radio" id="i34"  name="nota" value="4" />
+              <label class="reacao" for="i34"><img class="img-responsive center-block" src="/reacao04.png" alt=""></label>
+
+              <input type="radio"  id="i35"  name="nota" value="5" />
+              <label class="reacao" for="i35"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
+            </div>
+
+            <!-- resto do formulario -->
+            <div class="form-group resto">
+              <label>Qual o equipamento/exame?<a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+              <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+              </a></label>
+              <textarea class="form-control" rows="3" name="equipamento"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Oque foi dito pela instituição?</label>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Seu comentário:</label>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
+            </div>
+          </div>
+          <div class="modal-header enviar">
+            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--modal avaliar qualidade no atendimento-->
+  <div class=" modal fade " id="avaliarQualidadeDeAtendimento">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <a href="#"  data-dismiss="modal" aria-label="Close">
+          <img src="/topoPopUp04.png" class="img-responsive center-block">
+        </a>
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="qualidadeAtendimento">
+          <div class="modal-header corpoformulario">
+            <label> Classificação: Escolha uma reação para classificar a instituição </label>
+            <!-- classificadores -->
+            <div class=" conteiner classificacao">
+              <input type="radio"  id="i1" name="nota" value="1" />
+              <label class="reacao" for="i51"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
+
+              <input type="radio"  id="i52"  name="nota" value="2"/>
+              <label class="reacao" for="i52"><img class="img-responsive center-block" src="/reacao02.png" alt=""></label>
+
+              <input type="radio"  id="i53"  name="nota" value="3" />
+              <label class="reacao" for="i53"><img class="img-responsive center-block" src="/reacao03.png" alt=""></label>
+
+              <input type="radio" id="i54"  name="nota" value="4" />
+              <label class="reacao" for="i54"><img class="img-responsive center-block" src="/reacao04.png" alt=""></label>
+
+              <input type="radio"  id="i55"  name="nota" value="5" />
+              <label class="reacao" for="i55"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
+            </div>
+            <!-- resto do formulario -->
+            <div class="form-group resto">
+
+              <label> Turno: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+              <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
+              <select class="form-control" name="turno">
+                <option selected="true" disabled="disabled">Selecione...</option>
+                <option value="Manhã">Manhã</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noite">Noite</option>
+              </select>
+
+              <label> Data: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+              <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+              </a></label>
+              <input type="date" name="data">
+
+              <div class="form-group">
+                <label>Seu comentário:</label>
+                <textarea class="form-control" rows="3" name="comentario"></textarea>
+              </div>
+          </div>
+          </div>
+          <div class="modal-header enviar">
+            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--modal avaliar falta de medicamento-->
+  <div class=" modal fade " id="avaliarFaltaDeMedicamento">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <a href="#"  data-dismiss="modal" aria-label="Close">
+          <img src="/topoPopUp05.png" class="img-responsive center-block">
+        </a>
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="medicamentos">
+          <div class="modal-header corpoformulario">
+            <label> Classificação: Escolha uma reação para classificar a instituição </label>
+            <!-- classificadores -->
+            <div class=" conteiner classificacao">
+              <input type="radio"  id="i41" name="nota" value="1" />
+              <label class="reacao" for="i41"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
+
+              <input type="radio"  id="i42"  name="nota" value="2"/>
+              <label class="reacao" for="i42"><img class="img-responsive center-block" src="/reacao02.png" alt=""></label>
+
+              <input type="radio"  id="i43"  name="nota" value="3" />
+              <label class="reacao" for="i43"><img class="img-responsive center-block" src="/reacao03.png" alt=""></label>
+
+              <input type="radio" id="i44"  name="nota" value="4" />
+              <label class="reacao" for="i44"><img class="img-responsive center-block" src="/reacao04.png" alt=""></label>
+
+              <input type="radio"  id="i45"  name="nota" value="5" />
+              <label class="reacao" for="i45"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
+            </div>
+            <!-- resto do formulario -->
+
+            <div class="form-group">
+              <label>Qual o medicamento e/ou finalidade? <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+              <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
+              <textarea class="form-control" rows="3" name="medicamento"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Oque foi dito pela instituição?</label>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Seu comentário:</label>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
+            </div>
+          </div>
+          <div class="modal-header enviar">
+            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--modal avaliar estrutura-->
+  <div class=" modal fade " id="avaliarEstrutura">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <a href="#"  data-dismiss="modal" aria-label="Close">
+          <img src="/topoPopUp06.png" class="img-responsive center-block">
+        </a>
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="infraestrutura">
+          <div class="modal-header corpoformulario">
+            <label> Classificação: Escolha uma reação para classificar a instituição </label>
+            <!-- classificadores -->
+            <div class=" conteiner classificacao">
+              <input type="radio"  id="i1" name="nota" value="1" />
+              <label class="reacao" for="i51"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
+
+              <input type="radio"  id="i52"  name="nota" value="2"/>
+              <label class="reacao" for="i52"><img class="img-responsive center-block" src="/reacao02.png" alt=""></label>
+
+              <input type="radio"  id="i53"  name="nota" value="3" />
+              <label class="reacao" for="i53"><img class="img-responsive center-block" src="/reacao03.png" alt=""></label>
+
+              <input type="radio" id="i54"  name="nota" value="4" />
+              <label class="reacao" for="i54"><img class="img-responsive center-block" src="/reacao04.png" alt=""></label>
+
+              <input type="radio"  id="i55"  name="nota" value="5" />
+              <label class="reacao" for="i55"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
+            </div>
+            <!-- resto do formulario -->
+            <div class="form-group resto">
+              <label>Seu comentário:</label>
+              <textarea class="form-control" name="comentario" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="modal-header enviar">
+            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--conteiner de toda a pagina-->
+  <header>
+      <nav class=" navbar navbar-fixed topo">
+        <div class="logo">
+          <a href="/" type="button" id="logoPaciente"> <img src="/logo2.png" class="img-responsive center-block logopaciente" alt="Logo Paciente - home"></a>
+        </div>
+      </nav>
+
+      <nav class=" navbar  navbar-fixed topo2">
+        <div class="topo2-info">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 topo2-icone">
+            <img src="/localhoptal.png" class="img-responsive center-block " alt="Loocalizacao de hospital"></a>
+          </div>
+
+          <div class="topo2-texto ">
+            <span class=" topo2-texto1"> <b>NOME: &nbsp </b > <%= nome %></span>
+            <span class=" topo2-texto2 "><br><b>END.:&nbsp &nbsp</b> <%= endereco %></span>
+
+          </div>
+      </div>
+      </nav>
+    </header>
+
+    <!--inicio do corpo da pagina-->
+    <div class="p2-1">
+      <h2><p class="titulop3 text-center "><b>AVALIAÇÕES</b></p></h2>
+    </div>
+  <section class="container-fluid p2">
+    <div class="p2-2">
+      <div class="ranking01 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <a href="#">
+        <img src="/n2.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                 data-toggle="modal" data-target="#avaliarFaltaDeMedicos" id="logoham"></a>
+        <h4 class="text-center"><b>Presença de Profissionais de Saúde</h4></b>
+        <p class="text-center descricao"> Quando o usuário não consegue ser atendido devidamente</p>
+        <p class="text-center ">
+        <a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarFaltaDeMedicos" id="logoham">AVALIAR</a></p>
+      </div>
+<!-- fimr1      -->
+<!-- comeco r2 -->
+      <div class="ranking02 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <a href="#">
+        <img src="/n2.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                 data-toggle="modal" data-target="#avaliarDemora" id="logoham"></a>
+        <h4 class="text-center"><b>Tempo de Espera</b></h4>
+        <p class="text-center descricao"> Atraso nas consultas dos pacientes e o mesmo se sente prejudicado</p>
+        <p class="text-center ">
+        <a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarDemora" id="logoham">AVALIAR</a></p>
+      </div>
+<!-- fim r2 -->
+<!-- comeco r3 -->
+      <div class="ranking03 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <a href="#">
+        <img src="/n2.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                 data-toggle="modal" data-target="#avaliarFaltaDeEquipamento" id="logoham"></a>
+        <h4 class="text-center"><b>Disponibilidade de Equipamentos</b></h4>
+        <p class="text-center descricao"> Usuário não consegue ser atendido por falta de dispositivos médicos</p>
+        <p class="text-center ">
+        <a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarFaltaDeEquipamento" id="logoham">AVALIAR</a></p><
+      </div>
+<!-- fim r3 -->
+<!-- comeco r4 -->
+      <div class="  ranking04 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <a href="#">
+        <img src="/n2.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                 data-toggle="modal" data-target="#avaliarFaltaDeEquipamento" id="logoham"></a>
+        <h4 class="text-center"><b> Qualidade do Atendimento</b></h4>
+        <p class="text-center descricao"> Usuário não consegue ser atendido por falta de dispositivos médicos</p>
+        <p class="text-center ">
+        <a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarQualidadeDeAtendimento" id="logoham">AVALIAR</a></p>
+        </div>
+        </h4>
+      </div>
+<!-- fim r4 -->
+<!-- comeco r5 -->
+      <div class="ranking05 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <a href="#">
+          <img src="/n2.png" class="nivel img-responsive center-block" alt="Logo Ham.io" id="logo"
+                 data-toggle="modal" data-target="#avaliarFaltaDeMedicamento" id="logoham"></a>
+        <h4 class="text-center"><b>Disponibilidade de Medicamento</b></h4>
+        <p class="text-center descricao">Quando o usuário não teve seu atendimento adequado</p>
+        <p class="text-center">
+        <a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarFaltaDeMedicamento">AVALIAR</a></p>
+      </div>
+<!--fim r5-->
+<!-- comeco r6 -->
+      <div class="ranking06 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <a href="#">
+          <img src="/n2.png" class="nivel img-responsive center-block"
+                 data-toggle="modal" data-target="#avaliarEstrutura" ></a>
+        <h4 class="text-center"><b>Infraestrutura</b></h4>
+        <p class="text-center descricao">O paciente identificou problemas em infraestruturas</p>
+        <p class="text-center">
+        <a class="avaliar" href="#" data-toggle="modal" data-target="#avaliarEstrutura" >AVALIAR</a></p>
+      </div>
+<!-- fim r6 -->
+    </div>
+  </section>
+
+
+
+  <section class="p5 " >
+
+<ul class="topnav">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#home">Quem Somos?</a></li>
+  <li><a href="#news">Termos</a></li>
+  <li><a href="#contact">Privacidade</a></li>
+  <li class="right"><a href="#about">Help</a></li>
+</ul>
+
+  </section>
+
+  <section class="p6">
+    <p class="text-center textorodape">©Paciente 2017</p>
+
+  </section>
+
+</div>
+</body>
+</html>

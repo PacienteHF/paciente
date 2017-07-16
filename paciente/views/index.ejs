@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <title>Paciente - Atendimento sem Corrupção</title>
+	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style_login.css">
+	<link rel="stylesheet" type="text/css" href="/css/maps_search_box.css">
+
+	<script src="/jquery/jquery.min.js"></script>
+	<script src="/autocomplete/jquery.autocomplete.js"></script>
+	<script src="/js/maps.js" charset="utf-8"></script>
+	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw-kUn3g74P2z_rTgItryoWqUYfWZbqXo&libraries=places&callback=initMap" async defer></script>
+    <!-- escolher melhor e pior rank -->
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <script src="/js/index.js" charset="utf-8"></script>
+  <!--colocanto icone na aba da pagina-->
+  <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
+</head>
+<body>
+  <section class="p1">
+  	<div class="container-fluid">
+      <div class="col-xs-8 col-xs-offset-2
+                  col-sm-8 col-sm-offset-2
+                  col-md-4 col-md-offset-4
+                  col-lg-4 col-lg-offset-4">
+                  <a href="#"><img src="logo.png" class="img-responsive center-block" alt="Logo Ham.io" id="logo"></a>
+      </div>
+  	  	<div class="row col-xs-12 col-xs-offset-
+                  col-sm-9 col-sm-offset-1
+                  col-md-6 col-md-offset-3
+                  col-lg-6 col-lg-offset-3">
+
+
+                    <p class="txt01 text-center">
+            O Sistema tem como objetivo a interação dos usuários em relação aos problemas dos serviços em estabelecimentos de saúde,
+            <br><b>selecione uma instituição abaixo para ver seu nível de aprovação ou avaliar</b></p>
+            <a class="scroll" href="#espmap"><img src="seta.png" class="img-responsive center-block seta"></a>
+    		</div>
+    	</div>
+    </div>
+  </section>
+
+	<section>
+  	<div id="espmap" class="espantmapa"></div>
+		<input id="pac-input" class="controls" type="text" placeholder="Procurar Estabelecimentos">
+  	<div id="map" class="row "></div>
+	</section>
+
+  <section class="p3" id="fundoP3" name="mais">
+    <div class="container-fluid contp3">
+    	<h2>
+      	<p class="titulop3 text-center">Ranking das intituições 
+<input type="checkbox" id="mudaropcao" checked data-toggle="toggle" data-on="Mais" data-off="Menos">
+
+</label>bem avaliados</p>
+      
+      </h2>
+      <div class="container">
+        <div class="col-xs-12
+                    col-sm-6 col-sm-offset-0
+                    col-md-6 col-md-offset-0
+                    col-lg-6 col-lg-offset-0"> 
+                     <span class="titulop4 text-center">  ESCOLHA UMA CIDADE</span>
+        </div>
+        <div class="col-xs-12
+                    col-sm-6 col-sm-offset-0
+                    col-md-6 col-md-offset-0
+                    col-lg-6 col-lg-offset-0"> 
+        <input type="email" class="form-control input-lg" id="exampleInputEmail1" placeholder="Email">
+
+
+      </div>
+      </div>
+
+
+
+      <div class="ranking01 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <div id="flip1">
+              <img src="presensademedicos.png" class="img-responsive center-block" >
+              <img id="icone1" name="desligado1" src="iconeseta01.png" class="img-responsive center-block setarank" >
+        </div>
+        <div id="panel1">
+          <table class="table table-hover">
+            <tr>
+              <td >1º- Marcelo Tavares</td>
+            </tr>
+            <tr>
+              <td >2º- João Dantas </td>
+            </tr>
+            <tr>
+              <td >3º- Cruz Vermelha</td>
+            </tr>
+            <tr>
+              <td ><a href="#">Acesse a lista completa</a></td>
+            </tr>
+          </table>
+        </div>
+        </div>
+
+        <div class="ranking02 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <div id="flip2">
+            <img src="medicamento.png" class="img-responsive center-block" >
+            <img id="icone2" name="desligado2" src="iconeseta01.png" class="img-responsive center-block setarank" >
+        </div>
+        <div id="panel2">
+          <table class="table table-hover ">
+            <tr class="trr">
+              <td >1º- Marcelo Tavares</td>
+            </tr>
+            <tr class="trr">
+              <td >2º- João Dantas </td>
+            </tr>
+            <tr class="trr">
+              <td >3º- Cruz Vermelha</td>
+            </tr>
+            <tr>
+              <td ><a href="#">Acesse a lista completa</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="ranking01 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <div id="flip3">
+         <img src="infra.png" class="img-responsive center-block" >
+         <img id="icone3" name="desligado3" src="iconeseta01.png" class="img-responsive center-block setarank" >
+        </div>
+        <div id="panel3">
+          <table class="table table-hover">
+            <tr>
+              <td >1º- Marcelo Tavares</td>
+            </tr>
+            <tr>
+              <td >2º- João Dantas </td>
+            </tr>
+            <tr>
+              <td >3º- Cruz Vermelha</td>
+            </tr>
+            <tr>
+              <td ><a href="#">Acesse a lista completa</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="row espEntreLinha">
+      </div>
+
+      <div class="  ranking02 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <div id="flip4">
+         <img src="tempoDeEspera.png" class="img-responsive center-block" >
+         <img id="icone4" name="desligado4" src="iconeseta01.png" class="img-responsive center-block setarank" >
+        </div>
+        <div id="panel4">
+          <table class="table table-hover">
+            <tr class="trr">
+              <td >1º- Marcelo Tavares</td>
+            </tr>
+            <tr class="trr">
+              <td >2º- João Dantas </td>
+            </tr>
+            <tr class="trr">
+              <td >3º- Cruz Vermelha</td>
+            </tr>
+            <tr>
+              <td ><a href="#">Acesse a lista completa</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="ranking01 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <div id="flip5">
+         <img src="equipamento.png" class="img-responsive center-block" >
+         <img id="icone5" name="desligado5" src="iconeseta01.png" class="img-responsive center-block setarank" >
+        </div>
+        <div id="panel5">
+          <table class="table table-hover">
+            <tr>
+              <td >1º- Marcelo Tavares</td>
+            </tr>
+            <tr>
+              <td >2º- João Dantas </td>
+            </tr>
+            <tr>
+              <td >3º- Cruz Vermelha</td>
+            </tr>
+            <tr>
+              <td ><a href="#">Acesse a lista completa</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="ranking02 col-xs-12
+                    col-sm-4
+                    col-md-4
+                    col-lg-4 ">
+        <div id="flip6">
+         <img src="atendimento.png" class="img-responsive center-block" >
+         <img id="icone6" name="desligado6" src="iconeseta01.png" class="img-responsive center-block setarank" >
+        </div>
+        <div id="panel6">
+          <table class="table table-hover">
+            <tr class="trr">
+              <td >1º- Marcelo Tavares</td>
+            </tr>
+            <tr class="trr">
+              <td >2º- João Dantas </td>
+            </tr>
+            <tr class="trr">
+              <td >3º- Cruz Vermelha</td>
+            </tr>
+            <tr>
+              <td ><a href="#">Acesse a lista completa</a></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+        </div>
+
+
+  </section>
+
+  <section class="p4">
+  	<div class="container">
+    <h2>
+        <p class="titulop3 text-center">NOSSOS PARCEIROS</p>
+      
+      </h2>
+    	<div class="col-xs-3
+                  col-sm-3
+                  col-md-3
+                  col-lg-3">
+              <img src="apoio02tc.png" 
+                onMouseOver="this.src='apoio02.png'"
+                onMouseOut="this.src='apoio02tc.png'"
+              >
+
+      </div>
+
+      <div class="col-xs-3
+                  col-sm-3
+                  col-md-3
+                  col-lg-3  ">
+              <img src="apoio01tc.png" 
+                onMouseOver="this.src='apoio01.png'"
+                onMouseOut="this.src='apoio01tc.png'"
+              >
+      </div>
+
+      <div class="col-xs-3
+                  col-sm-3
+                  col-md-3
+                  col-lg-3">
+              <img src="apoio03tc.png" 
+                onMouseOver="this.src='apoio03.png'"
+                onMouseOut="this.src='apoio03tc.png'"
+              >       
+      </div>
+
+      <div class="col-xs-3
+                  col-sm-3
+                  col-md-3
+                  col-lg-3">
+              <img src="apoio04tc.png" 
+                onMouseOver="this.src='apoio04.png'"
+                onMouseOut="this.src='apoio04tc.png'"
+              >  
+      </div>
+		</div>
+  </section>
+
+
+  <section class="p5" >
+
+<ul class="topnav">
+  <li><a href="#home">Quem Somos?</a></li>
+  <li><a href="#news">Termos e Politica de Privacidade</a></li>
+  <li class="right"><a href="#about">Ajuda</a></li>
+</ul>
+
+  </section>
+
+  <section class="p6">
+    <p class="text-center textorodape">©Paciente 2017</p>
+
+  </section>
+
+</body>
+</html>

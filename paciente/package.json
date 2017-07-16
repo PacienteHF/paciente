@@ -1,0 +1,26 @@
+{
+  "name": "hackfest",
+  "version": "1.0.0",
+  "description": "Sistema de avaliacao de servicos medicos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dr Ligado",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "devbridge-autocomplete": "^1.4.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.10.5"
+  },
+  "devDependencies": {
+    "jsonfile": "^3.0.0",
+    "nightmare": "^2.10.0"
+  }
+}
