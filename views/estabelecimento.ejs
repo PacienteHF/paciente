@@ -16,25 +16,26 @@
   <!--colocanto icone na aba da pagina-->
   <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
   <!-- nao sou um robo -->
-  <script src='https://www.google.com/recaptcha/api.js'></script>
-   <script src="/js/local.js" charset="utf-8"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script src="/js/local.js" charset="utf-8"></script>
 </head>
 
 <body>
 <!--popups modals-->
 
-<!--modal avaliar falta de medicos-->
+  <!--modal avaliar falta de medicos-->
   <div class="modal fade" id="avaliarFaltaDeMedicos">
     <div class="modal-dialog">
       <div class="modal-content ">
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp01.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/avaliarEstrutura" method="post">
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="presencaEquipe">
           <div class="modal-header corpoformulario">
 
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
-<!-- classificadores -->
+            <!-- classificadores -->
             <div class=" conteiner classificacao">
               <input type="radio"  id="i11" name="nota" value="1" />
               <label class="reacao" for="i11"><img class="img-responsive center-block" src="/reacao11.png" alt=""></label>
@@ -51,76 +52,71 @@
               <input type="radio"  id="i15"  name="nota" value="5" />
               <label class="reacao" for="i15"><img class="img-responsive center-block" src="/reacao15.png" alt=""></label>
             </div>
-<!-- resto do formulario -->
-
-
-
+            <!-- resto do formulario -->
 
             <label> Turno: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-            <select class="form-control">
-              <option>Selecione...</option>
-              <option>Manhã</option>
-              <option>Tarde</option>
-              <option>Noite</option>
+            <select class="form-control" name="turno">
+              <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Manhã">Manhã</option>
+              <option value="Tarde">Tarde</option>
+              <option value="Noite">Noite</option>
             </select>
 
             <label> Data: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-            <input type="date" name="bday">
+            <input type="date" name="data">
 
             <label> Especialidade: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-            <select class="form-control" >
-               <option> Selecione...</option>
-               <option> Alergia e Imunologia</option>
-               <option>Anestesiologia</option>
-               <option>Angiologia</option>
-               <option>Oncologia</option>
-               <option>Cardiologia</option>
-               <option> Ala Cirúrgica</option>
-               <option>Coloproctologia</option>
-               <option>Dermatologia</option>
-               <option>Endocrinologia</option>
-               <option>Gastroenterologia</option>
-               <option>Geriatria</option>
-               <option>Ginecologia e obstetrícia</option>
-               <option>Hematologia e Hemoterapia</option>
-               <option>Mastologia</option>
-               <option>Nefrologia</option>
-               <option>Neurologia</option>
-               <option>Nutrologia</option>
-               <option>Oftalmologia</option>
-               <option>Ortopedia e Traumatologia</option>
-               <option>Otorrinolaringologia</option>
-               <option>Pediatria</option>
-               <option>Pneumologia</option>
-               <option>Psiquiatria</option>
-               <option>Radiologia</option>
-               <option>Radioterapia</option>
-               <option> Reumatologia</option>
-               <option>Urologia</option>
+            <select class="form-control" name="especialidade">
+               <option selected="true" disabled="disabled">Selecione...</option>
+               <option value="Alergia e Imunologia">Alergia e Imunologia</option>
+               <option value="Anestesiologia">Anestesiologia</option>
+               <option value="Angiologia">Angiologia</option>
+               <option value="Oncologia">Oncologia</option>
+               <option value="Cardiologia">Cardiologia</option>
+               <option value="Ala Cirúrgica">Ala Cirúrgica</option>
+               <option value="Coloproctologia">Coloproctologia</option>
+               <option value="Dermatologia">Dermatologia</option>
+               <option value="Endocrinologia">Endocrinologia</option>
+               <option value="Gastroenterologia">Gastroenterologia</option>
+               <option value="Geriatria">Geriatria</option>
+               <option value="Ginecologia e obstetrícia">Ginecologia e obstetrícia</option>
+               <option value="Hematologia e Hemoterapia">Hematologia e Hemoterapia</option>
+               <option value="Mastologia">Mastologia</option>
+               <option value="Nefrologia">Nefrologia</option>
+               <option value="Neurologia">Neurologia</option>
+               <option value="Nutrologia">Nutrologia</option>
+               <option value="Oftalmologia">Oftalmologia</option>
+               <option value="Ortopedia e Traumatologia">Ortopedia e Traumatologia</option>
+               <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+               <option value="Pediatria">Pediatria</option>
+               <option value="Pneumologia">Pneumologia</option>
+               <option value="Psiquiatria">Psiquiatria</option>
+               <option value="Radiologia">Radiologia</option>
+               <option value="Radioterapia">Radioterapia</option>
+               <option value="Reumatologia">Reumatologia</option>
+               <option value="Urologia">Urologia</option>
             </select>
 
             <div class="form-group">
               <label>Oque foi dito pelo instituição? <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
-            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-            </a>
-
-            </label>
-              <textarea class="form-control" rows="3"></textarea>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                </a>
+              </label>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
             </div>
 
             <div class="form-group">
               <label>Seu comentário: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
-            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-            </a>
-
-            </label>
-              <textarea class="form-control" rows="3"></textarea>
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                </a>
+              </label>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
             </div>
 
           </div>
@@ -139,10 +135,11 @@
                 <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp02.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/avaliarEstrutura" method="post">
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="tempoEspera">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
-<!-- classificadores -->
+            <!-- classificadores -->
             <div class=" conteiner classificacao">
               <input type="radio"  id="i21" name="nota" value="1" />
               <label class="reacao" for="i21"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
@@ -159,92 +156,87 @@
               <input type="radio"  id="i25"  name="nota" value="5" />
               <label class="reacao" for="i25"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
             </div>
-<!-- resto do formulario -->
-            
+            <!-- resto do formulario -->
+
             <label> Turno: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-            <select class="form-control">
-              <option>Selecione...</option>
-              <option>Manhã</option>
-              <option>Tarde</option>
-              <option>Noite</option>
+            <select class="form-control" name="turno">
+              <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Manhã">Manhã</option>
+              <option value="Tarde">Tarde</option>
+              <option value="Noite">Noite</option>
             </select>
 
             <label>Tempo esperado:<a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-
-            <select class="form-control">
-             <option> Selecione...</option>
-              <option>Até 1 hora</option>
-              <option>Entre 1 e 2 horas</option>
-              <option>Entre 2 e 3 horas</option>
-              <option>Entre 3 e 4 horas</option>
-              <option>Mais de 4 horas</option>
+            <select class="form-control" name="tempoEsperado">
+             <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Até 1 hora">Até 1 hora</option>
+              <option value="Entre 1 e 2 horas">Entre 1 e 2 horas</option>
+              <option value="Entre 2 e 3 horas">Entre 2 e 3 horas</option>
+              <option value="Entre 3 e 4 horas">Entre 3 e 4 horas</option>
+              <option value="Mais de 4 horas">Mais de 4 horas</option>
             </select>
 
             <label>Procedimento medico:<a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-
-            <select class="form-control">
-             <option> Selecione...</option>
-              <option>Consulta</option>
-              <option>Exame</option>
+            <select class="form-control" name="procedimentoMedico">
+              <option selected="true" disabled="disabled">Selecione...</option>
+              <option value="Consulta">Consulta</option>
+              <option value="Exame">Exame</option>
             </select>
 
             <label> Data: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-            <input type="date" name="bday">
+            <input type="date" name="data">
 
             <label> Especialidade: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
             <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
             </a></label>
-            <select class="form-control" >
-               <option> Selecione...</option>
-               <option> Alergia e Imunologia</option>
-               <option>Anestesiologia</option>
-               <option>Angiologia</option>
-               <option>Oncologia</option>
-               <option>Cardiologia</option>
-               <option> Ala Cirúrgica</option>
-               <option>Coloproctologia</option>
-               <option>Dermatologia</option>
-               <option>Endocrinologia</option>
-               <option>Gastroenterologia</option>
-               <option>Geriatria</option>
-               <option>Ginecologia e obstetrícia</option>
-               <option>Hematologia e Hemoterapia</option>
-               <option>Mastologia</option>
-               <option>Nefrologia</option>
-               <option>Neurologia</option>
-               <option>Nutrologia</option>
-               <option>Oftalmologia</option>
-               <option>Ortopedia e Traumatologia</option>
-               <option>Otorrinolaringologia</option>
-               <option>Pediatria</option>
-               <option>Pneumologia</option>
-               <option>Psiquiatria</option>
-               <option>Radiologia</option>
-               <option>Radioterapia</option>
-               <option> Reumatologia</option>
-               <option>Urologia</option>
+            <select class="form-control" name="especialidade">
+               <option selected="true" disabled="disabled">Selecione...</option>
+               <option value="Alergia e Imunologia">Alergia e Imunologia</option>
+               <option value="Anestesiologia">Anestesiologia</option>
+               <option value="Angiologia">Angiologia</option>
+               <option value="Oncologia">Oncologia</option>
+               <option value="Cardiologia">Cardiologia</option>
+               <option value="Ala Cirúrgica">Ala Cirúrgica</option>
+               <option value="Coloproctologia">Coloproctologia</option>
+               <option value="Dermatologia">Dermatologia</option>
+               <option value="Endocrinologia">Endocrinologia</option>
+               <option value="Gastroenterologia">Gastroenterologia</option>
+               <option value="Geriatria">Geriatria</option>
+               <option value="Ginecologia e obstetrícia">Ginecologia e obstetrícia</option>
+               <option value="Hematologia e Hemoterapia">Hematologia e Hemoterapia</option>
+               <option value="Mastologia">Mastologia</option>
+               <option value="Nefrologia">Nefrologia</option>
+               <option value="Neurologia">Neurologia</option>
+               <option value="Nutrologia">Nutrologia</option>
+               <option value="Oftalmologia">Oftalmologia</option>
+               <option value="Ortopedia e Traumatologia">Ortopedia e Traumatologia</option>
+               <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+               <option value="Pediatria">Pediatria</option>
+               <option value="Pneumologia">Pneumologia</option>
+               <option value="Psiquiatria">Psiquiatria</option>
+               <option value="Radiologia">Radiologia</option>
+               <option value="Radioterapia">Radioterapia</option>
+               <option value="Reumatologia">Reumatologia</option>
+               <option value="Urologia">Urologia</option>
             </select>
-
-
 
             <div class="form-group">
               <label>Oque foi dito pela instituição?</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
             </div>
+
             <div class="form-group">
               <label>Seu comentário:</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
             </div>
-
-
           </div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
@@ -254,18 +246,18 @@
     </div>
   </div>
 
-
-    <!--modal avaliar falta de equipamento-->
+  <!--modal avaliar falta de equipamento-->
   <div class=" modal fade " id="avaliarFaltaDeEquipamento">
     <div class="modal-dialog">
       <div class="modal-content ">
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp03.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/avaliarEstrutura" method="post">
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="equipamentos">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
-<!-- classificadores -->
+            <!-- classificadores -->
             <div class=" conteiner classificacao">
               <input type="radio"  id="i31" name="nota" value="1" />
               <label class="reacao" for="i31"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
@@ -282,26 +274,24 @@
               <input type="radio"  id="i35"  name="nota" value="5" />
               <label class="reacao" for="i35"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
             </div>
-<!-- resto do formulario -->
-            <div class="form-group resto">
 
-              <label>Qual o equipamento?<a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
-            <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-            </a></label>
-            <textarea class="form-control" rows="3"></textarea>
+            <!-- resto do formulario -->
+            <div class="form-group resto">
+              <label>Qual o equipamento/exame?<a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
+              <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+              </a></label>
+              <textarea class="form-control" rows="3" name="equipamento"></textarea>
             </div>
 
             <div class="form-group">
-              <label>Qual o Exame?</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <label>Oque foi dito pela instituição?</label>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
             </div>
 
             <div class="form-group">
               <label>Seu comentário:</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
             </div>
-
-
           </div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
@@ -311,17 +301,18 @@
     </div>
   </div>
 
-    <!--modal avaliar qualidade no atendimento-->
+  <!--modal avaliar qualidade no atendimento-->
   <div class=" modal fade " id="avaliarQualidadeDeAtendimento">
     <div class="modal-dialog">
       <div class="modal-content ">
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp04.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/avaliarQualidadeDeAtendimento" method="post">
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="qualidadeAtendimento">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
-<!-- classificadores -->
+            <!-- classificadores -->
             <div class=" conteiner classificacao">
               <input type="radio"  id="i1" name="nota" value="1" />
               <label class="reacao" for="i51"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
@@ -338,30 +329,27 @@
               <input type="radio"  id="i55"  name="nota" value="5" />
               <label class="reacao" for="i55"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
             </div>
-<!-- resto do formulario -->
-            <input type="text" name="id" style="display: none" value= <%= id %> ></input>
+            <!-- resto do formulario -->
             <div class="form-group resto">
 
               <label> Turno: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
               <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
-              <select class="form-control">
-                <option>Selecione...</option>
-                <option>Manhã</option>
-                <option>Tarde</option>
-                <option>Noite</option>
+              <select class="form-control" name="turno">
+                <option selected="true" disabled="disabled">Selecione...</option>
+                <option value="Manhã">Manhã</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Noite">Noite</option>
               </select>
 
               <label> Data: <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
               <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
               </a></label>
-              <input type="date" name="bday">
+              <input type="date" name="data">
 
               <div class="form-group">
                 <label>Seu comentário:</label>
-                <textarea class="form-control" rows="3"></textarea>
+                <textarea class="form-control" rows="3" name="comentario"></textarea>
               </div>
-
-
           </div>
           </div>
           <div class="modal-header enviar">
@@ -372,8 +360,6 @@
     </div>
   </div>
 
-
-
   <!--modal avaliar falta de medicamento-->
   <div class=" modal fade " id="avaliarFaltaDeMedicamento">
     <div class="modal-dialog">
@@ -381,10 +367,11 @@
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp05.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/avaliarEstrutura" method="post">
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="medicamentos">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
-<!-- classificadores -->
+            <!-- classificadores -->
             <div class=" conteiner classificacao">
               <input type="radio"  id="i41" name="nota" value="1" />
               <label class="reacao" for="i41"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
@@ -401,22 +388,21 @@
               <input type="radio"  id="i45"  name="nota" value="5" />
               <label class="reacao" for="i45"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
             </div>
-<!-- resto do formulario -->
+            <!-- resto do formulario -->
 
             <div class="form-group">
               <label>Qual o medicamento e/ou finalidade? <a class="duvida01" data-toggle="popover" title="Marcelo é Gay" data-content="Marcelo seu fresco vá da trabalho a outra pessoa" >
               <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" name="medicamento"></textarea>
             </div>
             <div class="form-group">
               <label>Oque foi dito pela instituição?</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
             </div>
             <div class="form-group">
               <label>Seu comentário:</label>
-              <textarea class="form-control" rows="3"></textarea>
+              <textarea class="form-control" rows="3" name="comentario"></textarea>
             </div>
-
           </div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
@@ -426,7 +412,6 @@
     </div>
   </div>
 
-
   <!--modal avaliar estrutura-->
   <div class=" modal fade " id="avaliarEstrutura">
     <div class="modal-dialog">
@@ -434,10 +419,11 @@
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp06.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/avaliarEstrutura" method="post">
+        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+          <input type="text" name="type" style="display: none" value="infraestrutura">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
-<!-- classificadores -->
+            <!-- classificadores -->
             <div class=" conteiner classificacao">
               <input type="radio"  id="i1" name="nota" value="1" />
               <label class="reacao" for="i51"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
@@ -454,11 +440,10 @@
               <input type="radio"  id="i55"  name="nota" value="5" />
               <label class="reacao" for="i55"><img class="img-responsive center-block" src="/reacao05.png" alt=""></label>
             </div>
-<!-- resto do formulario -->
-            <input type="text" name="id" style="display: none" value= <%= id %> ></input>
+            <!-- resto do formulario -->
             <div class="form-group resto">
               <label>Seu comentário:</label>
-              <textarea class="form-control" name="problemaEstrutura" rows="3"></textarea>
+              <textarea class="form-control" name="comentario" rows="3"></textarea>
             </div>
           </div>
           <div class="modal-header enviar">
@@ -469,20 +454,11 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
   <!--conteiner de toda a pagina-->
   <header>
       <nav class=" navbar navbar-fixed topo">
         <div class="logo">
-            <a href="/" type="button" id="logoPaciente"> <img src="/logo2.png" class="img-responsive center-block logopaciente" alt="Logo Paciente - home"></a>
-          </div>
+          <a href="/" type="button" id="logoPaciente"> <img src="/logo2.png" class="img-responsive center-block logopaciente" alt="Logo Paciente - home"></a>
         </div>
       </nav>
 
@@ -584,7 +560,7 @@
                     col-md-4
                     col-lg-4 ">
         <a href="#">
-          <img src="/n2.png" class="nivel img-responsive center-block" 
+          <img src="/n2.png" class="nivel img-responsive center-block"
                  data-toggle="modal" data-target="#avaliarEstrutura" ></a>
         <h4 class="text-center"><b>Infraestrutura</b></h4>
         <p class="text-center descricao">O paciente identificou problemas em infraestruturas</p>

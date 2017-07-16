@@ -16,33 +16,40 @@ var schema = new mongoose.Schema({
     logradouro: String
   },
   avaliacoes: {
-    presencaMedicos: [{
+    presencaEquipe: [{
       nota: Number,
-      especialidade: String,
+      data: Date,
       turno: String,
-      justificativa: String,
+      especialidade: String,
+      respostaInstituicao: String,
       comentario: String
     }],
-    atendimentos: [{
+    tempoEspera: [{
       nota: Number,
-      especialidade: String,
+      data: Date,
       turno: String,
-      tempoEspera: String,
-      justificativa: String,
+      tempoEsperado: String,
+      procedimentoMedico: String,
+      especialidade: String,
+      respostaInstituicao: String,
       comentario: String
     }],
-    equipamentos: [{
+    qualidadeAtendimento: [{
       nota: Number,
-      dispositivo: String,
-      exame: String,
-      justificativa: String,
+      data: Date,
+      turno: String,
       comentario: String
     }],
     medicamentos: [{
       nota: Number,
-      especialidade: String,
       medicamento: String,
-      justificativa: String,
+      respostaInstituicao: String,
+      comentario: String
+    }],
+    equipamentos: [{
+      nota: Number,
+      equipamento: String,
+      respostaInstituicao: String,
       comentario: String
     }],
     infraestrutura: [{

@@ -15,7 +15,9 @@ exports.get = function(id, callback) {
 
 exports.avalia = function(id, avaliacao, callback) {
   this.get(id, function(err, estabelecimento) {
-    estabelecimento.avaliacoes.infraestrutura.push(avaliacao);
+    var type = avaliacao.type;
+    delete avaliacao.type;
+    estabelecimento.avaliacoes[type].push(avaliacao);
     estabelecimento.save(function(err) {
       callback(err);
     });
