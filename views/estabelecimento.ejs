@@ -11,6 +11,8 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/style_paginaDispositivo.css">
   <script src="/jquery/jquery.min.js"></script>
+  <script src="/ajax/jquery.form.min.js"></script>
+  <script src="/js/ajax.js"></script>
   <script src="/bootstrap/js/bootstrap.min.js"></script>
 
   <!--colocanto icone na aba da pagina-->
@@ -30,7 +32,7 @@
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp01.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+        <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="presencaEquipe">
           <div class="modal-header corpoformulario">
 
@@ -135,7 +137,7 @@
                 <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp02.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+        <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="tempoEspera">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
@@ -253,7 +255,7 @@
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp03.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+        <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="equipamentos">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
@@ -308,7 +310,7 @@
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp04.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+        <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="qualidadeAtendimento">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
@@ -367,7 +369,7 @@
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp05.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+        <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="medicamentos">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>
@@ -419,7 +421,7 @@
         <a href="#"  data-dismiss="modal" aria-label="Close">
           <img src="/topoPopUp06.png" class="img-responsive center-block">
         </a>
-        <form id="form-estrutura" action="/estabelecimentos/<%= id %>" method="post">
+        <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="infraestrutura">
           <div class="modal-header corpoformulario">
             <label> Classificação: Escolha uma reação para classificar a instituição </label>

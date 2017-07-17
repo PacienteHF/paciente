@@ -23,6 +23,9 @@ router.route('/:id')
     var id = req.params.id;
     var avaliacao = req.body;
     controller.avalia(id, avaliacao, function(err) {
+      if(err) {
+        res.sendStatus(403);
+      }
       res.sendStatus(200);
     });
   })
