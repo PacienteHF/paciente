@@ -1,11 +1,13 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
+var cookieParser = require('cookie-parser');
 
 var router = require('../routes/index');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 

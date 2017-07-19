@@ -22,12 +22,19 @@ router.route('/:id')
   .post(function(req, res) {
     var id = req.params.id;
     var avaliacao = req.body;
-    controller.avalia(id, avaliacao, function(err) {
-      if(err) {
-        res.sendStatus(403);
-      }
-      res.sendStatus(200);
-    });
+    var type = avaliacao.type;
+    var cookies = req.cookies;
+    if (type in cookies) {
+      res.sendStatus(403);
+    } else {
+      controller.avalia(id, avaliacao, function(err, avaliacaoId) {
+        if(err) {
+          res.sendStatus(403);
+        }
+        res.cookie(type, avaliacaoId, { maxAge: 24 * 60 * 60 * 1000, path: '/estabelecimentos/' + id });
+        res.sendStatus(200);
+      });
+    }
   })
 
 module.exports = router;
