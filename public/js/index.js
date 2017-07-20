@@ -104,13 +104,17 @@ $(document).ready(function(){
     $('#mudaropcao').change(function() {
         if(window.document.getElementById("fundoP3").name==="mais"){
             $('#fundoP3').css("background-color","#602341" );
+            $('.ranking01').css("background-color", "#602341");
              $('.ranking02').css("background-color", "#9f346c");
 
             window.document.getElementById("fundoP3").name="menos";
         }
+
         else{
-            $('#fundoP3').css("background-color", "black");
-                        $('.ranking02').css("background-color", "red");
+            $('#fundoP3').css("background-color",  "#450726");
+          
+                 $('.ranking01').css("background-color", "#9f346c");
+                 $('.ranking02').css("background-color", "#450726");
 
             window.document.getElementById("fundoP3").name="mais";
         }

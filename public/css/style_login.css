@@ -170,10 +170,31 @@ input:checked + .slider:before {
 	margin-top: 2px;
 	color: #fff;
 	padding-top: 15px;
-	padding-bottom: 2%;
+	padding-bottom: 20px;
 
 }
+.mudaropcao{
+	background-color: #fff !important;
+	color: #000 !important;
+	padding: 2px;
+		font-size: 20px !important;
+	font-family: 'Nunito', sans-serif!important;
 
+}
+.mudaropcao:hover{
+	color: #000 !important;
+	background-color: #000;
+
+}
+.escolhercidade{
+	margin-top: 5px;
+
+}
+.caixacidade{
+	text-align: center;
+	margin-bottom: 50px;
+
+}
 .ranking01{
 	background-color: #602341;
 	padding: 0px;
@@ -220,10 +241,28 @@ tr:hover{
 #panel1,#panel2,#panel3,#panel4,#panel5,#panel6{
     display: none;
     padding: 30px;
-    padding-bottom:0px;
-    padding-top: 0px; 
+    padding-bottom:3%;
+    padding-top: 0px;
 }
+.btnListaCompleta{
+	background-color:  #602341;
+	padding: 8px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: 'Nunito', sans-serif!important;
+	color: #fff;
+	border-radius: 10px;
+	border: 2px solid;
+	border-color: #fff;
+		display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btnListaCompleta:hover{
+	background-color: #9f346c;
+	color: #fff;
 
+}
 /*parte 4*/
 /*
 x
@@ -231,7 +270,8 @@ x
 x*/
 
 .p4{
-	padding-top: 10%;
+	padding-top: 5%;
+	padding-bottom: 40px;
 
 }
 
@@ -247,7 +287,14 @@ x*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	
+}
+.titulop6{
+	color: #602341;
+	font-size: 40px !important;
+	font-family: 'Nunito', sans-serif!important;
+    list-style-type: none;
 }
 
 ul.topnav {
@@ -285,13 +332,14 @@ x
 x*/
 .p6{
 	background-color: #9F346C!important;
-	padding: 20px;
+	padding: 10px;
+
 	
 }
 .textorodape{
 	color: #602341;
 	font-size: 15px !important;
 	font-family: 'Nunito', sans-serif!important;
-	padding-top: 5%;
+	padding-top: 2%;
 
 }

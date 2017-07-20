@@ -275,14 +275,15 @@ x
 x*/
 .p6{
 	background-color: #9F346C!important;
-	padding: 20px;
+	padding: 10px;
+
 	
 }
 .textorodape{
 	color: #602341;
 	font-size: 15px !important;
 	font-family: 'Nunito', sans-serif!important;
-	padding-top: 5%;
+	padding-top: 2%;
 
 }
 
@@ -292,21 +293,18 @@ x*/
 /*
 x*/
 
-/*duvidas*/
+/*duvidas de campos do formulario*/
+.duvida01{
+	color: #ccc;
+}
 .duvida01:hover{
-
+	color: #A9346F;
 }
 
 .corpoformulario{
-	margin: 10px;
+	margin: 0px;
 }
-.naosourobo{
-	background-color: #000;
-	  display: flex;
-  align-items: center;
-  justify-content: center;
 
-}
 .essa{
 	margin:  10px;
 }
@@ -315,7 +313,7 @@ x*/
   display: flex;
   align-items: center;
   justify-content: center
-  padding:0px;
+  padding: 0;
   margin: 0;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -325,10 +323,14 @@ x*/
 input[type="radio"] {
         visibility: hidden;
 }
+.tituloformularioclassificacao{
+		display: flex;
+  	align-items: center;
+ 	justify-content: center;
+}
     
 .reacao {
 	background-color:#B4B7BB;
-    float: left;
 
 }
 .reacao:hover {
@@ -337,6 +339,12 @@ input[type="radio"] {
 
 input[type="radio"]:checked+.reacao {
     background-color: #5D2A43;
+}
+.pulalinhaform{
+	margin-top: 20px;
+}
+.pulalinhaform2{
+	margin-top: 0px;
 }
 
 .enviar{
