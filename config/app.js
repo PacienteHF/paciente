@@ -24,4 +24,16 @@ app.get("/", function(req, res) {
   res.render('index');
 });
 
+app.get("/sobre", function(req, res) {
+  res.render('sobre');
+});
+
+app.get("/ajuda", function(req, res) {
+  res.render('ajuda');
+});
+
+app.get("/privacidade", function(req, res) {
+  res.render('privacidade');
+});
+
 module.exports = app;

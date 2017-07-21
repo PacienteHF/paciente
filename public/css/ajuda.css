@@ -1,0 +1,168 @@
+body {
+	text-align: justify;
+	font-family:Nunito;
+}
+.par {
+ margin-right: 20%;
+ margin-left: 20%;
+
+}
+h3{
+	font-size: 40px;
+	text-align: center;
+	color: #9f346c;
+	align-items: center;
+	margin-right: 20%;
+ 	margin-left: 20%;
+ 	justify-content: center;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+
+}
+h2{
+	font-size: 40px;
+	text-align: center;
+	align-items: center;
+	 margin-right: 20%;
+ 	margin-left: 20%;
+
+ 	justify-content: center;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+
+}
+/*editando nav, menu*/
+
+.topo{
+    background-color: #9f346c;
+    padding-top: 0%;
+     border-radius: 0px;
+
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .logopaciente{
+ 	opacity:0.65;
+ 	padding-top:10px;
+ 	padding-bottom: 5px;
+ 	margin: 10px;
+ }
+
+ .logopaciente:hover{
+ 	opacity:1;
+ }
+.estab {
+
+  max-width: 100%;
+  max-height: 100%;
+  width: 20em;
+}
+@media screen and (max-width: 700px) {
+    .panel-group{
+        margin:0px !important;
+    }
+}
+.topo2{
+	background: #F0F0F0  URL(../hospitais.png)top;
+	background-size:cover;
+    padding-top: 0%;
+    margin-top: -20px;
+    -webkit-box-shadow: 0px 2px 30px #606062;
+     border-radius: 0px;
+}
+.topo-info{
+	padding-bottom: 10px !important;
+}
+.topo2-icone{
+	padding: 0px;
+	margin: 0px;
+	margin-top: -100px;
+	margin-left: 50px;
+
+}
+.team-member
+{
+	position: relative;
+    display: block;
+    margin-bottom: -1px;
+    background-color: #fff;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+/*rodape*/
+.p4 {
+
+	padding: 0 !important;
+	align-items: center;
+}
+
+.p5{
+	background-color: #602341;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 !important;
+	margin: 0!important;
+	
+}
+
+ul.topnav {
+	color: #fff;
+	font-size: 15px !important;
+	font-family: 'Nunito', sans-serif!important;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+	padding: 20px;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+.p6{
+	background-color: #9F346C!important;
+	padding: 20px;
+	
+}
+
+.panel-title {
+	
+	font-family: 'Nunito';
+	font-size: 25px;
+	
+}
+.panel-body {
+	
+	font-family: 'Nunito', sans-serif!important;;
+	font-size: 20px;
+	
+	
+}
+.panel-group {
+
+	padding:1em;
+	align-items: center;
+	margin-right: 20%;
+ 	margin-left: 20%;
+}
+.bottom {
+	padding-bottom: 2em;
+}

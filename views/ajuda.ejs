@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ajuda</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/ajuda.css">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900" rel="stylesheet">
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+  <!--colocanto icone na aba da pagina-->
+  <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
+</head>
+
+<body>
+
+  <header>
+      <nav class=" navbar navbar-fixed topo">
+        <div class="logo">
+            <a href="/" type="button" id="logoPaciente"> <img src="/logo2.png" class="img-responsive center-block logopaciente" alt="Logo Paciente - home"></a>
+          </div>
+        </div>
+      </nav>
+
+      <nav class=" navbar  navbar-fixed topo2">
+        <div class="topo2-info">
+            <h3>AJUDA</h3>
+        </div>
+      </nav>
+    </header>
+    <h2><i class="fa fa-question-circle" aria-hidden="true"></i></h2>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Como busco o hospital que quero avaliar?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+       Na página inicial do PaCiente você terá acesso ao mapa da paraíba, onde poderá acessar o estabelecimento clicando no local indicado <img width="30px" src="http://www.eurocarers.org/images/gmaps/m5.png"> para aproximar o mapa e acessar a página do hospital através da marcação <img width="20px" src="http://www.clker.com/cliparts/B/q/g/r/2/3/light-orange-pin-md.png">, ou ir direto a Barra de Busca <p><img  class="img-responsive estab"  border="0" alt="Null" src="estabe.jpg"></p> onde poderá ser pesquisado o nome do estabelecimento ou endereço.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Não consigo encontrar um hospital, o que faço?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+       Devido à imprecisão nos dados, alguns hospitais não estão localizados no mapa, porém você pode pesquisá-los diretamente pela barra de busca. <img class="estab" border="0" alt="Null" src="estabe.jpg">
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Como avalio um hospital?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Após acessar a página do hospital, escolha o item a ser avaliado e pressione o botão <img src="avaliar.jpg">, onde você será direcionado para um formulário a ser preenchido. OBS: Campos que possuem um “ * “ são obrigatórios.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Como tenho acesso ao ranking dos avaliados?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+        Abaixo do mapa você terá a lista com o top 3 hospitais avaliados positivamente e negativamente de cada item, e ainda acesso a lista geral. Poderá mudar o tipo de avaliação através do botão: (...)
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Posso avaliar o mesmo hospital mais de uma vez?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+        Sim, porém só poderá avaliar o mesmo hospital depois de um tempo determinado, antes disso sua avaliação anterior será substituída.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <section class="par">
+
+
+      <div>
+      <p class="questao">Como busco o hospital que quero avaliar?</p>
+      <p>Na página inicial do PaCiente você terá acesso ao mapa da paraíba, onde poderá acessar o estabelecimento clicando no local indicado <img src=""> para aproximar o mapa e acessar a página do hospital através da marcação , ou ir direto a Barra de Busca onde poderá ser pesquisado o nome do estabelecimento ou endereço. </p>
+      </div>
+      <div>
+      <p class="questao">Não consigo encontrar um hospital, o que faço?</p>
+      <p>Devido à imprecisão nos dados, alguns hospitais não estão localizados no mapa, porém você pode pesquisá-los diretamente pela barra de busca. </p>
+      </div>
+      <div>
+      <p class="questao">Como avalio um hospital?</p>
+      <p>Após acessar a página do hospital, escolha o item a ser avaliado e pressione o botão , onde você será direcionado para um formulário a ser preenchido. OBS: Campos que possuem um “ * “ são obrigatórios. </p>
+      </div>
+      <div>
+      <p class="questao">Como tenho acesso ao ranking dos avaliados?</p>
+      <p>Abaixo do mapa você terá a lista com o top 3 hospitais avaliados positivamente e negativamente de cada item, e ainda acesso a lista geral. Poderá mudar o tipo de avaliação através do botão: (...) </p>
+      </div>
+      <div>
+      <p class="questao">Posso avaliar o mesmo hospital mais de uma vez?</p>
+      <p class="bottom">Sim, porém só poderá avaliar o mesmo hospital depois de um tempo determinado, antes disso sua avaliação anterior será substituída. </p>
+      </div>
+
+</section> -->
+
+<section class="p5" >
+  <ul class="topnav">
+	  <li><a href="/">Home</a></li>
+	  <li><a href="sobre">Sobre</a></li>
+	  <li><a href="privacidade">Privacidade</a></li>
+	  <li class="right"><a href="ajuda">Ajuda</a></li>
+	</ul>
+
+  </section>
+
+  <section class="p6">
+    <p class="text-center textorodape">©Paciente 2017</p>
+
+  </section>
+
+</div>
+</body>
+</html>
