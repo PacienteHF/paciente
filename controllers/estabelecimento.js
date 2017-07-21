@@ -14,6 +14,35 @@ exports.get = function(id, callback) {
   });
 }
 
+exports.getNotas = function(estabelecimento, callback) {
+  function average(array) {
+    function plus(a, b) { return a + b; }
+    if(array.length === 0) { return 0; }
+    return Math.round(array.reduce(plus) / array.length);
+  }
+  var notas = {
+    presencaEquipe: average(estabelecimento.avaliacoes.presencaEquipe.map(function(avaliacao) {
+      return avaliacao.nota;
+    })),
+    tempoEspera: average(estabelecimento.avaliacoes.tempoEspera.map(function(avaliacao) {
+      return avaliacao.nota;
+    })),
+    qualidadeAtendimento: average(estabelecimento.avaliacoes.qualidadeAtendimento.map(function(avaliacao) {
+      return avaliacao.nota;
+    })),
+    equipamentos: average(estabelecimento.avaliacoes.equipamentos.map(function(avaliacao) {
+      return avaliacao.nota;
+    })),
+    medicamentos: average(estabelecimento.avaliacoes.medicamentos.map(function(avaliacao) {
+      return avaliacao.nota;
+    })),
+    infraestrutura: average(estabelecimento.avaliacoes.infraestrutura.map(function(avaliacao) {
+      return avaliacao.nota;
+    }))
+  }
+  callback(notas);
+}
+
 exports.avalia = function(id, avaliacao, callback) {
   this.get(id, function(err, estabelecimento) {
     var type = avaliacao.type;

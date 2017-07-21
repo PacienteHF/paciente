@@ -13,37 +13,13 @@ router.route('/:id')
   .get(function(req, res) {
     var id = req.params.id;
     controller.get(id, function(err, estabelecimento) {
-      function average(array) {
-        function plus(a, b) { return a + b; }
-        if(array.length === 0) { return 0; }
-        return Math.round(array.reduce(plus) / array.length);
-      }
-      var notas = {
-        presencaEquipe: average(estabelecimento.avaliacoes.presencaEquipe.map(function(avaliacao) {
-          return avaliacao.nota;
-        })),
-        tempoEspera: average(estabelecimento.avaliacoes.tempoEspera.map(function(avaliacao) {
-          return avaliacao.nota;
-        })),
-        qualidadeAtendimento: average(estabelecimento.avaliacoes.qualidadeAtendimento.map(function(avaliacao) {
-          return avaliacao.nota;
-        })),
-        equipamentos: average(estabelecimento.avaliacoes.equipamentos.map(function(avaliacao) {
-          return avaliacao.nota;
-        })),
-        medicamentos: average(estabelecimento.avaliacoes.medicamentos.map(function(avaliacao) {
-          return avaliacao.nota;
-        })),
-        infraestrutura: average(estabelecimento.avaliacoes.infraestrutura.map(function(avaliacao) {
-          return avaliacao.nota;
-        }))
-      }
-      console.log(notas);
-      var data = { id: estabelecimento.id,
-                    nome: estabelecimento.nome,
-                    endereco: estabelecimento.endereco.logradouro,
-                    notas: notas }
-      res.render('estabelecimento', data);
+      controller.getNotas(estabelecimento, function(notas) {
+        var data = { id: estabelecimento.id,
+          nome: estabelecimento.nome,
+          endereco: estabelecimento.endereco.logradouro,
+          notas: notas }
+          res.render('estabelecimento', data);
+      });
     });
   })
   .post(function(req, res) {
