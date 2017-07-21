@@ -12,7 +12,7 @@ $(document).ready(function(){
     }
 
     });
-  
+
 });
 
 $(document).ready(function(){
@@ -51,7 +51,7 @@ $(document).ready(function(){
     else{
         window.document.getElementById("icone4").src="iconeseta01.png";
         window.document.getElementById("icone4").name="desligado4";
-    }   
+    }
     });
 });
 $(document).ready(function(){
@@ -83,8 +83,8 @@ $(document).ready(function(){
 
 
 
-jQuery(document).ready(function($) { 
-    $(".scroll").click(function(event){        
+jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){
         event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
    });
@@ -96,29 +96,4 @@ $(document).ready(function(){
         $("#fundotopo").remove();
 
     }
-});
-
-
-$(document).ready(function(){
-
-    $('#mudaropcao').change(function() {
-        if(window.document.getElementById("fundoP3").name==="mais"){
-            $('#fundoP3').css("background-color","#602341" );
-            $('.ranking01').css("background-color", "#602341");
-             $('.ranking02').css("background-color", "#9f346c");
-
-            window.document.getElementById("fundoP3").name="menos";
-        }
-
-        else{
-            $('#fundoP3').css("background-color",  "#450726");
-          
-                 $('.ranking01').css("background-color", "#9f346c");
-                 $('.ranking02').css("background-color", "#450726");
-
-            window.document.getElementById("fundoP3").name="mais";
-        }
-
-    });
-
 });

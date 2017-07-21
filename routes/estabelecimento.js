@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var controller = require('../controllers/estabelecimento')
+var controller = require('../controllers/estabelecimento');
 
 router.route('/')
   .get(function(req, res) {
@@ -15,10 +15,10 @@ router.route('/:id')
     controller.get(id, function(err, estabelecimento) {
       controller.getNotas(estabelecimento, function(notas) {
         var data = { id: estabelecimento.id,
-          nome: estabelecimento.nome,
-          endereco: estabelecimento.endereco.logradouro,
-          notas: notas }
-          res.render('estabelecimento', data);
+                     nome: estabelecimento.nome,
+                     endereco: estabelecimento.endereco.logradouro,
+                     notas: notas }
+        res.render('estabelecimento', data);
       });
     });
   })

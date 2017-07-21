@@ -14,6 +14,26 @@ exports.get = function(id, callback) {
   });
 }
 
+exports.getRanking = function(type, order, callback) {
+  Estabelecimento.aggregate(
+    [
+        { "$project": {
+            "_id": "$id",
+            "nome": '$nome',
+            "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
+        }},
+        { "$sort": { "avgNota": order } },
+        { "$match": {
+          "avgNota": { "$exists": true, "$ne": null }
+        }},
+        { "$limit": 3 }
+    ],
+    function(err, ranking) {
+      callback(ranking);
+    }
+  );
+}
+
 exports.getNotas = function(estabelecimento, callback) {
   function average(array) {
     function plus(a, b) { return a + b; }
