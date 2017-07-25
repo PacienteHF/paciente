@@ -23,6 +23,7 @@ app.use('/ajax', express.static('./node_modules/jquery-form/dist/'));
 app.use('/autocomplete', express.static('./node_modules/devbridge-autocomplete/dist/'));
 app.use('/vue', express.static('./node_modules/vue/dist/'));
 app.use('/vue-resource', express.static('./node_modules/vue-resource/dist/'));
+app.use('/animate-css', express.static('./node_modules/animate.css/'));
 
 app.use('/', router);
 
