@@ -9,6 +9,7 @@
   "author": "Dr Ligado",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "bootstrap-switch": "^3.3.4",

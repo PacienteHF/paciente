@@ -10,16 +10,18 @@
   <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/style_paginaDispositivo.css">
+  <link rel="stylesheet" href="/animate-css/animate.min.css">
   <script src="/jquery/jquery.min.js"></script>
   <script src="/ajax/jquery.form.min.js"></script>
   <script src="/js/ajax.js"></script>
   <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/js/local.js" charset="utf-8"></script>
+  <script src="/js/recaptcha.js" charset="utf-8"></script>
 
   <!--colocanto icone na aba da pagina-->
   <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
   <!-- nao sou um robo -->
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script src="/js/local.js" charset="utf-8"></script>
+  <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit&hl=pt-BR" async defer></script>
 </head>
 
 <body>
@@ -132,6 +134,7 @@
             </div>
           </div>
        </div>
+       <div id="RecaptchaField1" data-theme='dark'style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
           </div>
@@ -279,6 +282,7 @@
           </div>
           </div>
           </div>
+          <div id="RecaptchaField2" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
           </div>
@@ -340,6 +344,7 @@
               <textarea class="form-control" rows="3" name="comentario"></textarea>
             </div>
           </div>
+          <div id="RecaptchaField3" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
           </div>
@@ -411,6 +416,7 @@
           </div>
           </div>
           </div>
+          <div id="RecaptchaField4" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
           </div>
@@ -467,6 +473,7 @@
               <textarea class="form-control" rows="3" name="comentario"></textarea>
             </div>
           </div>
+          <div id="RecaptchaField5" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
           </div>
@@ -511,6 +518,7 @@
               <textarea class="form-control" name="comentario" rows="3"></textarea>
             </div>
           </div>
+          <div id="RecaptchaField6" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
             <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
           </div>
