@@ -17,6 +17,9 @@ router.route('/:id')
         var data = { id: estabelecimento.id,
                      nome: estabelecimento.nome,
                      endereco: estabelecimento.endereco.logradouro,
+                     bairro: estabelecimento.endereco.bairro,
+                     municipio: estabelecimento.endereco.municipio,
+                     numero: estabelecimento.endereco.numero,
                      notas: notas }
         res.render('estabelecimento', data);
       });
