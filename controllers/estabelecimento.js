@@ -17,16 +17,16 @@ exports.get = function(id, callback) {
 exports.getRanking = function(type, order, callback) {
   Estabelecimento.aggregate(
     [
-        { "$project": {
-            "_id": "$id",
-            "nome": '$nome',
-            "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
-        }},
-        { "$sort": { "avgNota": order } },
-        { "$match": {
-          "avgNota": { "$exists": true, "$ne": null }
-        }},
-        { "$limit": 3 }
+      { "$project": {
+        "_id": "$id",
+        "nome": '$nome',
+        "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
+      }},
+      { "$sort": { "avgNota": order } },
+      { "$match": {
+        "avgNota": { "$exists": true, "$ne": null }
+      }},
+      { "$limit": 3 }
     ],
     function(err, ranking) {
       callback(ranking);
@@ -34,31 +34,86 @@ exports.getRanking = function(type, order, callback) {
   );
 }
 
-exports.getNotas = function(estabelecimento, callback) {
+exports.getRankingCidade = function(type, order, cidade, callback) {
+  Estabelecimento.aggregate(
+    [
+      { "$match" : { "endereco.municipio" : cidade }},
+      { "$project": {
+        "_id": "$id",
+        "nome": '$nome',
+        "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
+      }},
+      { "$sort": { "avgNota": order } },
+      { "$match": {
+        "avgNota": { "$exists": true, "$ne": null }
+      }},
+      { "$limit": 3 }
+    ],
+    function(err, ranking) {
+      callback(ranking);
+    }
+  );
+}
+
+exports.getRankingCidadeTotal = function(type, order, cidade, callback) {
+  Estabelecimento.aggregate(
+    [
+      { "$match" : { "endereco.municipio" : cidade }},
+      { "$project": {
+        "_id": "$id",
+        "nome": '$nome',
+        "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
+      }},
+      { "$sort": { "avgNota": order } },
+      { "$match": {
+        "avgNota": { "$exists": true, "$ne": null }
+      }}
+    ],
+    function(err, ranking) {
+      callback(ranking);
+    }
+  );
+}
+
+exports.getRankingTotal = function(type, order, callback) {
+  Estabelecimento.aggregate(
+    [
+      { "$project": {
+        "_id": "$id",
+        "nome": '$nome',
+        "cidade": "$endereco.municipio",
+        "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
+      }},
+      { "$sort": { "avgNota": order } },
+      { "$match": {
+        "avgNota": { "$exists": true, "$ne": null }
+      }}
+    ],
+    function(err, ranking) {
+      callback(ranking);
+    }
+  );
+}
+
+exports.getNota = function(estabelecimento, type) {
   function average(array) {
     function plus(a, b) { return a + b; }
     if(array.length === 0) { return 0; }
     return Math.round(array.reduce(plus) / array.length);
   }
+  return average(estabelecimento.avaliacoes[type].map(function(avaliacao) {
+    return avaliacao.nota;
+  }));
+}
+
+exports.getNotas = function(estabelecimento, callback) {
   var notas = {
-    presencaEquipe: average(estabelecimento.avaliacoes.presencaEquipe.map(function(avaliacao) {
-      return avaliacao.nota;
-    })),
-    tempoEspera: average(estabelecimento.avaliacoes.tempoEspera.map(function(avaliacao) {
-      return avaliacao.nota;
-    })),
-    qualidadeAtendimento: average(estabelecimento.avaliacoes.qualidadeAtendimento.map(function(avaliacao) {
-      return avaliacao.nota;
-    })),
-    equipamentos: average(estabelecimento.avaliacoes.equipamentos.map(function(avaliacao) {
-      return avaliacao.nota;
-    })),
-    medicamentos: average(estabelecimento.avaliacoes.medicamentos.map(function(avaliacao) {
-      return avaliacao.nota;
-    })),
-    infraestrutura: average(estabelecimento.avaliacoes.infraestrutura.map(function(avaliacao) {
-      return avaliacao.nota;
-    }))
+    presencaEquipe: this.getNota(estabelecimento, "presencaEquipe"),
+    tempoEspera: this.getNota(estabelecimento, "tempoEspera"),
+    qualidadeAtendimento: this.getNota(estabelecimento, "qualidadeAtendimento"),
+    equipamentos: this.getNota(estabelecimento, "equipamentos"),
+    medicamentos: this.getNota(estabelecimento, "medicamentos"),
+    infraestrutura: this.getNota(estabelecimento, "infraestrutura")
   }
   callback(notas);
 }

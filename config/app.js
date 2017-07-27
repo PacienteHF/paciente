@@ -46,17 +46,17 @@ app.get("/privacidade", function(req, res) {
 app.get("/ranking", function(req, res) {
   var order = Number(req.query.order);
   var ranking = {};
-  controller.getRanking("presencaEquipe", order, function(rankingPresenca) {
+  controller.getRankingTotal("presencaEquipe", order, function(rankingPresenca) {
     ranking.presencaEquipe = rankingPresenca;
-    controller.getRanking("tempoEspera", order, function(rankingEspera) {
+    controller.getRankingTotal("tempoEspera", order, function(rankingEspera) {
       ranking.tempoEspera = rankingEspera;
-      controller.getRanking("qualidadeAtendimento", order, function(rankingAtendimento) {
+      controller.getRankingTotal("qualidadeAtendimento", order, function(rankingAtendimento) {
         ranking.qualidadeAtendimento = rankingAtendimento;
-        controller.getRanking("medicamentos", order, function(rankingMedicamentos) {
+        controller.getRankingTotal("medicamentos", order, function(rankingMedicamentos) {
           ranking.medicamentos = rankingMedicamentos;
-          controller.getRanking("equipamentos", order, function(rankingEquipamentos) {
+          controller.getRankingTotal("equipamentos", order, function(rankingEquipamentos) {
             ranking.equipamentos = rankingEquipamentos;
-            controller.getRanking("infraestrutura", order, function(rankingInfraestrutura) {
+            controller.getRankingTotal("infraestrutura", order, function(rankingInfraestrutura) {
               ranking.infraestrutura = rankingInfraestrutura;
               res.json(ranking);
             });
@@ -64,6 +64,32 @@ app.get("/ranking", function(req, res) {
         });
       });
     });
+  });
+});
+
+app.get("/rankingTotal", function(req, res) {
+  var order = Number(req.query.order);
+  var type = req.query.type;
+  controller.getRankingTotal(type, order, function(rankingTotal) {
+    res.json(rankingTotal);
+  });
+});
+
+app.get("/rankingCidade", function(req, res) {
+  var order = Number(req.query.order);
+  var type = req.query.type;
+  var cidade = req.query.cidade;
+  controller.getRankingCidade(type, order, cidade, function(ranking) {
+    res.json(ranking);
+  });
+});
+
+app.get("/rankingCidadeTotal", function(req, res) {
+  var order = Number(req.query.order);
+  var type = req.query.type;
+  var cidade = req.query.cidade;
+  controller.getRankingCidade(type, order, cidade, function(ranking) {
+    res.json(ranking);
   });
 });
 
