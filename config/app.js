@@ -24,6 +24,7 @@ app.use('/autocomplete', express.static('./node_modules/devbridge-autocomplete/d
 app.use('/vue', express.static('./node_modules/vue/dist/'));
 app.use('/vue-resource', express.static('./node_modules/vue-resource/dist/'));
 app.use('/animate-css', express.static('./node_modules/animate.css/'));
+app.use('/noty', express.static('./node_modules/noty/lib/'));
 
 app.use('/', router);
 
