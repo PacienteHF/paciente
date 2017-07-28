@@ -11,12 +11,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/style_paginaDispositivo.css">
   <link rel="stylesheet" href="/animate-css/animate.min.css">
-  <script src="/jquery/jquery.min.js"></script>
-  <script src="/ajax/jquery.form.min.js"></script>
-  <script src="/js/ajax.js"></script>
-  <script src="/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/js/local.js" charset="utf-8"></script>
-  <script src="/js/recaptcha.js" charset="utf-8"></script>
+  <link href="/noty/noty.css" rel="stylesheet">
 
   <!--colocanto icone na aba da pagina-->
   <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
@@ -39,7 +34,7 @@
           <div class="modal-header corpoformulario">
 
             <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar a instituição</label>
-<!-- classificadores -->
+            <!-- classificadores -->
             <div class=" conteiner classificacao">
               <input type="radio"  id="i11" name="nota" value="1" />
               <label class="reacao" for="i11"><img class="img-responsive center-block" src="/reacao11.png" alt=""></label>
@@ -543,7 +538,7 @@
 
           <div class="topo2-texto ">
             <span class=" topo2-texto1"> <b>NOME: &nbsp </b > <%= nome %></span>
-            <span class=" topo2-texto2 "><br><b>END.:&nbsp &nbsp</b> <%= endereco %></span>
+            <span class=" topo2-texto2 "><br><b>END.:&nbsp &nbsp</b> <%= endereco %>, <%= numero %>, <%= bairro %>, <%= municipio %></span>
 
           </div>
       </div>
@@ -664,5 +659,14 @@
     <p class="text-center textorodape">©Paciente 2017</p>
 
   </section>
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/ajax/jquery.form.min.js"></script>
+  <script src="/noty/noty.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/js/local.js" charset="utf-8"></script>
+  <script src="/js/recaptcha.js" charset="utf-8"></script>
+  <script src="/vue/vue.min.js"></script>
+  <script src="/js/ajax.js"></script>
+  <script src="/js/recaptcha.js" charset="utf-8"></script>
 </body>
 </html>
