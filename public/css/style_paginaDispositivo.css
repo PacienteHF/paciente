@@ -1,7 +1,7 @@
 /*editando nav, menu*/
 
 .topo{
-    background-color: #9f346c;
+    background-color: #170C48;;
     padding-top: 0%;
      border-radius: 0px;
 
@@ -48,7 +48,7 @@
 	 	margin-bottom: 2% !important;
 }
 .topo2-texto1{
- 	color: #602341 !important;
+ 	color: #170C48 !important;
 	font-size: 25px !important;
 	font-family: 'Nunito', sans-serif!important;
 	padding: 10px;
@@ -56,7 +56,7 @@
 
 .topo2-texto2{
  	padding-top: 2%;
- 	color: #9F346C;
+ 	color: #170C48 ;
 	font-size: 20px !important;
 	font-family: 'Nunito', sans-serif!important;
 		padding: 10px;
@@ -106,7 +106,7 @@
 }
 
 .titulop3{
-	color: #9f346c;
+	color: #170C48;
 	font-size: 40px !important;
 	font-family: 'Nunito', sans-serif!important;
 	padding: 30px;
@@ -127,9 +127,9 @@
 	background-size:cover;
 	font-family: 'Nunito', sans-serif!important;
 	margin: 0px;
-	color: #602341;
+	color: #170C48 ;
     padding: 5%;
-    border-color: #F0F0F0;
+
 
 }
 
@@ -139,7 +139,7 @@
 	font-family: 'Nunito', sans-serif!important;
 	padding: 0px;
 	margin: 0px;
-	color: #602341;
+	color: #170C48 ;
 	padding: 5%;
 }
 .ranking03{
@@ -148,7 +148,7 @@
 	font-family: 'Nunito', sans-serif!important;
 	padding: 0px;
 	margin: 0px;
-	color: #602341;
+	color: #170C48 ;
     padding: 5%;
 }
 .ranking04{
@@ -157,7 +157,7 @@
 	font-family: 'Nunito', sans-serif!important;
 	padding: 0px;
 	margin: 0px;
-	color: #602341;
+	color: #170C48 ;
 	padding: 5%;
 }
 .ranking05{
@@ -166,7 +166,7 @@
 	font-family: 'Nunito', sans-serif!important;
 	padding: 0px;
 	margin: 0px;
-	color: #602341;
+	color: #170C48 ;
     padding: 5%;
 }
 .ranking06{
@@ -175,12 +175,12 @@
 	font-family: 'Nunito', sans-serif!important;
 	padding: 0px;
 	margin: 0px;
-	color: #602341;
+	color: #170C48 ;
 	padding: 5%;
 }
 
 .avaliar{
-	background-color: #690042 ;
+	background-color: #170C48 ;
 	padding: 8px;
 	padding-left: 30px;
 	padding-right: 30px;
@@ -191,7 +191,7 @@
 }
 
 .avaliar:hover{
-	background-color: #9f346c;
+	background-color: #00A6F3;
 	color: #fff;
 
 }
@@ -203,6 +203,15 @@
 
 }
 
+.tituloavalia{
+	font-size: 25px;
+}
+.descricao{
+	margin-top: 10px !important;
+	margin-bottom: 40px !important;
+	font-size: 18px;
+
+}
 
  @media (max-width: 700px){
  	.titulop3{
@@ -229,16 +238,7 @@ tr:hover{
 /*rodape*/
 
 
-.p5{
-	background-color: #602341;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0 !important;
-	margin: 0!important;
-	margin-top: 100px !important;
-	
-}
+
 
 ul.topnav {
 	color: #fff;
@@ -273,19 +273,32 @@ ul.topnav li a:hover{background-color: #9F346C;}
 x
 x
 x*/
-.p6{
-	background-color: #9F346C!important;
-	padding: 10px;
+.p5{
+	margin-top: 100px; 
+	background-color: #170C48;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	
 }
+.titulop6{
+	color: #170C48;
+	font-size: 40px !important;
+	font-family: 'Nunito', sans-serif!important;
+    list-style-type: none;
+}
+.p6{
+	background-color: #080029!important;
+	padding: 10px;
+}
 .textorodape{
-	color: #602341;
+	color: #E6EBF3;
 	font-size: 15px !important;
 	font-family: 'Nunito', sans-serif!important;
 	padding-top: 2%;
-
 }
+ul.topnav li a:hover{background-color: #080029;color:#fff;}
 
 /*css popup*/
 /*
@@ -294,11 +307,13 @@ x*/
 x*/
 
 /*duvidas de campos do formulario*/
+
+
 .duvida01{
 	color: #ccc;
 }
 .duvida01:hover{
-	color: #A9346F;
+	color: #170C48;
 }
 
 .corpoformulario{
@@ -338,7 +353,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked+.reacao {
-    background-color: #5D2A43;
+    background-color: #170C48;
+
 }
 .pulalinhaform{
 	margin-top: 20px;
@@ -346,6 +362,8 @@ input[type="radio"]:checked+.reacao {
 .pulalinhaform2{
 	margin-top: 0px;
 }
+
+
 
 .enviar{
 	display: flex;
@@ -355,7 +373,7 @@ input[type="radio"]:checked+.reacao {
 }
 
 .btn-enviar{
-	background-color: #A9346F;
+	background-color: #170C48;
 	color: #fff;
 	margin: 20px;
 	padding: 8px;

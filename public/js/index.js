@@ -1,3 +1,32 @@
+
+ function collapseNavbar(){
+    if($(".navbar").offset().top>50){
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+        $( "#logomenu" ).css("display", "block");
+    
+    }else{
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $( "#logomenu" ).css("display", "none");
+    }}
+ $(window).scroll(collapseNavbar);
+ $(document).ready(collapseNavbar);
+ 
+ $(function(){
+    $('a.page-scroll').bind('click',function(event){
+        var $anchor=$(this);
+        $('html, body').stop().animate({
+            scrollTop:$($anchor.attr('href')).offset().top},1500,'easeInOutExpo');
+        event.preventDefault();});});
+
+
+ $('.navbar-collapse ul li a').click(function(){
+    $(".navbar-collapse").collapse('hide');
+ });
+
+ 
+
+
+
 $(document).ready(function(){
     $("#flip1").click(function(){
         $("#panel1").slideToggle("slow");
@@ -83,17 +112,4 @@ $(document).ready(function(){
 
 
 
-jQuery(document).ready(function($) {
-    $(".scroll").click(function(event){
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 600);
-   });
-});
 
-//criar e exluir div video//
-$(document).ready(function(){
-    if($(window).width()<800){
-        $("#fundotopo").remove();
-
-    }
-});

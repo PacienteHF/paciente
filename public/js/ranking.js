@@ -20,7 +20,7 @@ function filtra(ranking, cidade) {
 }
 
 var app = new Vue({
-  el: '#fundoP3',
+  el: '#p3rank',
   data: {
     filtro: null,
     checkbox: checkbox,
@@ -65,17 +65,14 @@ var app = new Vue({
 
 $(document).ready(function(){
   $('#mudaropcao').change(function() {
-    if(window.document.getElementById("fundoP3").name==="mais") {
+    if(window.document.getElementById("p3rank").name==="mais") {
       app.checkbox = true;
       // atualiza ranking
       Object.keys(app.ranking).forEach(function(key) {
         app.ranking[key] = view(rankingAtual[key], -1);
       })
-      $('#fundoP3').css("background-color", "#602341");
-      $('.ranking01').css("background-color", "#602341");
-      $('.ranking02').css("background-color", "#9f346c");
 
-      window.document.getElementById("fundoP3").name="menos";
+      window.document.getElementById("p3rank").name="menos";
     }
     else {
       app.checkbox = false;
@@ -83,11 +80,7 @@ $(document).ready(function(){
       Object.keys(app.ranking).forEach(function(key) {
         app.ranking[key] = view(rankingAtual[key], 1);
       })
-      $('#fundoP3').css("background-color",  "#450726");
-      $('.ranking01').css("background-color", "#9f346c");
-      $('.ranking02').css("background-color", "#450726");
-
-      window.document.getElementById("fundoP3").name="mais";
+      window.document.getElementById("p3rank").name="mais";
     }
   });
 

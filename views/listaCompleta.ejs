@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista Completa</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/listaCompleta.css">
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+
+  <!--colocanto icone na aba da pagina-->
+  <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
+</head>
+
+<body>
+<!--popups modals-->
+
+<!--modal avaliar falta de medicos-->
+
+  <!--conteiner de toda a pagina-->
+  <header>
+      <nav class=" navbar navbar-fixed topo">
+        <div class="logo">
+            <a href="/" type="button" id="logoPaciente"> <img src="/logo2.png" class="img-responsive center-block logopaciente" alt="Logo Paciente - home"></a>
+          </div>
+        </div>
+      </nav>
+
+      <nav class=" navbar  navbar-fixed topo2">
+        <div class="topo2-info">
+
+            <h3>Lista Completa</h3>
+        </a>
+        </div>
+      </nav>
+    </header>
+     <!-- <i class="fa fa-heartbeat fa-2x bola" aria-hidden="true"></i> -->
+<section class="container">
+
+<div class="table-responsive">
+              <table class="table table-striped table-condensed table-hover">
+              <tr>
+                <th>Posição</th>
+                <th>Nome</th>
+                <th>Município</th>
+                <th>Bairro</th>
+                <th>Rua</th>
+                <th>Nota</th>
+              </tr>
+               <tr>
+                <td> {{ item.nome }} </td>
+                <td> {{ item.avgNota }} </td>
+                <td> {{ item.nome }} </td>
+                <td> {{ item.avgNota }} </td>
+                <td> {{ item.nome }} </td>
+                <td> {{ item.avgNota }} </td>
+              </tr>
+              <tr>
+                <td> {{ item.nome }} </td>
+                <td> {{ item.avgNota }} </td>
+                <td> {{ item.nome }} </td>
+                <td> {{ item.avgNota }} </td>
+                <td> {{ item.nome }} </td>
+                <td> {{ item.avgNota }} </td>
+              </tr>
+             
+
+            </table>
+            </div>
+</section>
+
+  
+
+
+<section class="p5 " >
+<ul class="topnav">
+  <li><a href="/">Home</a></li>
+  <li><a href="sobre">Sobre</a></li>
+  <li><a href="privacidade">Privacidade</a></li>
+  <li class="right"><a href="ajuda">Ajuda</a></li>
+</ul>
+
+  </section>
+
+  <section class="p6">
+    <p class="text-center textorodape">©Paciente 2017</p>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -25,6 +25,7 @@ app.use('/vue', express.static('./node_modules/vue/dist/'));
 app.use('/vue-resource', express.static('./node_modules/vue-resource/dist/'));
 app.use('/animate-css', express.static('./node_modules/animate.css/'));
 app.use('/noty', express.static('./node_modules/noty/lib/'));
+app.use('/hover', express.static('./node_modules/hover.css/css/'));
 
 app.use('/', router);
 
@@ -34,6 +35,10 @@ app.get("/", function(req, res) {
 
 app.get("/sobre", function(req, res) {
   res.render('sobre');
+});
+
+app.get("/listaCompleta", function(req, res) {
+  res.render('listaCompleta');
 });
 
 app.get("/ajuda", function(req, res) {

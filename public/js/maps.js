@@ -67,6 +67,6 @@ function initMap() {
     });
 
     var markerCluster = new MarkerClusterer(map, markers,
-      {imagePath: 'https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/images/m'});
+      {imagePath: '/img/m'});
   });
 }
