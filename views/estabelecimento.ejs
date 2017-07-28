@@ -15,8 +15,6 @@
 
   <!--colocanto icone na aba da pagina-->
   <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
-  <!-- nao sou um robo -->
-  <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit&hl=pt-BR" async defer></script>
 </head>
 
 <body>
@@ -51,7 +49,7 @@
               <input type="radio"  id="i15"  name="nota" value="5" />
               <label class="reacao" for="i15"><img class="img-responsive center-block" src="/reacao15.png" alt=""></label>
             </div>
-<!-- resto do formulario -->
+            <!-- resto do formulario -->
 
             <div class="row pulalinhaform"><br>
               <div class="turno col-xs-6">
@@ -129,9 +127,9 @@
             </div>
           </div>
        </div>
-       <div id="RecaptchaField1" data-theme='dark'style="margin: 0 auto; display:table"></div>
+       <div id="RecaptchaField1" style="margin: 0 auto; display:table" data-callback="enableBtn"></div>
           <div class="modal-header enviar">
-            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+            <button type="submit" class="btn btn-default btn-enviar" id="btn-presenca"><b>E N V I A R</b></button>
           </div>
       </form>
     </div>
@@ -279,7 +277,7 @@
           </div>
           <div id="RecaptchaField2" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
-            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+            <button type="submit" class="btn btn-default btn-enviar" id="btn-demora"><b>E N V I A R</b></button>
           </div>
         </form>
       </div>
@@ -341,7 +339,7 @@
           </div>
           <div id="RecaptchaField3" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
-            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+            <button type="submit" class="btn btn-default btn-enviar" id="btn-equipamento"><b>E N V I A R</b></button>
           </div>
         </form>
       </div>
@@ -413,7 +411,7 @@
           </div>
           <div id="RecaptchaField4" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
-            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+            <button type="submit" class="btn btn-default btn-enviar" id="btn-atendimento"><b>E N V I A R</b></button>
           </div>
         </form>
       </div>
@@ -470,7 +468,7 @@
           </div>
           <div id="RecaptchaField5" style="margin: 0 auto; display:table"></div>
           <div class="modal-header enviar">
-            <button type="submit" class="btn btn-default btn-enviar"><b>E N V I A R</b></button>
+            <button type="submit" class="btn btn-default btn-enviar" id="btn-medicamento"><b>E N V I A R</b></button>
           </div>
         </form>
       </div>
@@ -659,12 +657,13 @@
     <p class="text-center textorodape">©Paciente 2017</p>
 
   </section>
+  <!-- nao sou um robo -->
+  <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit&hl=pt-BR" async defer></script>
   <script src="/jquery/jquery.min.js"></script>
   <script src="/ajax/jquery.form.min.js"></script>
   <script src="/noty/noty.min.js"></script>
   <script src="/bootstrap/js/bootstrap.min.js"></script>
   <script src="/js/local.js" charset="utf-8"></script>
-  <script src="/js/recaptcha.js" charset="utf-8"></script>
   <script src="/vue/vue.min.js"></script>
   <script src="/js/ajax.js"></script>
   <script src="/js/recaptcha.js" charset="utf-8"></script>
