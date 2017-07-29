@@ -23,11 +23,11 @@
     $(".navbar-collapse").collapse('hide');
  });
 
- 
-
 
 
 $(document).ready(function(){
+    
+
     $("#flip1").click(function(){
         $("#panel1").slideToggle("slow");
 

@@ -10,10 +10,10 @@ body {
 h3{
 	font-size: 40px;
 	text-align: center;
-	color: #9f346c;
-	align-items: center;
-	margin-right: 20%;
+	color: #170C48;
+	 margin-right: 20%;
  	margin-left: 20%;
+
  	justify-content: center;
 	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                  0px 8px 13px rgba(0,0,0,0.1),
@@ -36,10 +36,9 @@ h2{
 /*editando nav, menu*/
 
 .topo{
-    background-color: #9f346c;
+    background-color: #170C48;
     padding-top: 0%;
-     border-radius: 0px;
-
+    border-radius: 0px;
 }
 
 .logo{
@@ -50,9 +49,9 @@ h2{
 
  .logopaciente{
  	opacity:0.65;
- 	padding-top:10px;
- 	padding-bottom: 5px;
- 	margin: 10px;
+ 	padding-top:8px;
+ 	padding-bottom: 2px;
+ 	margin: 8px;
  }
 
  .logopaciente:hover{
@@ -106,15 +105,6 @@ h2{
 	align-items: center;
 }
 
-.p5{
-	background-color: #602341;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 0 !important;
-	margin: 0!important;
-	
-}
 
 ul.topnav {
 	color: #fff;
@@ -135,13 +125,6 @@ ul.topnav li a {
     text-decoration: none;
 }
 
-
-
-.p6{
-	background-color: #9F346C!important;
-	padding: 20px;
-	
-}
 
 .panel-title {
 	
@@ -166,3 +149,29 @@ ul.topnav li a {
 .bottom {
 	padding-bottom: 2em;
 }
+
+.p5{
+	margin-top: 60px; 
+	background-color: #170C48;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.titulop6{
+	color: #170C48;
+	font-size: 40px !important;
+	font-family: 'Nunito', sans-serif!important;
+    list-style-type: none;
+}
+.p6{
+	background-color: #080029!important;
+	padding: 10px;
+}
+.textorodape{
+	color: #E6EBF3;
+	font-size: 15px !important;
+	font-family: 'Nunito', sans-serif!important;
+	padding-top: 2%;
+}
+ul.topnav li a:hover{background-color: #080029;color:#fff;}

@@ -4,11 +4,10 @@ body {
 	text-align: justify;
 }
 
-h3{
+h3,h4{
 	font-size: 40px;
 	text-align: center;
-	color: #9f346c;
-	
+	color: #170C48;
 	 margin-right: 20%;
  	margin-left: 20%;
 
@@ -17,6 +16,10 @@ h3{
                  0px 8px 13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
 
+}
+h4{
+	font-size: 25px;
+	margin-bottom: 5%;
 }
 hr{
 
@@ -27,9 +30,9 @@ hr{
 /*editando nav, menu*/
 
 .topo{
-    background-color: #9f346c;
+    background-color: #170C48;
     padding-top: 0%;
-     border-radius: 0px;
+    border-radius: 0px;
 
 }
 
@@ -41,9 +44,9 @@ hr{
 
  .logopaciente{
  	opacity:0.65;
- 	padding-top:10px;
- 	padding-bottom: 5px;
- 	margin: 10px;
+ 	padding-top:8px;
+ 	padding-bottom: 2px;
+ 	margin: 8px;
  }
 
  .logopaciente:hover{
@@ -80,15 +83,35 @@ td, th{
 }
 /*rodape*/
 
+.titulop6{
+	color: #170C48;
+	font-size: 40px !important;
+	font-family: 'Nunito', sans-serif!important;
+    list-style-type: none;
+}
+.p6{
+	background-color: #080029!important;
+	padding: 10px;
+
+}
+.textorodape{
+	color: #E6EBF3;
+	font-size: 15px !important;
+	font-family: 'Nunito', sans-serif!important;
+	padding-top: 2%;
+}
+ul.topnav li a:hover{background-color: #080029;color:#fff;}
+
 .p5{
 
-	background-color: #602341;
+	background-color: #170C48;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	display: fixed;
-	margin-top: 5%;
+	margin-top: 10%;
 	margin-bottom: 0px;
+
 	
 }
 
@@ -111,8 +134,3 @@ ul.topnav li a {
     text-decoration: none;
 }
 
-.p6{
-	background-color: #9F346C!important;
-	padding: 20px;
-	
-}

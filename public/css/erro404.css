@@ -1,0 +1,16 @@
+
+body{
+	background-color: #0E004C;
+}
+.texto{
+	color: #fff;
+	font-size: 120%;
+}
+.texto:hover{
+	color: #00A6F3;
+}
+
+.erro404{
+	margin-top: 10%;
+	margin-bottom: 0;
+}

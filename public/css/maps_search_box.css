@@ -50,3 +50,36 @@
 .autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
 .autocomplete-group { padding: 2px 5px; }
 .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+#pac-input{
+    color: #000;
+  font-size: 15px !important;
+  font-family: 'Nunito', sans-serif!important;
+  width: 35%;
+}
+@media (max-width: 700px){
+  #pac-input {
+  width: 75%;
+  }}
+
+.autocomplete-suggestion {
+      color: #BDBEBF;
+      font-size: 15px !important;
+      font-family: 'Nunito', sans-serif!important;
+      margin: 2px;
+      padding-top: 5px;
+      padding-bottom: 5px;  
+}
+.autocomplete-suggestion:nth-child(odd) {
+    background: #F5F5F5;
+}
+
+.autocomplete-suggestions strong {
+  color: #00A6F3;
+  }
+
+.autocomplete-suggestion:hover{
+  color: #fff;
+  background-color: #0E004C;
+
+}
