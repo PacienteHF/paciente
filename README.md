@@ -17,7 +17,7 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 5. Instale as dependências do sistema com `$npm install`;
 6. Insira a base de dados. Para isso vá para a pasta 'dados' que está dentro da pasta raiz do projeto e rode `$node .\insertDadosDB.js`;
 7. Volte para a pasta raiz e rode `$node .\server.js`;
-8. Em qualquer navegador vá para [http://localhost:3000](#http://localhost:3000/)
+8. Em qualquer navegador vá para [http://localhost:3000](http://localhost:3000/)
 
 ### Fazendo Deploy
 
