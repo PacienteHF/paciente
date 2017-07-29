@@ -36,7 +36,8 @@ Antes de qualquer coisa, é necessário que se tenha uma conta cadastrada no [He
 1. Na Home de sua conta, clique no nome do banco de dados criado acima;
 2. Para se conectar ao banco teremos que criar um usuário e senha. Para isso clique na aba *Users* e em seguida *Add database user*;
 3. Escolha o nome de usuário e senha que preferir;
-4. 
+4. Adicione ao código em (config\db.js) `mongoose.connect("")` e a URI gerada na criação do banco de dados dentro dos parênteses. Não esqueça de substituir <dbuser> pelo usuário criado e <dbpassword> pela senha escolhida;
+5. Comente a linha `mongoose.connect("mongodb://localhost/saude");`, que está no mesmo script 
 
 
 ### Como Usar
