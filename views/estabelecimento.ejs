@@ -33,10 +33,10 @@
           <input type="text" name="type" style="display: none" value="presencaEquipe">
           <div class="modal-header corpoformulario">
 
-            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar a instituição</label>
+            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar o estabelecimento</label>
             <!-- classificadores -->
             <div class=" conteiner classificacao">
-              <input type="radio"  id="i11" name="nota" value="1" />
+              <input type="radio"  id="i11" name="nota" value="1" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Classificação', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               <label class="reacao" for="i11"><img class="img-responsive center-block" src="/reacao11.png" alt=""></label>
 
               <input type="radio"  id="i12"  name="nota" value="2"/>
@@ -57,13 +57,13 @@
               <div class="turno col-xs-6">
                 <label> Data*: <a class="duvida01 " data-toggle="tooltip" title="Informe a data que o(a) senhor(a) esteve no estabelecimento"  >
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
-                <input type="date" name="data" class="form-control" >
+                <input type="date" name="data" class="form-control" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher o campo Data', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               </div>
               <div class="data col-xs-6">
                 <label> Turno*: <a class="duvida01 " data-toggle="tooltip" title="Informe o turno que o(a) senhor(a) esteve no estabelecimento."  >
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                 </a></label>
-                <select class="form-control" name="turno" placeholder=".col-xs-6">
+                <select class="form-control" name="turno" placeholder=".col-xs-6" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher o Turno', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
                   <option selected="true" disabled="disabled">Selecione...</option>
                   <option value="Manhã">Manhã</option>
                   <option value="Tarde">Tarde</option>
@@ -113,7 +113,7 @@
           <div class="row pulalinhaform2">
             <div class="container-fluid">
               <div class="form-group"><br>
-                <label>O que foi dito pelo instituição? <a class="duvida01" data-toggle="tooltip" title="Informe o que foi repassado pelos funcionários.">
+                <label>O que foi dito pela instituição? <a class="duvida01" data-toggle="tooltip" title="Informe o que foi repassado pelos funcionários.">
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
                 <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
               </div>
@@ -149,10 +149,10 @@
           <input type="text" name="type" style="display: none" value="tempoEspera">
           <div class="modal-header corpoformulario">
 
-            <label class="tituloformularioclassificacao"> Classificação: Escolha uma reação para classificar a instituição </label>
+            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar o estabelecimento </label>
             <!-- classificadores -->
             <div class=" conteiner classificacao">
-              <input type="radio"  id="i21" name="nota" value="1" />
+              <input type="radio"  id="i21" name="nota" value="1" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Classificação', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               <label class="reacao" for="i21"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
 
               <input type="radio"  id="i22"  name="nota" value="2"/>
@@ -173,13 +173,13 @@
               <div class="turno col-xs-6">
                 <label>Data*: <a class="duvida01 " data-toggle="tooltip" title="Informe a data que o(a) senhor(a) esteve no estabelecimento."  >
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
-                <input type="date" name="data" class="form-control" >
+                <input type="date" name="data" class="form-control" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Data', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               </div>
               <div class="data col-xs-6">
                 <label>Turno*: <a class="duvida01 " data-toggle="tooltip" title="Informe o turno que o(a) senhor(a) esteve no estabelecimento."  >
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                 </a></label>
-                <select class="form-control" name="turno" placeholder=".col-xs-6">
+                <select class="form-control" name="turno" placeholder=".col-xs-6" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher o Turno', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
                   <option selected="true" disabled="disabled">Selecione...</option>
                   <option value="Manhã">Manhã</option>
                   <option value="Tarde">Tarde</option>
@@ -193,7 +193,7 @@
                 <label>Tempo esperado*:<a class="duvida01" data-toggle="tooltip" title="Informe o tempo de espera para ser atendido.">
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                 </a></label>
-                <select class="form-control" name="tempoEsperado">
+                <select class="form-control" name="tempoEsperado" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher o Tempo Esperado', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
                  <option selected="true" disabled="disabled">Selecione...</option>
                   <option value="Até 1 hora">Até 1 hora</option>
                   <option value="Entre 1 e 2 horas">Entre 1 e 2 horas</option>
@@ -297,10 +297,10 @@
         <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="equipamentos">
           <div class="modal-header corpoformulario">
-            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar a instituição </label>
+            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar o estabelecimento </label>
             <!-- classificadores -->
             <div class=" conteiner classificacao">
-              <input type="radio"  id="i31" name="nota" value="1" />
+              <input type="radio"  id="i31" name="nota" value="1" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Classificação', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               <label class="reacao" for="i31"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
 
               <input type="radio"  id="i32"  name="nota" value="2"/>
@@ -358,10 +358,10 @@
         <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="qualidadeAtendimento">
           <div class="modal-header corpoformulario">
-            <label class="tituloformularioclassificacao"> Classificação: Escolha uma reação para classificar a instituição </label>
+            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar o estabelecimento </label>
             <!-- classificadores -->
             <div class=" conteiner classificacao">
-              <input type="radio"  id="i41" name="nota" value="1" />
+              <input type="radio"  id="i41" name="nota" value="1" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Classificação', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               <label class="reacao" for="i41"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
 
               <input type="radio"  id="i42"  name="nota" value="2"/>
@@ -383,13 +383,13 @@
               <div class="turno col-xs-6">
                 <label> Data*: <a class="duvida01 " data-toggle="tooltip" title="Informe a data que o(a) senhor(a) esteve no estabelecimento."  >
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
-                <input type="date" name="bday" class="form-control" >
+                <input type="date" name="bday" class="form-control" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Data', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               </div>
               <div class="data col-xs-6">
                 <label> Turno*: <a class="duvida01 " data-toggle="tooltip" title="Informe o turno que o(a) senhor(a) esteve no estabelecimento."  >
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                 </a></label>
-                <select class="form-control" name="turno" placeholder=".col-xs-6">
+                <select class="form-control" name="turno" placeholder=".col-xs-6" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher o Turno', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
                   <option selected="true" disabled="disabled">Selecione...</option>
                   <option value="Manhã">Manhã</option>
                   <option value="Tarde">Tarde</option>
@@ -430,10 +430,10 @@
         <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="medicamentos">
           <div class="modal-header corpoformulario">
-            <label class="tituloformularioclassificacao"> Classificação: Escolha uma reação para classificar a instituição </label>
+            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar o estabelecimento </label>
             <!-- classificadores -->
             <div class=" conteiner classificacao">
-              <input type="radio"  id="i51" name="nota" value="1" />
+              <input type="radio"  id="i51" name="nota" value="1" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Classificação', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               <label class="reacao" for="i51"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
 
               <input type="radio"  id="i52"  name="nota" value="2"/>
@@ -457,7 +457,7 @@
               <textarea class="form-control" rows="3" name="medicamento"></textarea>
             </div>
             <div class="form-group">
-              <label>Oque foi dito pela instituição? <a class="duvida01" data-toggle="tooltip" title="Informe o que foi repassado pelos funcionários do estabelecimento." >
+              <label>O que foi dito pela instituição? <a class="duvida01" data-toggle="tooltip" title="Informe o que foi repassado pelos funcionários do estabelecimento." >
               <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
               <textarea class="form-control" rows="3" name="respostaInstituicao"></textarea>
             </div>
@@ -487,10 +487,10 @@
         <form class="form-avaliacao" action="/estabelecimentos/<%= id %>" method="post">
           <input type="text" name="type" style="display: none" value="infraestrutura">
           <div class="modal-header corpoformulario">
-            <label class="tituloformularioclassificacao"> Classificação: Escolha uma reação para classificar a instituição </label>
+            <label class="tituloformularioclassificacao"> Classificação*: Escolha uma reação para classificar o estabelecimento </label>
             <!-- classificadores -->
             <div class=" conteiner classificacao">
-              <input type="radio"  id="i61" name="nota" value="1" />
+              <input type="radio"  id="i61" name="nota" value="1" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher a Classificação', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               <label class="reacao" for="i61"><img class="img-responsive center-block" src="/reacao01.png" alt=""></label>
 
               <input type="radio"  id="i62"  name="nota" value="2"/>
