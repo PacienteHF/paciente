@@ -64,7 +64,7 @@
                   col-sm-8 col-sm-offset-2
                   col-md-4 col-md-offset-4
                   col-lg-4 col-lg-offset-4">
-                  <a href="#"><img src="logoteste.png" class="img-responsive center-block" alt="Logo Ham.io" id="logo"></a>
+                  <a href="#"><img src="/logoteste.png" class="img-responsive center-block" alt="Logo Ham.io" id="logo"></a>
       </div>
 	  	<div class="row col-xs-12 col-xs-offset-
                 col-sm-9 col-sm-offset-1
@@ -128,7 +128,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a href="listaCompleta" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/presencaEquipe?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
 
           </div>
@@ -151,7 +151,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a href="#" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/tempoEspera?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -173,7 +173,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a href="#" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/qualidadeAtendimento?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -197,7 +197,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a href="#" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/equipamentos?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -220,7 +220,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a href="#" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/medicamentos?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -242,7 +242,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a href="#" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/infraestrutura?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
         <div class="row espEntreLinha">
