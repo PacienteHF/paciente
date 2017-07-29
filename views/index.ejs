@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <title>Paciente - Colabore, informe, se informe</title>
-	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="/css/maps_search_box.css">
+  <link rel="stylesheet" type="text/css" href="/css/maps_search_box.css">
 <!-- hover css -->
   <link rel="stylesheet" type="text/css" href="/hover/hover.css">
     <!- escolher melhor e pior rank -->
@@ -53,6 +53,7 @@
         </div>
         <!-- /.container -->
     </nav>
+
 
 
 
@@ -102,9 +103,9 @@
                     col-md-8 col-md-offset-2
                     col-lg-8 col-lg-offset-2">
 				<input type="text" class="form-control input-lg caixacidade" id="cidades" placeholder="Digite uma cidade">
-				<div v-if="filtro">
-					<p>Mostrando resultados para: {{ filtro }}</p>
-					<button type="button" v-on:click="removeFiltro" name="btn">Remover Filtro</button>
+				<div class="textoinvisivelcidade" v-if="filtro">
+          <p class="text-center titulop3-2">Mostrando resultados para: {{ filtro }}</p>
+					<button class="btnRemover" type="button" v-on:click="removeFiltro" name="btn">Remover Filtro</button>
 				</div>
       </div>
       <div class="container-fluid ranks">
@@ -322,18 +323,19 @@
     <p class="text-center textorodape">©Paciente 2017</p>
 
   </section>
-	<script src="/jquery/jquery.min.js"></script>
-	<script src="/bootstrap/js/bootstrap.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
-	<script src="/bootstrap-switch/js/bootstrap-switch.min.js"></script>
-	<script src="/autocomplete/jquery.autocomplete.js"></script>
-	<script src="/vue/vue.min.js"></script>
-	<script src="/vue-resource/vue-resource.js" charset="utf-8"></script>
-	<script src="/js/ranking.js" charset="utf-8"></script>
-	<script src="/js/index.js" charset="utf-8"></script>
-	<script src="/js/maps.js" charset="utf-8"></script>
-	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw-kUn3g74P2z_rTgItryoWqUYfWZbqXo&libraries=places&callback=initMap" async defer></script>
-	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="/jquery/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+  <script src="/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+  <script src="/autocomplete/jquery.autocomplete.js"></script>
+  <script src="/vue/vue.min.js"></script>
+  <script src="/vue-resource/vue-resource.js" charset="utf-8"></script>
+  <script src="/js/ranking.js" charset="utf-8"></script>
+  <script src="/js/index.js" charset="utf-8"></script>
+  <script src="/js/maps.js" charset="utf-8"></script>
+  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw-kUn3g74P2z_rTgItryoWqUYfWZbqXo&libraries=places&callback=initMap" async defer></script>
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
 </body>
 </html>
