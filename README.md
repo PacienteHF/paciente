@@ -21,6 +21,22 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 
 ### Fazendo Deploy
 
+Antes de qualquer coisa, é necessário que se tenha uma conta cadastrada no [Heroku](https://www.heroku.com/) (uma plataforma em nuvem como um serviço que suporta várias linguagens de programação que é usada como um modelo de implantação de aplicativos da Web) e também no [mLab](https://mlab.com/) (onde iremos hospedar o banco de dados).
+
+#### Hospedando o Banco de Dados
+
+##### Criando o Banco de Dados
+1. Na home de sua conta no mLab, em *MongoDB Deployments*, clique em *Create New*;
+2. Em *Cloud Provider* sugerimos que selecione a plataforma da Amazon e em *Plan Type* ultizamos para testes o plano Sandbox(Free). Continue;
+3. Em *AWS Region* sugerimos que selecione US East (Virginia)(us-east-1). Continue;
+4. Em *Database Name* escolha um nome para a base de dados. Utilizamos o nome "saude" mas sinta-se livre a mudar. Continue;
+5. Submit Order.
+
+##### Conectando a aplicação ao Banco de Dados criado
+1. Na Home de sua conta, clique no nome do banco de dados criado acima;
+2. Para se conectar ao banco teremos que criar um usuário e senha. Para isso clique na aba *Users* e em seguida *Add database user*;
+3. Escolha o nome de usuário e senha que preferir;
+4. 
 
 
 ### Como Usar
