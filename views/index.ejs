@@ -123,9 +123,9 @@
 
           <div id="panel1">
             <table v-for="item in ranking.presencaEquipe" class="table table-hover">
-              <tr class="trr">
-                <td> {{ item.nome }} </td>
-                <td> {{ item.avgNota }} </td>
+	            <tr>
+								<td><a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
+								<td> {{ item.avgNota }} </td>
               </tr>
             </table>
             <a href="listaCompleta" class="btnListaCompleta">Acesse a lista completa</a>
@@ -144,7 +144,7 @@
           <div id="panel4">
   					<table v-for="item in ranking.tempoEspera" class="table table-hover">
               <tr>
-                <td> {{ item.nome }} </td>
+                <td><a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -164,7 +164,7 @@
           <div id="panel6">
   					<table v-for="item in ranking.qualidadeAtendimento" class="table table-hover">
               <tr class="trr">
-                <td> {{ item.nome }} </td>
+                <td><a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -186,7 +186,7 @@
           <div id="panel5">
   					<table v-for="item in ranking.equipamentos" class="table table-hover">
               <tr>
-                <td> {{ item.nome }} </td>
+                <td><a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -207,7 +207,7 @@
           <div id="panel2">
   					<table v-for="item in ranking.medicamentos" class="table table-hover">
               <tr class="trr">
-                <td> {{ item.nome }} </td>
+                <td><a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -227,7 +227,7 @@
           <div id="panel3">
   					<table v-for="item in ranking.infraestrutura" class="table table-hover">
               <tr>
-                <td> {{ item.nome }} </td>
+                <td><a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -310,6 +310,7 @@
 
   </section>
 	<script src="/jquery/jquery.min.js"></script>
+	<script src="/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
 	<script src="/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 	<script src="/autocomplete/jquery.autocomplete.js"></script>
