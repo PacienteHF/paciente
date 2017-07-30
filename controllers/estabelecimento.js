@@ -90,6 +90,9 @@ exports.getRankingTotal = function(type, order, callback) {
       }}
     ],
     function(err, ranking) {
+      ranking.forEach(function(estabelecimento) {
+        estabelecimento.avgNota = estabelecimento.avgNota.toFixed(1);
+      });
       callback(ranking);
     }
   );
