@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
 
 module.exports = function() {
-    //mongoose.connect("mongodb://localhost/saude");
-    mongoose.connect("mongodb://pacientehf:paciente@ds127783.mlab.com:27783/saude");
-
+    mongoose.connect("mongodb://localhost/saude");
+    
     mongoose.connection.on('connected', function() {
         console.log('mongo conectado');
     });
