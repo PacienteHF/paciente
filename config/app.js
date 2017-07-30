@@ -52,10 +52,9 @@ app.get("/privacidade", function(req, res) {
     res.render('privacidade');
 });
 
-app.get("/404", function(req, res) {
-    res.render('404');
+app.use(function (req, res, next) {
+  res.status(404).render('404');
 });
-
 
 app.get("/ranking", function(req, res) {
     var order = Number(req.query.order);
