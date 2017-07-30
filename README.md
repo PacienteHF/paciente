@@ -36,7 +36,9 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
     2. Para se conectar ao banco teremos que criar um usuário e senha. Para isso clique na aba *Users* e em seguida *Add database user*;
     3. Escolha o nome de usuário e senha que preferir;
     4. Adicione ao código em (config\db.js) `mongoose.connect("")` e a URI gerada na criação do banco de dados dentro dos parênteses.       Não esqueça de substituir <dbuser> pelo usuário criado e <dbpassword> pela senha escolhida;
+    ![uri screenshot](screenshots/mlab.png)
     5. Comente a linha `mongoose.connect("mongodb://localhost/saude");`, que está no mesmo script e salve as alterações;
+    ![mongoose screenshot](screenshots/mongoose.png)
     6. Insira a base de dados. Para isso vá para a pasta 'dados' que está dentro da pasta raiz do projeto e rode `$node         .\insertDadosDB.js`;
     7. Atualize o git depois das alterações: `git add config/db.js` -> `git commit -m "comentario"` -> `git push`.
 
@@ -44,7 +46,9 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 É necessário que se tenha uma conta cadastrada no [Heroku](https://www.heroku.com/).
 
 1. Tenha certeza de ter o [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-cli) instalado;
-2. Na pasta raiz, execute `heroku login` para logar em sua conta;
-3. Depois de autenticado, execute `git push heroku master` e espere alguns minutos;
-4. Quando terminado, você já terá acesso ao link(em verde). 
-
+2. Na pasta raiz, execute `$heroku login` para logar em sua conta;
+3. Depois de autenticado, execute `$heroku create` para criar o repositório onde ficará hospedada a aplicação;
+![create screenshot](screenshots/create.png)
+4. Agora execute `$git push heroku master` e espere alguns minutos;
+5. Quando terminado, você já terá acesso ao link. 
+![link screenshot](screenshots/link.png)
