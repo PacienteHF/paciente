@@ -5,13 +5,15 @@ var express = require("express"),
     router = require('../routes/index'),
     Estabelecimento = require('../controllers/estabelecimento'),
     controller = require('../controllers/estabelecimento'),
-    compression = require("compression")
+    compression = require("compression"),
+    helmet = require("helmet");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static('./public'));
 app.use(compression());
+app.use(helmet());
 app.set('view engine', 'ejs');
 
 // dependencias do front-end
@@ -31,78 +33,78 @@ app.use('/hover', express.static('./node_modules/hover.css/css/'));
 app.use('/', router);
 
 app.get("/", function(req, res) {
-  res.render('index');
+    res.render('index');
 });
 
 app.get("/sobre", function(req, res) {
-  res.render('sobre');
+    res.render('sobre');
 });
 
 app.get("/listaCompleta", function(req, res) {
-  res.render('listaCompleta');
+    res.render('listaCompleta');
 });
 
 app.get("/ajuda", function(req, res) {
-  res.render('ajuda');
+    res.render('ajuda');
 });
 
 app.get("/privacidade", function(req, res) {
-  res.render('privacidade');
+    res.render('privacidade');
 });
 
 app.get("/404", function(req, res) {
-  res.render('404');
+    res.render('404');
 });
 
 
 app.get("/ranking", function(req, res) {
-  var order = Number(req.query.order);
-  var ranking = {};
-  controller.getRankingTotal("presencaEquipe", order, function(rankingPresenca) {
-    ranking.presencaEquipe = rankingPresenca;
-    controller.getRankingTotal("tempoEspera", order, function(rankingEspera) {
-      ranking.tempoEspera = rankingEspera;
-      controller.getRankingTotal("qualidadeAtendimento", order, function(rankingAtendimento) {
-        ranking.qualidadeAtendimento = rankingAtendimento;
-        controller.getRankingTotal("medicamentos", order, function(rankingMedicamentos) {
-          ranking.medicamentos = rankingMedicamentos;
-          controller.getRankingTotal("equipamentos", order, function(rankingEquipamentos) {
-            ranking.equipamentos = rankingEquipamentos;
-            controller.getRankingTotal("infraestrutura", order, function(rankingInfraestrutura) {
-              ranking.infraestrutura = rankingInfraestrutura;
-              res.json(ranking);
+    var order = Number(req.query.order);
+    var ranking = {};
+    controller.getRankingTotal("presencaEquipe", order, function(rankingPresenca) {
+        ranking.presencaEquipe = rankingPresenca;
+        controller.getRankingTotal("tempoEspera", order, function(rankingEspera) {
+            ranking.tempoEspera = rankingEspera;
+            controller.getRankingTotal("qualidadeAtendimento", order, function(rankingAtendimento) {
+                ranking.qualidadeAtendimento = rankingAtendimento;
+                controller.getRankingTotal("medicamentos", order, function(rankingMedicamentos) {
+                    ranking.medicamentos = rankingMedicamentos;
+                    controller.getRankingTotal("equipamentos", order, function(rankingEquipamentos) {
+                        ranking.equipamentos = rankingEquipamentos;
+                        controller.getRankingTotal("infraestrutura", order, function(rankingInfraestrutura) {
+                            ranking.infraestrutura = rankingInfraestrutura;
+                            res.json(ranking);
+                        });
+                    });
+                });
             });
-          });
         });
-      });
     });
-  });
 });
 
 app.get("/rankingTotal", function(req, res) {
-  var order = Number(req.query.order);
-  var type = req.query.type;
-  controller.getRankingTotal(type, order, function(rankingTotal) {
-    res.json(rankingTotal);
-  });
+    var order = Number(req.query.order);
+    var type = req.query.type;
+    controller.getRankingTotal(type, order, function(rankingTotal) {
+        res.json(rankingTotal);
+    });
 });
 
 app.get("/rankingCidade", function(req, res) {
-  var order = Number(req.query.order);
-  var type = req.query.type;
-  var cidade = req.query.cidade;
-  controller.getRankingCidade(type, order, cidade, function(ranking) {
-    res.json(ranking);
-  });
+    var order = Number(req.query.order);
+    var type = req.query.type;
+    var cidade = req.query.cidade;
+    controller.getRankingCidade(type, order, cidade, function(ranking) {
+        res.json(ranking);
+    });
 });
 
 app.get("/rankingCidadeTotal", function(req, res) {
-  var order = Number(req.query.order);
-  var type = req.query.type;
-  var cidade = req.query.cidade;
-  controller.getRankingCidade(type, order, cidade, function(ranking) {
-    res.json(ranking);
-  });
+    var order = Number(req.query.order);
+    var type = req.query.type;
+    var cidade = req.query.cidade;
+    controller.getRankingCidade(type, order, cidade, function(ranking) {
+        res.json(ranking);
+    });
 });
 
 module.exports = app;

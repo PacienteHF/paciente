@@ -1,36 +1,37 @@
 {
-    "name": "hackfest",
-    "version": "1.0.0",
-    "description": "Sistema de avaliacao de servicos medicos",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
-    },
-    "author": "Dr Ligado",
-    "license": "ISC",
-    "dependencies": {
-        "animate.css": "^3.5.2",
-        "body-parser": "^1.17.2",
-        "bootstrap": "^3.3.7",
-        "bootstrap-switch": "^3.3.4",
-        "compression": "^1.7.0",
-        "cookie-parser": "^1.4.3",
-        "devbridge-autocomplete": "^1.4.1",
-        "ejs": "^2.5.6",
-        "express": "^4.15.3",
-        "font-awesome": "^4.7.0",
-        "hover.css": "^2.2.0",
-        "jquery": "^3.2.1",
-        "jquery-form": "^4.2.1",
-        "lodash": "^4.17.4",
-        "mongoose": "^4.10.5",
-        "noty": "^3.1.2",
-        "vue": "^2.0.8",
-        "vue-resource": "^1.3.4"
-    },
-    "devDependencies": {
-        "jsonfile": "^3.0.0",
-        "nightmare": "^2.10.0"
-    }
+  "name": "hackfest",
+  "version": "1.0.0",
+  "description": "Sistema de avaliacao de servicos medicos",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Dr Ligado",
+  "license": "ISC",
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "bootstrap-switch": "^3.3.4",
+    "compression": "^1.7.0",
+    "cookie-parser": "^1.4.3",
+    "devbridge-autocomplete": "^1.4.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "font-awesome": "^4.7.0",
+    "helmet": "^3.8.1",
+    "hover.css": "^2.2.0",
+    "jquery": "^3.2.1",
+    "jquery-form": "^4.2.1",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.10.5",
+    "noty": "^3.1.2",
+    "vue": "^2.0.8",
+    "vue-resource": "^1.3.4"
+  },
+  "devDependencies": {
+    "jsonfile": "^3.0.0",
+    "nightmare": "^2.10.0"
+  }
 }
