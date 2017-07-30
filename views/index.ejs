@@ -8,6 +8,7 @@
   <title>Paciente - Colabore, informe, se informe</title>
 	<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+	<link href="/chardin.js/chardinjs.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/css/maps_search_box.css">
 <!-- hover css -->
@@ -80,13 +81,13 @@
   	</div>
   </section>
 <div id="p2mapa"></div>
+	<button type="button" id="help">Ajuda</button>
 	<section class="p2" >
    <p class="txtMapa text-center">
           <span>Selecione uma instituição abaixo para ver seu nível de aprovação ou avaliar anonimamente</span></p>
-
   	<div id="espmap" class="espantmapa"></div>
-		<input id="pac-input" class="controls" type="text" placeholder="Procurar Estabelecimentos">
-  	<div id="map" class="row "></div>
+		<input id="pac-input" class="controls" type="text" data-intro="Aqui você pode procurar o estabelecimento que procura pelo nome ou pelo endereço." data-position="top" placeholder="Procurar Estabelecimentos">
+  	<div id="map" class="row" data-intro="Cada um dos 'anéis' do mapa são pontos de concentração de estabelecimentos de saúde. Clique em um para aproximar até o local desejado." data-position="bottom"></div>
 	</section>
 
   <section id="p3rank" class="p3" name="mais">
@@ -329,6 +330,7 @@
 	<script src="/autocomplete/jquery.autocomplete.js"></script>
 	<script src="/vue/vue.min.js"></script>
 	<script src="/vue-resource/vue-resource.js" charset="utf-8"></script>
+	<script src="/chardin.js/chardinjs.min.js" charset="utf-8"></script>
 	<script src="/js/ranking.js" charset="utf-8"></script>
 	<script src="/js/index.js" charset="utf-8"></script>
 	<script src="/js/maps.js" charset="utf-8"></script>
