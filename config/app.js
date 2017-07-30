@@ -7,6 +7,7 @@ var express = require("express"),
     controller = require('../controllers/estabelecimento'),
     compression = require("compression"),
     helmet = require("helmet");
+    path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -34,6 +35,10 @@ app.use('/', router);
 
 app.get("/", function(req, res) {
     res.render('index');
+});
+
+app.get("/manual", function(req, res) {
+  res.sendFile(path.resolve('public/manual.pdf'));
 });
 
 app.get("/sobre", function(req, res) {
