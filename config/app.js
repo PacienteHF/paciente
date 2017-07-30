@@ -52,10 +52,6 @@ app.get("/privacidade", function(req, res) {
     res.render('privacidade');
 });
 
-app.use(function (req, res, next) {
-  res.status(404).render('404');
-});
-
 app.get("/ranking", function(req, res) {
     var order = Number(req.query.order);
     var ranking = {};
@@ -104,6 +100,10 @@ app.get("/rankingCidadeTotal", function(req, res) {
     controller.getRankingCidade(type, order, cidade, function(ranking) {
         res.json(ranking);
     });
+});
+
+app.use(function (req, res, next) {
+  res.status(404).render('404');
 });
 
 module.exports = app;
