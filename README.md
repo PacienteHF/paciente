@@ -8,7 +8,7 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 - [Hospendando o Banco de Dados](#hospedando-o-banco-de-dados)
 - [Fazendo Deploy](#fazendo-deploy)
 
-### Instalação
+## Instalação
 
 1. Tenha certeza de ter instalado o [Git](https://git-scm.com/downloads);
 2. Tenha certeza de ter instalado o [Node.js](https://nodejs.org/en/download/);
@@ -18,6 +18,8 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 6. Insira a base de dados. Para isso vá para a pasta 'dados' que está dentro da pasta raiz do projeto e rode `$node .\insertDadosDB.js`;
 7. Volte para a pasta raiz e rode `$node .\server.js`;
 8. Em qualquer navegador vá para [http://localhost:3000](http://localhost:3000/)
+
+## Deploy
 
 ### Hospedando o Banco de Dados
 É necessário que se tenha uma conta cadastrada no [mLab](https://mlab.com/).
