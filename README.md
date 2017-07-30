@@ -5,8 +5,8 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 ## Sumário
 
 - [Instalação](#instalação)
-- [Fazendo Deploy](#fazendo-deploy)
-- [Como Usar](#como-usar)
+- [Hospendando o Banco de Dados](#hospedando-o-banco-de-dados)
+- [Fazendo Deploy](#como-usar)
 
 ### Instalação
 
@@ -19,25 +19,22 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 7. Volte para a pasta raiz e rode `$node .\server.js`;
 8. Em qualquer navegador vá para [http://localhost:3000](http://localhost:3000/)
 
-### Fazendo Deploy
+### Hospedando o Banco de Dados
+É necessário que se tenha uma conta cadastrada no [mLab](https://mlab.com/).
 
-Antes de qualquer coisa, é necessário que se tenha uma conta cadastrada no [Heroku](https://www.heroku.com/) (uma plataforma em nuvem como um serviço que suporta várias linguagens de programação que é usada como um modelo de implantação de aplicativos da Web) e também no [mLab](https://mlab.com/) (onde iremos hospedar o banco de dados).
+1. Criando o Banco de Dados:
+  1. Na home de sua conta no mLab, em *MongoDB Deployments*, clique em *Create New*;
+  2. Em *Cloud Provider* sugerimos que selecione a plataforma da Amazon e em *Plan Type* ultizamos para testes o plano Sandbox(Free).     Continue;
+  3. Em *AWS Region* sugerimos que selecione US East (Virginia)(us-east-1). Continue;
+  4. Em *Database Name* escolha um nome para a base de dados. Utilizamos o nome "saude" mas sinta-se livre a mudar. Continue;
+  5. Submit Order.
 
-#### Hospedando o Banco de Dados
-
-##### Criando o Banco de Dados
-1. Na home de sua conta no mLab, em *MongoDB Deployments*, clique em *Create New*;
-2. Em *Cloud Provider* sugerimos que selecione a plataforma da Amazon e em *Plan Type* ultizamos para testes o plano Sandbox(Free). Continue;
-3. Em *AWS Region* sugerimos que selecione US East (Virginia)(us-east-1). Continue;
-4. Em *Database Name* escolha um nome para a base de dados. Utilizamos o nome "saude" mas sinta-se livre a mudar. Continue;
-5. Submit Order.
-
-##### Conectando a aplicação ao Banco de Dados criado
-1. Na Home de sua conta, clique no nome do banco de dados criado acima;
-2. Para se conectar ao banco teremos que criar um usuário e senha. Para isso clique na aba *Users* e em seguida *Add database user*;
-3. Escolha o nome de usuário e senha que preferir;
-4. Adicione ao código em (config\db.js) `mongoose.connect("")` e a URI gerada na criação do banco de dados dentro dos parênteses. Não esqueça de substituir <dbuser> pelo usuário criado e <dbpassword> pela senha escolhida;
-5. Comente a linha `mongoose.connect("mongodb://localhost/saude");`, que está no mesmo script 
+2. Conectando a aplicação ao Banco de Dados criado:
+  1. Na Home de sua conta, clique no nome do banco de dados criado acima;
+  2. Para se conectar ao banco teremos que criar um usuário e senha. Para isso clique na aba *Users* e em seguida *Add database user*;
+  3. Escolha o nome de usuário e senha que preferir;
+  4. Adicione ao código em (config\db.js) `mongoose.connect("")` e a URI gerada na criação do banco de dados dentro dos parênteses. Não   esqueça de substituir <dbuser> pelo usuário criado e <dbpassword> pela senha escolhida;
+  5. Comente a linha `mongoose.connect("mongodb://localhost/saude");`, que está no mesmo script 
 
 
 ### Como Usar
