@@ -9,7 +9,10 @@ exports.getAll = function(callback) {
 
 exports.get = function(id, callback) {
   var query = Estabelecimento.findOne({ id: id });
-  query.exec(function(err, estabelecimento) {
+  query.exec(function (err, estabelecimento) {
+    if (estabelecimento === null) {
+      err = { error :'estabelecimento não encontrado' };
+    }
     callback(err, estabelecimento);
   });
 }

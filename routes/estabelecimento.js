@@ -10,19 +10,24 @@ router.route('/')
   })
 
 router.route('/:id')
-  .get(function(req, res) {
+  .get(function(req, res, next) {
     var id = req.params.id;
     controller.get(id, function(err, estabelecimento) {
-      controller.getNotas(estabelecimento, function(notas) {
-        var data = { id: estabelecimento.id,
-                     nome: estabelecimento.nome,
-                     endereco: estabelecimento.endereco.logradouro,
-                     bairro: estabelecimento.endereco.bairro,
-                     municipio: estabelecimento.endereco.municipio,
-                     numero: estabelecimento.endereco.numero,
-                     notas: notas }
-        res.render('estabelecimento', data);
-      });
+      if(!err) {
+        controller.getNotas(estabelecimento, function(notas) {
+          var data = { id: estabelecimento.id,
+            nome: estabelecimento.nome,
+            endereco: estabelecimento.endereco.logradouro,
+            bairro: estabelecimento.endereco.bairro,
+            municipio: estabelecimento.endereco.municipio,
+            numero: estabelecimento.endereco.numero,
+            notas: notas }
+          res.render('estabelecimento', data);
+        });
+      }
+      else {
+        next();
+      }
     });
   })
   .post(function(req, res) {
