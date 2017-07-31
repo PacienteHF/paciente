@@ -14,18 +14,15 @@ exports.get = function(id, callback) {
   });
 }
 
-exports.getRanking = function(type, order, callback) {
+exports.getAvaliacoes = function(type, callback) {
   Estabelecimento.aggregate(
     [
       { "$project": {
         "_id": "$id",
         "nome": '$nome',
         "cidade": "$endereco.municipio",
-        "bairro": "$endereco.bairro",
-        "rua" : "$endereco.logradouro",
         "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
       }},
-      { "$sort": { "avgNota": order } },
       { "$match": {
         "avgNota": { "$exists": true, "$ne": null }
       }}
@@ -34,6 +31,51 @@ exports.getRanking = function(type, order, callback) {
       callback(ranking);
     }
   );
+}
+
+exports.getLista = function(type, order, cidade, callback) {
+  if(cidade === 'null') {
+    Estabelecimento.aggregate(
+      [
+        { "$project": {
+          "_id": "$id",
+          "nome": '$nome',
+          "cidade": "$endereco.municipio",
+          "bairro": "$endereco.bairro",
+          "rua" : "$endereco.logradouro",
+          "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
+        }},
+        { "$sort": { "avgNota": order } },
+        { "$match": {
+          "avgNota": { "$exists": true, "$ne": null }
+        }}
+      ],
+      function(err, ranking) {
+        callback(ranking);
+      }
+    );
+  } else {
+    Estabelecimento.aggregate(
+      [
+        {"$match" : { "endereco.municipio" : cidade }},
+        { "$project": {
+          "_id": "$id",
+          "nome": '$nome',
+          "cidade": "$endereco.municipio",
+          "bairro": "$endereco.bairro",
+          "rua" : "$endereco.logradouro",
+          "avgNota": { $avg: "$avaliacoes." + type + ".nota" },
+        }},
+        { "$sort": { "avgNota": order } },
+        { "$match": {
+          "avgNota": { "$exists": true, "$ne": null }
+        }}
+      ],
+      function(err, ranking) {
+        callback(ranking);
+      }
+    );
+  }
 }
 
 exports.getNota = function(estabelecimento, type) {

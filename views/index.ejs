@@ -28,7 +28,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a href="#"><img src="logoteste2.png" class="img-responsive center-block logomenu" alt="Logo Ham.io" id="logomenu"></a>
+                <a href="#"><img src="/logoteste2.png" class="img-responsive center-block logomenu" alt="Logo Ham.io" id="logomenu"></a>
 
                 </a>
             </div>
@@ -53,10 +53,6 @@
         </div>
         <!-- /.container -->
     </nav>
-
-
-
-
 
   <section id="01topo" class=" content-section p1">
   	<div class="container-fluid">
@@ -128,7 +124,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a v-bind:href="'/ranking/presencaEquipe?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/presencaEquipe?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
 
           </div>
@@ -151,7 +147,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a v-bind:href="'/ranking/tempoEspera?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/tempoEspera?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -173,7 +169,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a v-bind:href="'/ranking/qualidadeAtendimento?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/qualidadeAtendimento?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -197,7 +193,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a v-bind:href="'/ranking/equipamentos?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/equipamentos?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -220,7 +216,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a v-bind:href="'/ranking/medicamentos?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/medicamentos?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
@@ -242,7 +238,7 @@
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
-            <a v-bind:href="'/ranking/infraestrutura?order=' + checkbox" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
+            <a v-bind:href="'/ranking/infraestrutura?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
         <div class="row espEntreLinha">

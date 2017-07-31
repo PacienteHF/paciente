@@ -56,17 +56,17 @@ app.get("/404", function(req, res) {
 
 app.get("/ranking", function(req, res) {
   var ranking = {};
-  controller.getRanking("presencaEquipe", 1, function(rankingPresenca) {
+  controller.getAvaliacoes("presencaEquipe", function(rankingPresenca) {
     ranking.presencaEquipe = rankingPresenca;
-    controller.getRanking("tempoEspera", 1, function(rankingEspera) {
+    controller.getAvaliacoes("tempoEspera", function(rankingEspera) {
       ranking.tempoEspera = rankingEspera;
-      controller.getRanking("qualidadeAtendimento", 1, function(rankingAtendimento) {
+      controller.getAvaliacoes("qualidadeAtendimento", function(rankingAtendimento) {
         ranking.qualidadeAtendimento = rankingAtendimento;
-        controller.getRanking("medicamentos", 1, function(rankingMedicamentos) {
+        controller.getAvaliacoes("medicamentos", function(rankingMedicamentos) {
           ranking.medicamentos = rankingMedicamentos;
-          controller.getRanking("equipamentos", 1, function(rankingEquipamentos) {
+          controller.getAvaliacoes("equipamentos", function(rankingEquipamentos) {
             ranking.equipamentos = rankingEquipamentos;
-            controller.getRanking("infraestrutura", 1, function(rankingInfraestrutura) {
+            controller.getAvaliacoes("infraestrutura", function(rankingInfraestrutura) {
               ranking.infraestrutura = rankingInfraestrutura;
               res.json(ranking);
             });
@@ -78,6 +78,7 @@ app.get("/ranking", function(req, res) {
 });
 
 app.get("/ranking/:id", function(req,res) {
+  console.log(req.query);
   var nome;
   if (req.params.id==="presencaEquipe") {
     nome = "Presença de Profissionais de Saúde";
@@ -92,14 +93,13 @@ app.get("/ranking/:id", function(req,res) {
   } else {
     nome = "infraestrutura";
   }
-
   var order;
   if(req.query.order === 'true') {
     order = -1;
   } else {
     order = 1;
   }
-  controller.getRanking(req.params.id, order, function(ranking) {
+  controller.getLista(req.params.id, order, req.query.cidade, function(ranking) {
     res.render('listaCompleta', { data :  { ranking: ranking, nome: nome }});
   });
 });
