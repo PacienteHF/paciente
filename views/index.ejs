@@ -7,7 +7,8 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <title>Paciente - Colabore, informe, se informe</title>
   <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+	<link href="/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+	<link href="/chardin.js/chardinjs.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/css/maps_search_box.css">
 <!-- hover css -->
@@ -53,7 +54,6 @@
         </div>
         <!-- /.container -->
     </nav>
-
   <section id="01topo" class=" content-section p1">
   	<div class="container-fluid">
       <div class="col-xs-8 col-xs-offset-2
@@ -76,17 +76,19 @@
   	</div>
   </section>
 <div id="p2mapa"></div>
+  <button type="button" id="help">Ajuda</button>
 	<section class="p2" >
    <p class="txtMapa text-center">
           <span>Selecione uma instituição abaixo para ver seu nível de aprovação ou avaliar anonimamente</span></p>
 
   	<div id="espmap" class="espantmapa"></div>
-		<input id="pac-input" class="controls" type="text" placeholder="Procurar Estabelecimentos">
-  	<div id="map" class="row "></div>
+    <div id="espmap" class="espantmapa"></div>
+    	<input id="pac-input" class="controls" type="text" data-intro="Aqui você pode procurar o estabelecimento que procura pelo nome ou pelo endereço." data-position="top" placeholder="Procurar Estabelecimentos">
+      <div id="map" class="row" data-intro="Cada um dos 'anéis' do mapa são pontos de concentração de estabelecimentos de saúde. Clique em um para aproximar até o local desejado." data-position="bottom"></div>
 	</section>
 
-  <section id="p3rank" class="p3" name="mais">
-    <div id="rankings" class="container-fluid contp3">
+  <section id="p3rank" class="p3" name="mais" >
+    <div id="rankings"  class="container-fluid contp3">
     	<h2>
       	<p class="titulop3 text-center">Ranking de Instituições:
 
@@ -98,10 +100,20 @@
                     col-md-8 col-md-offset-2
                     col-lg-8 col-lg-offset-2">
 				<input type="text" class="form-control input-lg caixacidade" id="cidades" placeholder="Digite uma cidade">
-				<div class="textoinvisivelcidade" v-if="filtro">
+				<div class="col-xs-12
+                    col-sm-10
+                    col-md-8
+                    col-lg-8 " v-if="filtro">
           <p class="text-center titulop3-2">Mostrando resultados para: {{ filtro }}</p>
-					<button class="btnRemover" type="button" v-on:click="removeFiltro" name="btn">Remover Filtro</button>
-				</div>
+
+        </div>
+          <div class="col-xs-12
+                    col-sm-2
+                    col-md-4
+                    col-lg-4 " v-if="filtro">
+					 <a  class="btnRemover" v-on:click="removeFiltro" name="btn">Remover Filtro</a>
+				  </div>
+        </div>
       </div>
       <div class="container-fluid ranks">
 
@@ -120,7 +132,7 @@
 						<th>Nome</th>
 						<th>Nota</th>
               <tr v-for="item in ranking.presencaEquipe" class="trr">
-                <td> <a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
+                <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -142,8 +154,8 @@
 						<table class="table table-hover table-condensed">
 						<th>Nome</th>
 						<th>Nota</th>
-              <tr v-for="item in ranking.tempoEspera" class="trr">
-                <td> <a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
+              <tr v-for="item in ranking.tempoEspera">
+                <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -165,7 +177,7 @@
 						<th>Nome</th>
 						<th>Nota</th>
               <tr v-for="item in ranking.qualidadeAtendimento" class="trr">
-                <td> <a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
+                <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank trr"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -188,8 +200,8 @@
 						<table class="table table-hover table-condensed">
 						<th>Nome</th>
 						<th>Nota</th>
-              <tr v-for="item in ranking.equipamentos" class="trr">
-                <td> <a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
+              <tr v-for="item in ranking.equipamentos" >
+                <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -212,7 +224,7 @@
 						<th>Nome</th>
 						<th>Nota</th>
               <tr v-for="item in ranking.medicamentos" class="trr">
-                <td> <a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
+                <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank trr"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -233,8 +245,8 @@
 						<table class="table table-hover table-condensed">
 						<th>Nome</th>
 						<th>Nota</th>
-              <tr v-for="item in ranking.infraestrutura" class="trr">
-                <td> <a v-bind:href="'/estabelecimentos/'+ item._id"> {{ item.nome }} </a></td>
+              <tr v-for="item in ranking.infraestrutura" >
+                <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td> {{ item.avgNota }} </td>
               </tr>
             </table>
@@ -318,19 +330,19 @@
     <p class="text-center textorodape">©Paciente 2017</p>
 
   </section>
-    <script src="/jquery/jquery.min.js"></script>
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
   <script src="/bootstrap-switch/js/bootstrap-switch.min.js"></script>
   <script src="/autocomplete/jquery.autocomplete.js"></script>
   <script src="/vue/vue.min.js"></script>
   <script src="/vue-resource/vue-resource.js" charset="utf-8"></script>
+  <script src="/chardin.js/chardinjs.min.js" charset="utf-8"></script>
   <script src="/js/ranking.js" charset="utf-8"></script>
   <script src="/js/index.js" charset="utf-8"></script>
   <script src="/js/maps.js" charset="utf-8"></script>
   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw-kUn3g74P2z_rTgItryoWqUYfWZbqXo&libraries=places&callback=initMap" async defer></script>
   <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-
 </body>
 </html>
