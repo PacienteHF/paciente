@@ -58,19 +58,18 @@ app.get("/privacidade", function(req, res) {
 });
 
 app.get("/ranking", function(req, res) {
-  var order = Number(req.query.order);
   var ranking = {};
-  controller.getRankingTotal("presencaEquipe", order, function(rankingPresenca) {
+  controller.getAvaliacoes("presencaEquipe", function(rankingPresenca) {
     ranking.presencaEquipe = rankingPresenca;
-    controller.getRankingTotal("tempoEspera", order, function(rankingEspera) {
+    controller.getAvaliacoes("tempoEspera", function(rankingEspera) {
       ranking.tempoEspera = rankingEspera;
-      controller.getRankingTotal("qualidadeAtendimento", order, function(rankingAtendimento) {
+      controller.getAvaliacoes("qualidadeAtendimento", function(rankingAtendimento) {
         ranking.qualidadeAtendimento = rankingAtendimento;
-        controller.getRankingTotal("medicamentos", order, function(rankingMedicamentos) {
+        controller.getAvaliacoes("medicamentos", function(rankingMedicamentos) {
           ranking.medicamentos = rankingMedicamentos;
-          controller.getRankingTotal("equipamentos", order, function(rankingEquipamentos) {
+          controller.getAvaliacoes("equipamentos", function(rankingEquipamentos) {
             ranking.equipamentos = rankingEquipamentos;
-            controller.getRankingTotal("infraestrutura", order, function(rankingInfraestrutura) {
+            controller.getAvaliacoes("infraestrutura", function(rankingInfraestrutura) {
               ranking.infraestrutura = rankingInfraestrutura;
               res.json(ranking);
             });
@@ -81,29 +80,29 @@ app.get("/ranking", function(req, res) {
   });
 });
 
-app.get("/rankingTotal", function(req, res) {
-  var order = Number(req.query.order);
-  var type = req.query.type;
-  controller.getRankingTotal(type, order, function(rankingTotal) {
-    res.json(rankingTotal);
-  });
-});
-
-app.get("/rankingCidade", function(req, res) {
-  var order = Number(req.query.order);
-  var type = req.query.type;
-  var cidade = req.query.cidade;
-  controller.getRankingCidade(type, order, cidade, function(ranking) {
-    res.json(ranking);
-  });
-});
-
-app.get("/rankingCidadeTotal", function(req, res) {
-  var order = Number(req.query.order);
-  var type = req.query.type;
-  var cidade = req.query.cidade;
-  controller.getRankingCidade(type, order, cidade, function(ranking) {
-    res.json(ranking);
+app.get("/ranking/:id", function(req,res) {
+  var nome;
+  if (req.params.id==="presencaEquipe") {
+    nome = "Presença de Profissionais de Saúde";
+  } else if (req.params.id==="tempoEspera") {
+    nome = "Tempo Espera";
+  } else if (req.params.id==="qualidadeAtendimento") {
+    nome = "Qualidade de Atendimento";
+  } else if (req.params.id==="medicamentos") {
+    nome = "Disponibilidade de Medicamentos";
+  } else if (req.params.id==="equipamentos") {
+    nome = "Disponibilidade de Equipamentos";
+  } else {
+    nome = "infraestrutura";
+  }
+  var order;
+  if(req.query.order === 'true') {
+    order = -1;
+  } else {
+    order = 1;
+  }
+  controller.getLista(req.params.id, order, req.query.cidade, function(ranking) {
+    res.render('listaCompleta', { data :  { ranking: ranking, nome: nome }});
   });
 });
 

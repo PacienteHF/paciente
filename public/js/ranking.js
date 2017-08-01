@@ -51,7 +51,7 @@ var app = new Vue({
   },
   mounted: function () {
     // Inicia o ranking
-    this.$http.get('/ranking', { params: { order: -1 } }).then(function(response) {
+    this.$http.get('/ranking').then(function(response) {
       rankingOriginal = clone(response.body);
       rankingAtual = clone(rankingOriginal);
       Object.keys(app.ranking).forEach(function(key) {
