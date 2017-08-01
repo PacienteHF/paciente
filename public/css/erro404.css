@@ -8,6 +8,7 @@ body{
 }
 .texto:hover{
 	color: #00A6F3;
+	text-decoration: none;
 }
 
 .erro404{

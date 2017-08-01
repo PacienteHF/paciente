@@ -28,6 +28,12 @@
 $(document).ready(function(){
 
 
+    if($(window).width()<500){
+        alert(window.screen.availWidth);
+        $('.button').removeClass('hvr-grow');
+    }
+
+
     $("#flip1").click(function(){
         $("#panel1").slideToggle("slow");
 
