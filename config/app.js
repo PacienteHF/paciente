@@ -7,7 +7,7 @@ var express = require("express"),
   controller = require('../controllers/estabelecimento'),
   compression = require("compression"),
   helmet = require("helmet");
-path = require('path');
+  path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.use('/vue-resource', express.static('./node_modules/vue-resource/dist/'));
 app.use('/animate-css', express.static('./node_modules/animate.css/'));
 app.use('/noty', express.static('./node_modules/noty/lib/'));
 app.use('/hover', express.static('./node_modules/hover.css/css/'));
-
+app.use('/chardin.js', express.static('./node_modules/chardin.js/'));
 
 app.use('/', router);
 
