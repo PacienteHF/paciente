@@ -30,6 +30,8 @@ app.use('/animate-css', express.static('./node_modules/animate.css/'));
 app.use('/noty', express.static('./node_modules/noty/lib/'));
 app.use('/hover', express.static('./node_modules/hover.css/css/'));
 app.use('/chardin.js', express.static('./node_modules/chardin.js/'));
+app.use('/moment', express.static('./node_modules/moment/min/'));
+app.use('/moment-timezone', express.static('./node_modules/moment-timezone/'));
 
 app.use('/', router);
 

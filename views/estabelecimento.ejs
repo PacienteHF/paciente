@@ -55,7 +55,7 @@
               <div class="turno col-xs-6">
                 <label> Data*: <a class="duvida01 " data-toggle="tooltip" title="Informe a data que o(a) senhor(a) esteve no estabelecimento"  >
                 <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a></label>
-                <input type="date" name="data" class="form-control" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher o campo Data', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
+                <input type="date" id="moment" name="data" class="form-control" oninvalid="new Noty({type: 'error', text: 'ERRO - Você deve preencher o campo Data', timeout: 3000, modal: true, layout: 'centerRight'}).show();" required>
               </div>
               <div class="data col-xs-6">
                 <label> Turno*: <a class="duvida01 " data-toggle="tooltip" title="Informe o turno que o(a) senhor(a) esteve no estabelecimento."  >
@@ -658,13 +658,15 @@
 
   </section>
   <script src="/jquery/jquery.min.js"></script>
-  <script src="/ajax/jquery.form.min.js"></script>
-  <script src="/noty/noty.min.js"></script>
   <script src="/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/js/local.js" charset="utf-8"></script>
+  <script src="/ajax/jquery.form.min.js"></script>
+  <script src="/moment/moment.min.js"></script>
+  <script src="/moment-timezone/moment-timezone.js"></script>
+  <script src="/noty/noty.min.js"></script>
   <script src="/vue/vue.min.js"></script>
   <script src="/js/ajax.js"></script>
   <script src="/js/recaptcha.js" charset="utf-8"></script>
+  <script src="/js/local.js" charset="utf-8"></script>
   <!-- nao sou um robo -->
   <script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit&hl=pt-BR" async defer></script>
 </body>
