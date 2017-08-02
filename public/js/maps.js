@@ -2,19 +2,6 @@ var map;
 
 function initMap() {
   $.getJSON('/estabelecimentos', function(locations) {
-
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -7.2251168, lng: -36.4175412},
-      zoom: 8,
-      scrollwheel: false,
-      zoomControl: true,
-      mapTypeControl: false,
-      scaleControl: false,
-      streetViewControl: false,
-      rotateControl: false,
-      fullscreenControl: true
-    });
-
     var estabelecimentoSugestoes = locations.map(function(estabelecimento) {
       return { value: estabelecimento.nome,
                data: { id: estabelecimento.id, type: "nome", coordenadas: estabelecimento.coordenadas }
@@ -42,6 +29,18 @@ function initMap() {
       }
     });
 
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -7.2251168, lng: -36.4175412},
+      zoom: 8,
+      scrollwheel: false,
+      zoomControl: true,
+      mapTypeControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: true
+    });
+
     var input = document.getElementById('pac-input');
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
@@ -53,7 +52,11 @@ function initMap() {
     map.mapTypes.set('styled_map', styledMapType);
     map.setMapTypeId('styled_map');
 
-    var markers = locations.map(function(location) {
+    var validos = locations.filter(function(location) {
+      return location.coordenadas.lat !== 0;
+    })
+
+    var markers = validos.map(function(location) {
       var marker = new google.maps.Marker({
         position: { lat: location.coordenadas.lat, lng: location.coordenadas.lng },
         label: location.nome

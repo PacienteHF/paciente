@@ -1,5 +1,5 @@
 require('../config/db')();
-var dados = require('./dados-validos-sem-conflito')
+var dados = require('./dados-conflitos-null')
 var Estabelecimento = require('../models/estabelecimento');
 
 String.prototype.capitalize = function() {
