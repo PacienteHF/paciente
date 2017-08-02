@@ -36,7 +36,7 @@ router.route('/:id')
     var type = avaliacao.type;
     var cookies = req.cookies;
     if (type in cookies) {
-      res.sendStatus(403);
+      res.sendStatus(401);
     } else {
       controller.avalia(id, avaliacao, function(err, avaliacaoId) {
         if(err) {
