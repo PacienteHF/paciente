@@ -51,7 +51,7 @@ body{
 .p2{
 	
 	margin-top: 10%;
-	margin-bottom: 5%;
+	margin-bottom: 2%;
 }
 .txtMapa{
 	color: #170C48 !important;
@@ -59,6 +59,7 @@ body{
 	font-family: 'Nunito', sans-serif!important;
 	padding: 2px;
 	line-height: 140%;
+	margin-bottom: 10px;
 }
 #espmap{
 	margin-top: 2%;
@@ -298,12 +299,47 @@ tr:hover{
 	color: #fff;
 }
 
-#panel1,#panel2,#panel3,#panel4,#panel5,#panel6{
+#panel2,#panel3,#panel5{
     display: none;
     padding: 10px;
     padding-bottom:3%;
     padding-top: 0px;
 }
+#panel6, #panel1,#panel4{
+	 padding: 10px;
+    padding-bottom:3%;
+    padding-top: 0px;
+}
+
+.separaranks02{
+		display: none;
+	}
+ @media (max-width: 900px){
+ 	#panel6{
+		display: none;
+	}
+	.separaranks01{
+		display: none;
+	}
+	.separaranks02{
+		display: inline;
+		padding: 10px;
+
+	}
+}
+
+ @media (max-width: 700px){
+ 	#panel6,#panel4{
+		display: none;
+	}
+	.separaranks01{
+		display: none;
+	}
+	.separaranks02{
+		display: none;
+	}
+}
+
 .btnListaCompleta{
 	background-color:  #fff;
 	padding: 5px;
@@ -450,6 +486,11 @@ ul.topnav li a {
  		color:#fff
  	}
 
+ 	.navbar-nav>li>a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    }
+
  	@media (min-width:780px){
  		.navbar-custom{
  			padding:20px 0;
@@ -483,7 +524,7 @@ ul.topnav li a {
 
 
 .autocomplete-suggestion {
-      color: #BDBEBF;
+      color: #001;
       font-size: 15px !important;
       font-family: 'Nunito', sans-serif!important;
       margin: 2px;
@@ -494,18 +535,18 @@ ul.topnav li a {
 }
 
 .autocomplete-suggestions strong {
-  color: #00A6F3;
+  color: #0E004C;
+  font-weight: bold;
   }
 
 .autocomplete-suggestion:hover{
   color: #fff;
-  background-color: #0E004C;
-
+  background-color: #00A6F3;
 }
 
 .mensagemCidade{
 	text-align: center;
-		color: #170C48 ;
+	color: #170C48 ;
 	font-size: 120% !important;
 	font-family: 'Nunito', sans-serif!important;
 	margin-bottom: 50px;
@@ -517,6 +558,32 @@ ul.topnav li a {
     white-space: normal; }
 td{
 	text-align: left;
+}
+
+#help{
+	font-family: 'Nunito', sans-serif!important;
+	position: absolute;
+	border: 0px;
+	background-color: #0E004C;
+	color: #fff;
+	padding: 10px;
+
+}
+#help:hover{
+	border: 2px solid;
+	border-color: #0E004C;
+	color: #0E004C;
+	background-color: #fff;
+	border-left: 0px;
+	border-top: 0px;
+	}
+.glyphicon-alert{
+	margin-top: 8px;
+	color: #FFA600;
+	margin-bottom: 40px;
+}
+.text-aletramapa{
+	font-size: 90%;
 }
 
 /*usar nos content*/

@@ -19,7 +19,7 @@
   <link rel="shortcut icon" href="/icone.png" type="image/x-png" />
   <link rel="stylesheet" type="text/css" href="/css/style_login.css">
 </head>
-<body id="page-top" data-spy="page-scroll" >
+<body id="page-top"  >
 
 
     <!-- Navigation -->
@@ -38,13 +38,13 @@
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 
                     <li>
-                        <a class="page-scroll" href="#01topo">TOPO</a>
+                        <a  href="#01topo">TOPO</a>
                     </li>
                     <li>
-                        <a class=" button hvr-grow page-scroll" href="#p2mapa">MAPA</a>
+                        <a  href="#p2mapa">MAPA</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#p3rank">RANKING</a>
+                        <a  href="#p3rank">RANKING</a>
                     </li>
                 </ul>
             </div>
@@ -73,16 +73,21 @@
   		</div>
   	</div>
   </section>
-<div id="p2mapa"></div>
-  <button type="button" id="help">Ajuda</button>
+
+ 
 	<section class="p2" >
    <p class="txtMapa text-center">
           <span>Selecione uma instituição abaixo para ver seu nível de aprovação ou avaliar anonimamente</span></p>
+          <div id="p2mapa"></div>
 
   	<div id="espmap" class="espantmapa"></div>
     <div id="espmap" class="espantmapa"></div>
     	<input id="pac-input" class="controls" type="text" data-intro="Aqui você pode procurar o estabelecimento que procura pelo nome ou pelo endereço." data-position="top" placeholder="Procurar Estabelecimentos">
-      <div id="map" class="row" data-intro="Cada um dos 'anéis' do mapa são pontos de concentração de estabelecimentos de saúde. Clique em um para aproximar até o local desejado." data-position="bottom"></div>
+
+      <div id="map" class="row" data-intro="Cada um dos 'anéis' do mapa são pontos de concentração de estabelecimentos de saúde. Clique em um para aproximar até o local desejado." data-position="bottom"></div> <button aria-hidden="true" type="button" id="help">Ajuda</button></span></p>
+      <p class="text-center"> <span class="glyphicon glyphicon-alert" aria-hidden="true"></span><span class="text-aletramapa"> Algumas informações de localização podem esta incorretas <span class="text-right"> 
+
+     
 	</section>
 
   <section id="p3rank" class="p3" name="mais" >
@@ -131,7 +136,7 @@
 						<th>Nota</th>
               <tr v-for="item in ranking.presencaEquipe" class="trr">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
-                <td> {{ item.avgNota }} </td>
+                <td class="text-right"> {{ item.avgNota }} </td>
               </tr>
             </table>
             <a v-bind:href="'/ranking/presencaEquipe?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
@@ -154,12 +159,13 @@
 						<th>Nota</th>
               <tr v-for="item in ranking.tempoEspera">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
-                <td> {{ item.avgNota }} </td>
+                <td class="text-right"> {{ item.avgNota }} </td>
               </tr>
             </table>
             <a v-bind:href="'/ranking/tempoEspera?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
+                <div class="row separaranks02"></div>
 
         <div class="ranking01 col-xs-12
                     col-sm-4
@@ -176,14 +182,14 @@
 						<th>Nota</th>
               <tr v-for="item in ranking.qualidadeAtendimento" class="trr">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank trr"> {{ item.nome }} </a></td>
-                <td> {{ item.avgNota }} </td>
+                <td class="text-right"> {{ item.avgNota }} </td>
               </tr>
             </table>
             <a v-bind:href="'/ranking/qualidadeAtendimento?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
 
-        <div class="row separaranks"></div>
+        <div class="row separaranks01"></div>
 
         <div class="ranking02 col-xs-12
                       col-sm-4
@@ -200,12 +206,13 @@
 						<th>Nota</th>
               <tr v-for="item in ranking.equipamentos" >
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
-                <td> {{ item.avgNota }} </td>
+                <td class="text-right"> {{ item.avgNota }} </td>
               </tr>
             </table>
             <a v-bind:href="'/ranking/equipamentos?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
           </div>
         </div>
+
 
 
           <div class="ranking01 col-xs-12
@@ -223,7 +230,7 @@
 						<th>Nota</th>
               <tr v-for="item in ranking.medicamentos" class="trr">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank trr"> {{ item.nome }} </a></td>
-                <td> {{ item.avgNota }} </td>
+                <td class="text-right"> {{ item.avgNota }} </td>
               </tr>
             </table>
             <a v-bind:href="'/ranking/medicamentos?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
@@ -245,7 +252,7 @@
 						<th>Nota</th>
               <tr v-for="item in ranking.infraestrutura" >
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
-                <td> {{ item.avgNota }} </td>
+                <td class="text-right" > {{ item.avgNota }} </td>
               </tr>
             </table>
             <a v-bind:href="'/ranking/infraestrutura?order=' + checkbox + '&cidade='+ filtro" class="btnListaCompleta"><b>Acesse a lista completa</b></a>
