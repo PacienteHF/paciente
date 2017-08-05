@@ -38,11 +38,11 @@ router.route('/:id')
     if (type in cookies) {
       res.sendStatus(401);
     } else {
-      controller.avalia(id, avaliacao, function(err, avaliacaoId) {
+      controller.avalia(id, avaliacao, function(err) {
         if(err) {
           res.sendStatus(403);
         }
-        res.cookie(type, avaliacaoId, { maxAge: 24 * 60 * 60 * 1000, path: '/estabelecimentos/' + id });
+        res.cookie(type, "", { maxAge: 24 * 60 * 60 * 1000, path: '/estabelecimentos/' + id });
         res.sendStatus(200);
       });
     }

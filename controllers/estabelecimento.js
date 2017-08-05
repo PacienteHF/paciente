@@ -2,7 +2,14 @@ var Estabelecimento = require('../models/estabelecimento');
 var _ = require('lodash');
 
 exports.getAll = function(callback) {
-  Estabelecimento.find({}, function(err, estabelecimentos) {
+  Estabelecimento.find({},
+    {
+      id: 1,
+      nome: 1,
+      coordenadas: 1,
+      'endereco.logradouro': 1,
+      _id: 0
+    }, function(err, estabelecimentos) {
     callback(estabelecimentos);
   });
 }
@@ -119,8 +126,7 @@ exports.avalia = function(id, avaliacao, callback) {
     delete avaliacao.type;
     estabelecimento.avaliacoes[type].push(avaliacao);
     estabelecimento.save(function(err, estab) {
-      var idAvaliacao = _.last(estab.avaliacoes[type])._id;
-      callback(err, idAvaliacao);
+      callback(err);
     });
   });
 }

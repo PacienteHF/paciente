@@ -32,9 +32,9 @@ router.route("/:id")
     if (req.params.id === "presencaEquipe") {
       nome = "Presença de Profissionais de Saúde";
     } else if (req.params.id === "tempoEspera") {
-      nome = "Tempo Espera";
+      nome = "Tempo de Espera";
     } else if (req.params.id === "qualidadeAtendimento") {
-      nome = "Qualidade de Atendimento";
+      nome = "Qualidade do Atendimento";
     } else if (req.params.id === "medicamentos") {
       nome = "Disponibilidade de Medicamentos";
     } else if (req.params.id === "equipamentos") {
