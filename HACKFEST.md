@@ -2,7 +2,7 @@
 O Sistema tem como objetivo a interação dos usuários em relação ao serviço prestado em estabelecimentos públicos de saúde da Paraíba.
 
 ## Sustentabilidade do projeto
-O sistema é colaborativo, ou seja, toda nosso banco de dados é "alimentado" pelo próprio usuário, através de suas avaliações, tornando a "atualização" da aplicação automática e barata. Quanto ao mapeamento dos estabelecimentos, utilizamos os dados do [CNES](http://cnes.datasus.gov.br/).
+O sistema é colaborativo, ou seja, toda nosso banco de dados é "alimentado" pelo próprio usuário, através de suas avaliações, tornando a "atualização" da aplicação automática e barata. Quanto ao mapeamento dos estabelecimentos, utilizamos os dados já cadastrados no [CNES](http://cnes.datasus.gov.br/).
 Nosso banco de dados está hospedado no [mLab](https://mlab.com/) ainda de forma gratuita, visto que a quantidade de dados não chega a ser cobrada. A partir de 1Gb de dados, deve ser feito um plano de $15 por mês (para cada Gb utilizado), porém, vale dizer que mesmo com toda a Paraíba sendo mapeada e já termos algumas instituições avaliadas ficticiamente, essa base não chega a ter 1Mb, o que mostra o potencial da sustentabilidade do projeto.
 
 ## Inovação e Impacto
