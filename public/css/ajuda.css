@@ -15,9 +15,7 @@ h3{
  	margin-left: 20%;
 
  	justify-content: center;
-	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-                 0px 8px 13px rgba(0,0,0,0.1),
-                 0px 18px 23px rgba(0,0,0,0.1);
+
 
 }
 h2{
@@ -28,9 +26,7 @@ h2{
  	margin-left: 20%;
 
  	justify-content: center;
-	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-                 0px 8px 13px rgba(0,0,0,0.1),
-                 0px 18px 23px rgba(0,0,0,0.1);
+
 
 }
 /*editando nav, menu*/
@@ -175,3 +171,7 @@ ul.topnav li a {
 	padding-top: 2%;
 }
 ul.topnav li a:hover{background-color: #080029;color:#fff;}
+
+.baixarmanual{
+
+}

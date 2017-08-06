@@ -17,6 +17,8 @@ body{
 	font-family: 'Nunito', sans-serif!important;
 	padding: 2px;
 	line-height: 140%;
+	margin-left: 20%;
+	margin-right:  20%;
 }
 .seta{
 	opacity: 0.8;
@@ -29,14 +31,14 @@ body{
 }
 
 
+
 @media (max-width: 700px){
-	video{
-		display: none;
-	}
-	
-	.txt01{
+
+
+	.txt01, .txtMapa{
 		font-size: 14px !important;
-		text-shadow: #000 0px 0px 0px;
+		margin-left: 10%;
+		margin-right:  10%;
 	}
 	.seta{
 		width: 10%;
@@ -51,16 +53,26 @@ body{
 .p2{
 	
 	margin-top: 10%;
-	margin-bottom: 2%;
+	margin-bottom: 8%;
 }
+
 .txtMapa{
 	color: #170C48 !important;
 	font-size: 30px !important;
 	font-family: 'Nunito', sans-serif!important;
 	padding: 2px;
 	line-height: 140%;
+	margin: 5px;
 	margin-bottom: 10px;
 }
+@media (max-width: 700px){
+	.txtMapa{
+		font-size: 20px !important;
+		margin-left: 10%;
+		margin-right:  10%;
+	}
+}
+
 #espmap{
 	margin-top: 2%;
 	padding: 10px;
@@ -253,14 +265,17 @@ x*/
   @media (max-width: 700px){
  	.ranking01{
 
-    width: 99%;
+    width: 100%;
     margin: 0%;
+    margin-bottom: 5%;
  	}
- 	 	.ranking02{
+ 	.ranking02{
 
     width: 100%;
     margin: 0%;
+    margin-bottom: 5%;
  	}}
+
 
 .setarank{
 	margin-bottom: 0px;
@@ -356,6 +371,7 @@ tr:hover{
 	background-color: #170C48;
 	color: #fff;
 	border: 2px solid;
+	text-decoration: none;
 
 }
 /*parte 4*/
@@ -562,11 +578,13 @@ td{
 
 #help{
 	font-family: 'Nunito', sans-serif!important;
-	position: absolute;
+	position: absolute!important;
+	/*display: block;*/
 	border: 0px;
 	background-color: #0E004C;
 	color: #fff;
 	padding: 10px;
+	left: -15px;
 
 }
 #help:hover{
@@ -578,14 +596,35 @@ td{
 	border-top: 0px;
 	}
 .glyphicon-alert{
-	margin-top: 8px;
+	margin-top: 1%;
 	color: #FFA600;
-	margin-bottom: 40px;
+	margin-left: -8%
+
 }
 .text-aletramapa{
 	font-size: 90%;
+	margin-bottom: 40px;
+
 }
 
+.container-fluid {
+    padding-right: 8px;
+    padding-left: 8px;
+
+}
+th{
+	color: #fff;
+}
+th:hover{
+	color: #fff;
+}
+.th2{
+	background-color: #170C48;
+}
+
+#icone6, #icone5 , #icone4, #icone3, #icone2, #icone1{
+	padding-top: 10px;
+}
 /*usar nos content*/
 /*height: 100%;
 background-size: cover;

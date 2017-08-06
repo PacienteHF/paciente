@@ -1,5 +1,6 @@
 
- function collapseNavbar(){
+
+function collapseNavbar(){
     if($(".navbar").offset().top>50){
         $(".navbar-fixed-top").addClass("top-nav-collapse");
         $( "#logomenu" ).css("display", "block");
@@ -27,12 +28,9 @@
 
 $(document).ready(function(){
 
-
     if($(window).width()<500){
-        alert(window.screen.availWidth);
         $('.button').removeClass('hvr-grow');
     }
-
 
     $("#flip1").click(function(){
         $("#panel1").slideToggle("slow");
@@ -113,9 +111,13 @@ $(document).ready(function(){
         window.document.getElementById("icone6").src="iconeseta01.png";
         window.document.getElementById("icone6").name="desligado6";
     }
+
+
     });
 });
+
 
 $('#help').click(function () {
   $('body').chardinJs('start')
 })
+

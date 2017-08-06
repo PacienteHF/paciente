@@ -38,13 +38,13 @@
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
 
                     <li>
-                        <a  href="#01topo">TOPO</a>
+                        <a  href="#01topo">Início</a>
                     </li>
                     <li>
-                        <a  href="#p2mapa">MAPA</a>
+                        <a  href="#p2mapa">Mapa</a>
                     </li>
                     <li>
-                        <a  href="#p3rank">RANKING</a>
+                        <a  href="#p3rank">Ranking</a>
                     </li>
                 </ul>
             </div>
@@ -58,23 +58,18 @@
                   col-sm-8 col-sm-offset-2
                   col-md-4 col-md-offset-4
                   col-lg-4 col-lg-offset-4">
-                  <a href="#"><img src="/logoteste.png" class="img-responsive center-block" alt="Logo Ham.io" id="logo"></a>
+                  <img src="/logoteste.png" class="img-responsive center-block" alt="Logo Ham.io" id="logo">
       </div>
-	  	<div class="row col-xs-12 col-xs-offset-
-                col-sm-9 col-sm-offset-1
-                col-md-6 col-md-offset-3
-                col-lg-6 col-lg-offset-3">
-
-
-                  <p class="txt01 text-center">
+    </div>
+	  <div class="container-fluid">
+      <p class="txt01 text-center">
           O Sistema tem como objetivo a interação dos usuários em relação aos problemas dos serviços em estabelecimentos de saúde.
-          </p>
+      </p>
           <!--<a class="scroll" href="#p2mapa"><img src="seta.png" class="img-responsive center-block seta"></a>-->
-  		</div>
   	</div>
   </section>
 
- 
+
 	<section class="p2" >
    <p class="txtMapa text-center">
           <span>Selecione uma instituição abaixo para ver seu nível de aprovação ou avaliar anonimamente</span></p>
@@ -84,10 +79,26 @@
     <div id="espmap" class="espantmapa"></div>
     	<input id="pac-input" class="controls" type="text" data-intro="Aqui você pode procurar o estabelecimento que procura pelo nome ou pelo endereço." data-position="top" placeholder="Procurar Estabelecimentos">
 
-      <div id="map" class="row" data-intro="Cada um dos 'anéis' do mapa são pontos de concentração de estabelecimentos de saúde. Clique em um para aproximar até o local desejado." data-position="bottom"></div> <button aria-hidden="true" type="button" id="help">Ajuda</button></span></p>
-      <p class="text-center"> <span class="glyphicon glyphicon-alert" aria-hidden="true"></span><span class="text-aletramapa"> Algumas informações de localização podem esta incorretas <span class="text-right"> 
+      <div id="map" class="row" data-intro="Cada um dos 'anéis' do mapa são pontos de concentração de estabelecimentos de saúde. Clique em um para aproximar até o local desejado." data-position="bottom"></div>
 
-     
+      <div class="container-fluid">
+        <div class=" col-xs-2
+                col-sm-2
+                col-md-2
+                col-lg-2 "
+                >
+          <button aria-hidden="true" type="button" id="help">Ajuda</button>
+        </div>
+
+        <div class=" col-xs-10
+                col-sm-10
+                col-md-10
+                col-lg-10 text-right "
+                >
+          <span class="glyphicon glyphicon-alert" aria-hidden="true"></span><span class="text-aletramapa"> Algumas informações de localização podem esta incorretas </span>
+        </div>
+      </div>
+
 	</section>
 
   <section id="p3rank" class="p3" name="mais" >
@@ -124,16 +135,19 @@
                       col-sm-4
                       col-md-4
                       col-lg-4
-                      btn button hvr-grow">
+                      ">
+
           <div id="flip1">
+            <div class="btn button hvr-grow">
                 <img src="presensademedicos.png" class="img-responsive center-block" >
-                <img id="icone1" name="desligado1" src="iconeseta01.png" class="img-responsive center-block setarank" >
+                <img id="icone1" name="ligado1" src="iconeseta02.png" class="img-responsive center-block setarank" >
+            </div>
           </div>
 
           <div id="panel1">
 						<table class="table table-hover table-condensed">
 						<th>Nome</th>
-						<th>Nota</th>
+						<th class="text-right">Nota</th>
               <tr v-for="item in ranking.presencaEquipe" class="trr">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td class="text-right"> {{ item.avgNota }} </td>
@@ -148,15 +162,17 @@
                         col-sm-4
                         col-md-4
                         col-lg-4
-                        btn button hvr-grow">
+                        ">
           <div id="flip4">
-           <img src="tempoDeEspera.png" class="img-responsive center-block" >
-           <img id="icone4" name="desligado4" src="iconeseta01.png" class="img-responsive center-block setarank" >
+            <div class="btn button hvr-grow">
+             <img src="tempoDeEspera.png" class="img-responsive center-block" >
+             <img id="icone4" name="ligado4" src="iconeseta02.png" class="img-responsive center-block setarank" >
+            </div>
           </div>
           <div id="panel4">
 						<table class="table table-hover table-condensed">
-						<th>Nome</th>
-						<th>Nota</th>
+						<th class="th2">Nome</th>
+						<th class="text-right th2">Nota</th>
               <tr v-for="item in ranking.tempoEspera">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td class="text-right"> {{ item.avgNota }} </td>
@@ -171,15 +187,17 @@
                     col-sm-4
                     col-md-4
                     col-lg-4
-                    btn button hvr-grow">
+                    ">
           <div id="flip6">
-           <img src="atendimento.png" class="img-responsive center-block" >
-           <img id="icone6" name="desligado6" src="iconeseta01.png" class="img-responsive center-block setarank" >
+            <div class="btn button hvr-grow">
+             <img src="atendimento.png" class="img-responsive center-block" >
+             <img id="icone6" name="ligado6" src="iconeseta02.png" class="img-responsive center-block setarank" >
+           </div>
           </div>
           <div id="panel6">
 						<table class="table table-hover table-condensed">
 						<th>Nome</th>
-						<th>Nota</th>
+						<th class="text-right">Nota</th>
               <tr v-for="item in ranking.qualidadeAtendimento" class="trr">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank trr"> {{ item.nome }} </a></td>
                 <td class="text-right"> {{ item.avgNota }} </td>
@@ -195,15 +213,17 @@
                       col-sm-4
                       col-md-4
                       col-lg-4
-                      btn button hvr-grow">
+                      ">
           <div id="flip5">
-           <img src="equipamento.png" class="img-responsive center-block" >
-           <img id="icone5" name="desligado5" src="iconeseta01.png" class="img-responsive center-block setarank" >
+            <div class="btn button hvr-grow">
+             <img src="equipamento.png" class="img-responsive center-block" >
+             <img id="icone5" name="desligado5" src="iconeseta01.png" class="img-responsive center-block setarank" >
+            </div>
           </div>
           <div id="panel5">
 						<table class="table table-hover table-condensed">
-						<th>Nome</th>
-						<th>Nota</th>
+						<th class="th2">Nome</th>
+						<th class="text-right th2">Nota</th>
               <tr v-for="item in ranking.equipamentos" >
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td class="text-right"> {{ item.avgNota }} </td>
@@ -219,15 +239,17 @@
                       col-sm-4
                       col-md-4
                       col-lg-4
-                      btn button hvr-grow">
+                      ">
           <div id="flip2">
+            <div class="btn button hvr-grow">
               <img src="medicamento.png" class="img-responsive center-block" >
               <img id="icone2" name="desligado2" src="iconeseta01.png" class="img-responsive center-block setarank" >
+            </div>
           </div>
           <div id="panel2">
 						<table class="table table-hover table-condensed">
 						<th>Nome</th>
-						<th>Nota</th>
+						<th class="text-right">Nota</th>
               <tr v-for="item in ranking.medicamentos" class="trr">
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank trr"> {{ item.nome }} </a></td>
                 <td class="text-right"> {{ item.avgNota }} </td>
@@ -241,15 +263,17 @@
                       col-sm-4
                       col-md-4
                       col-lg-4
-                      btn button hvr-grow">
+                     ">
           <div id="flip3">
-           <img src="infra.png" class="img-responsive center-block" >
-           <img id="icone3" name="desligado3" src="iconeseta01.png" class="img-responsive center-block setarank" >
+          <div class="btn button hvr-grow">
+             <img src="infra.png" class="img-responsive center-block" >
+             <img id="icone3" name="desligado3" src="iconeseta01.png" class="img-responsive center-block setarank" >
+           </div>
           </div>
           <div id="panel3">
 						<table class="table table-hover table-condensed">
-						<th>Nome</th>
-						<th>Nota</th>
+						<th class="th2" >Nome</th>
+						<th class="text-right th2">Nota</th>
               <tr v-for="item in ranking.infraestrutura" >
                 <td> <a v-bind:href="'/estabelecimentos/'+ item._id" class="instanciarank"> {{ item.nome }} </a></td>
                 <td class="text-right" > {{ item.avgNota }} </td>
@@ -276,11 +300,12 @@
                   col-sm-6
                   col-md-3
                   col-lg-3">
+                  <a href="https://www.facebook.com/DantasDesignSC/">
               <img src="apoio02tc.png"
                 onMouseOver="this.src='apoio02.png'"
                 onMouseOut="this.src='apoio02tc.png'"
                 class="img-responsive center-block"
-              >
+              ></a>
 
       </div>
 
@@ -288,33 +313,36 @@
                   col-sm-6
                   col-md-3
                   col-lg-3  ">
+              <a href="http://hackfest.com.br/">
               <img src="apoio01tc.png"
                 onMouseOver="this.src='apoio01.png'"
                 onMouseOut="this.src='apoio01tc.png'"
                  class="img-responsive center-block"
-              >
+              ></a>
       </div>
 
       <div class="col-xs-6
                   col-sm-6
                   col-md-3
                   col-lg-3">
+              <a href="http://nutes.uepb.edu.br/">
               <img src="apoio03tc.png"
                 onMouseOver="this.src='apoio03.png'"
                 onMouseOut="this.src='apoio03tc.png'"
                  class="img-responsive center-block"
-              >
+              ></a>
       </div>
 
       <div class="col-xs-6
                   col-sm-6
                   col-md-3
                   col-lg-3">
+              <a href="http://www.uepb.edu.br/">
               <img src="apoio04tc.png"
                 onMouseOver="this.src='apoio04.png'"
                 onMouseOut="this.src='apoio04tc.png'"
                  class="img-responsive center-block"
-              >
+              ></a>
       </div>
 		</div>
   </section>
