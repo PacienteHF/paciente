@@ -7,6 +7,7 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 - [Instalação](#instalação)
 - [Hospendando o Banco de Dados](#hospedando-o-banco-de-dados)
 - [Fazendo Deploy](#fazendo-deploy)
+- [Como Usar](#como-usar)
 
 ## Instalação
 
@@ -52,3 +53,8 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 4. Agora execute `$git push heroku master` e espere alguns minutos;
 5. Quando terminado, você já terá acesso ao link. 
 ![link screenshot](screenshots/link.png)
+
+## Como usar
+
+A aplicação foi desenvolvida de forma que os usuários não tenham quaisquer problemas na hora de usar. Ferramentas de ajuda e textos explicativos estão por todo o sistema. Além disso, uma aba "Ajuda", no rodapé do site, está disponível caso ainda alguma dúvida apareça.
+Para um maior entendimento ainda, foi desenvolvido um manual completo, que você pode acessar aqui: ![Download Manual](public/manual.pdf)
