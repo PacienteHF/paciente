@@ -1,4 +1,4 @@
-# Introdução
+## Introdução
 O Sistema tem como objetivo a interação dos usuários em relação ao serviço prestado em estabelecimentos públicos de saúde da Paraíba.
 
 ## Sustentabilidade do projeto
