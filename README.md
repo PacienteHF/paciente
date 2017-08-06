@@ -57,4 +57,4 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 ## Como usar
 
 A aplicação foi desenvolvida de forma que os usuários não tenham quaisquer problemas na hora de usar. Ferramentas de ajuda e textos explicativos estão por todo o sistema. Além disso, uma aba "Ajuda", no rodapé do site, está disponível caso ainda alguma dúvida apareça.
-Para um maior entendimento ainda, foi desenvolvido um manual completo, que você pode acessar aqui: ![Download Manual](public/manual.pdf)
+Para um maior entendimento ainda, foi desenvolvido um manual completo, que você pode acessar ![aqui](public/manual.pdf)
