@@ -41,7 +41,7 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
     5. Comente a linha `mongoose.connect("mongodb://localhost/saude");`, que está no mesmo script e salve as alterações;
     ![mongoose screenshot](screenshots/mongoose.png)
     6. Insira a base de dados. Para isso vá para a pasta 'dados' que está dentro da pasta raiz do projeto e rode `$node         .\insertDadosDB.js`;
-    7. Atualize o git depois das alterações: `$git add config/db.js` -> `$git commit -m "comentario"` -> `$git push`.
+    7. Atualize o git depois das alterações: `$git add config/db.js` -> `$git commit -m "comentario"` -> `$git push -u origin <nova-branch>`.
 
 ### Fazendo Deploy
 É necessário que se tenha uma conta cadastrada no [Heroku](https://www.heroku.com/).
