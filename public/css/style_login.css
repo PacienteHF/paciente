@@ -313,7 +313,12 @@ tr:hover{
 	background-color: #170C48 !important;
 	color: #fff;
 }
+#flip1, #flip2, #flip3, #flip4, #flip5,#flip6{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
+}
 #panel2,#panel3,#panel5{
     display: none;
     padding: 10px;
@@ -321,7 +326,7 @@ tr:hover{
     padding-top: 0px;
 }
 #panel6, #panel1,#panel4{
-	 padding: 10px;
+	padding: 10px;
     padding-bottom:3%;
     padding-top: 0px;
 }

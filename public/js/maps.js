@@ -8,7 +8,11 @@ function initMap() {
              }
     });
 
-    var ruaSugestoes = locations.map(function(estabelecimento) {
+    var validos = locations.filter(function(location) {
+      return location.coordenadas.lat !== 0;
+    });
+
+    var ruaSugestoes = validos.map(function(estabelecimento) {
       return { value: estabelecimento.endereco.logradouro,
                data: { id: estabelecimento.id, type: "rua", coordenadas: estabelecimento.coordenadas }
              }
@@ -29,9 +33,14 @@ function initMap() {
       }
     });
 
+    var zoomvar=8;
+    if($(window).width()<700){
+      zoomvar=6;
+    }
+
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: -7.2251168, lng: -36.4175412},
-      zoom: 8,
+      zoom: zoomvar,
       scrollwheel: false,
       zoomControl: true,
       mapTypeControl: false,
