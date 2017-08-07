@@ -9,13 +9,17 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
 - [Fazendo Deploy](#fazendo-deploy)
 - [Como Usar](#como-usar)
 
+## Obs.: Antes de qualquer coisa, é importante que se "Fork" o projeto pois haverá necessidade de fazer alterações no repositório durante o deploy.
+
+*Nas screenshots relacionadas a mudanças no código-fonte estamos utilizando o "VS Code".
+
 ## Instalação
 
 1. Tenha certeza de ter instalado o [Git](https://git-scm.com/downloads);
 2. Tenha certeza de ter instalado o [Node.js](https://nodejs.org/en/download/);
 3. Tenha certeza de ter instalado o [Mongo DB](https://www.mongodb.com/download-center#community) (Community Server);
-4. Clone este repositório com `$git clone https://github.com/PacienteHF/paciente` e vá para a pasta clonada ;
-5. Instale as dependências do sistema com `$npm install`;
+4. Clone o repositório com `$git clone https://github.com/<seu_username>/paciente` e vá para a pasta clonada ;
+5. Execute `$npm install` para instalar todas as dependências do projeto;
 6. Insira a base de dados. Para isso vá para a pasta 'dados' que está dentro da pasta raiz do projeto e rode `$node .\insertDadosDB.js`;
 7. Volte para a pasta raiz e rode `$node .\server.js`;
 8. Em qualquer navegador vá para [http://localhost:3000](http://localhost:3000/).
@@ -36,12 +40,14 @@ O sistema tem como objetivos expor indícios de corrupção nesses estabelecimen
     1. Na Home de sua conta, clique no nome do banco de dados criado acima;
     2. Para se conectar ao banco teremos que criar um usuário e senha. Para isso clique na aba *Users* e em seguida *Add database user*;
     3. Escolha o nome de usuário e senha que preferir;
-    4. Adicione ao código em (config\db.js) `mongoose.connect("")` e a URI gerada na criação do banco de dados dentro dos parênteses.       Não esqueça de substituir `<dbuser>` pelo usuário criado e `<dbpassword>` pela senha escolhida;
-    ![uri screenshot](screenshots/mlab.png)
+    4. Adicione ao código-fonte (no arquivo db.js que está na pasta config) `mongoose.connect("")` e a URI gerada na criação do banco de dados dentro dos parênteses (Como nas screenshots abaixo). Não esqueça de substituir `<dbuser>` pelo usuário criado e `<dbpassword>` pela senha escolhida.
     5. Comente a linha `mongoose.connect("mongodb://localhost/saude");`, que está no mesmo script e salve as alterações;
+    ![uri screenshot](screenshots/mlab.png)
+    
     ![mongoose screenshot](screenshots/mongoose.png)
+    
     6. Insira a base de dados. Para isso vá para a pasta 'dados' que está dentro da pasta raiz do projeto e rode `$node         .\insertDadosDB.js`;
-    7. Atualize o git depois das alterações: `$git add config/db.js` -> `$git commit -m "comentario"` -> `$git push -u origin <nova-branch>`.
+    7. Atualize o git depois das alterações: `$git add config/db.js` -> `$git commit -m "<seu_comentario>"` -> `$git push`.
 
 ### Fazendo Deploy
 É necessário que se tenha uma conta cadastrada no [Heroku](https://www.heroku.com/).
